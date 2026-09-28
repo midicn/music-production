@@ -22,7 +22,7 @@ sources:
 制作与数字音乐站讲**从声音到成品的那一段**：录音、混音、合成与音色设计、编曲，
 以及音乐怎么进入影像与游戏。
 
-## 会收录哪些内容
+## 会讲哪些环节
 
 - **录音** —— 话筒怎么摆、房间的影响、远近与拾音方式的取舍。
 - **混音** —— 动态、均衡、空间与层次：几十条音轨怎样排出一张清楚的画面。
@@ -43,7 +43,7 @@ sources:
 2. **带着一首曲子读** —— 拿一首熟悉的曲子对照，效果好得多。
 3. **别把参数当结论** —— 参数是手段，听感才是结果。
 
-## 现在到哪一步
+## 先从哪一段开始
 
 制作与数字音乐两部分都在陆续上线。会先把**录音与混音**这条主线立起来 ——
 后面谈合成与编曲时，都要用到这里建立起来的耳朵。
@@ -55,7 +55,7 @@ sources:
 This station covers **the stretch from sound to finished record**: recording, mixing,
 synthesis and sound design, arranging, and how music works inside film and games.
 
-## What it will contain
+## Which stages are covered
 
 - **Recording** — microphone placement, the effect of the room, and the trade-offs between
   close and distant capture.
@@ -80,7 +80,7 @@ synthesis and sound design, arranging, and how music works inside film and games
 2. **With one piece of music in hand** — comparing against something familiar works far better.
 3. **Do not mistake settings for conclusions** — settings are means; what you hear is the result.
 
-## Where it stands today
+## Where it starts
 
 Both halves — production and digital audio — are being added over time. **Recording and
 mixing** come first, because the ear built here is what the later discussion of synthesis

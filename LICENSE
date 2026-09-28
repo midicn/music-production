@@ -1,0 +1,35 @@
+# 内容许可 / Content Licence
+
+本仓库中全部文字内容（`*.md`）均采用
+**Creative Commons Attribution 4.0 International (CC BY 4.0)** 许可。
+
+    midicn 制作与数字音乐 © 2026 midicn contributors, licensed CC BY 4.0
+    https://creativecommons.org/licenses/by/4.0/
+
+你可以自由**复制、分发、改写、翻译、演绎，包括商业用途**，
+唯一条件是**署名**（注明来源为 midicn，并给出
+<https://prod.midicn.com/> 链接）。无其他限制。
+
+许可全文：<https://creativecommons.org/licenses/by/4.0/legalcode.zh-hans>
+
+---
+
+## Scope / 适用范围
+
+**CC BY 4.0 applies to all original text in this repository** —— 每条条目的
+标题、摘要、正文与图表说明（中英双语均为原创撰写）。
+
+- 参考源仅用于核查事实，**未采用任何来源的句式**（尤其未使用维基百科文本）
+- 图表均为**自绘 SVG**，不使用实拍照片
+
+## 曲目数据 / Musical material
+
+条目中引用的**曲目**（`track-id` 形式）来自
+[midicn-lib](https://lib.midicn.com/)，**不由本仓库授权**。
+每首曲目保留其上游来源的许可，逐曲记录于该数据集的 `l` 字段。
+本仓对这些素材不主张任何权利，也无权为其另行授权。
+
+## 站点与代码 / Site & code
+
+站点产物（HTML/CSS/JavaScript）见 [`midicn/prod`](https://github.com/midicn/prod)，
+其许可说明见该仓 `LICENSE`。

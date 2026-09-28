@@ -30,6 +30,8 @@
 | 站点产物 | [`midicn/prod`](https://github.com/midicn/prod) |
 | 数据集（MIDI 索引） | [`midicn/midi-library`](https://github.com/midicn/midi-library) |
 
-## 说明
+## 反馈
 
-本仓由 midicn 的内容生产流程维护，**不是**手工逐条上传 —— 内容在内核工作区撰写与校验（七关强制门）后同步至此。
+发现内容错误或有改进建议？欢迎在 [Issues](https://github.com/midicn/music-production/issues) 提出。
+
+内容与站点同步发布：这里的一个 Markdown 文件对应线上一个条目页（含中英双语）。

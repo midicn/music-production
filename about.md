@@ -2,14 +2,14 @@
 id: about
 site: prod
 cat: META
-title: 关于制作与数字音乐
-title_en: About Production & Digital Audio
-summary: 制作与数字音乐这一站讲什么、按什么顺序读。
+title: 关于音频与音乐制作
+title_en: About Audio & Music Production
+summary: 音频与音乐制作这一站讲什么、按什么顺序读。
 summary_en: What this station covers, in what order to read it, and where the writing stands today.
 level: page
 tags: [本站说明]
 tags_en: [about]
-alias: [关于, 说明, 制作说明, about, production]
+alias: [关于, 说明, 音频说明, about, audio, production]
 order: 99
 updated: 2026-09-28
 sources:
@@ -19,7 +19,7 @@ sources:
 ::: zh
 ## 这一站是做什么的
 
-制作与数字音乐站讲**从声音到成品的那一段**：录音、混音、合成与音色设计、编曲，
+音频与音乐制作站讲**从声音到成品的那一段**：录音、混音、合成与音色设计、编曲，
 以及音乐怎么进入影像与游戏。
 
 ## 会讲哪些环节
@@ -45,7 +45,7 @@ sources:
 
 ## 先从哪一段开始
 
-制作与数字音乐两部分都在陆续上线。会先把**录音与混音**这条主线立起来 ——
+音频与音乐制作两部分都在陆续上线。会先把**录音与混音**这条主线立起来 ——
 后面谈合成与编曲时，都要用到这里建立起来的耳朵。
 :::
 

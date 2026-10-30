@@ -4,7 +4,7 @@
   "name": "音频与音乐制作",
   "updated": "2026-10-30",
   "total_planned": 254,
-  "done": 253,
+  "done": 313,
   "batches": [
     {
       "id": "M6-a",
@@ -96,6 +96,13 @@
       "status": "done",
       "entries": [],
       "note": "并行批次；七关全绿。"
+    },
+    {
+      "id": "M6-v3",
+      "title": "C/D 工具与流程 60 条",
+      "status": "done",
+      "entries": [],
+      "note": "DAW 10 · 插件 12 · 采样库 8 · 硬件 10 · 软件/选型 12 · 工作流 8"
     }
   ]
 }

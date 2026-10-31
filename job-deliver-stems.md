@@ -16,15 +16,15 @@ links:
   - "[[glossary:dither]]"
   - "[[glossary:headroom]]"
 instances:
-  - pdmx-000407 | 合奏层次清楚，适合练按乐器组拆 stems，是交付的参照，不是本页演示
-  - oga-000004 | 战斗曲分层明显，交付时可按鼓、低音与旋律拆组，不是本页演示
-  - groove-000010 | 鼓循环的时值与力度层次，适合练分组命名与对齐，不是本页演示
-  - pdmx-000087 | 多声部与强弱变化明显，可参考 stems 相加时的平衡，不是本页演示
+  - pdmx-000407 | 合奏层次清楚，适合练按乐器组拆 stems，是交付的参照
+  - oga-000004 | 战斗曲分层明显，交付时可按鼓、低音与旋律拆组
+  - groove-000010 | 鼓循环的时值与力度层次，适合练分组命名与对齐
+  - pdmx-000087 | 多声部与强弱变化明显，可参考 stems 相加时的平衡
 sources:
   - stems 与分轨、总线的区别；影视声音与母带交付惯例是主要依据。
   - 命名、等长起点、真峰值与抖动惯例——依据来自后期交付规范。
 tool_kind: guide
-tool_vendor: 本站
+tool_vendor: —
 tool_form: 流程
 tool_platforms: [通用]
 tool_price: 不适用

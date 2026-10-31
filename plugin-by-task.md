@@ -16,15 +16,15 @@ links:
   - "[[glossary:compressor]]"
   - "[[glossary:reverb]]"
 instances:
-  - pdmx-000007 | 编制完整的交响曲，声部多、频段挤，是 EQ 取舍的参照，不是本页演示
-  - openscore-000005 | 人声随钢琴起伏，动态大，是压缩控制的参照，不是本页演示
-  - cyberhymnal-000000 | 管风琴长音，尾音与空间分不开，是混响处理的参照，不是本页演示
-  - atepp-001116 | 标注为转制的钢琴录音，嘶声与踏板噪声分层，是修复插件的参照，不是本页演示
+  - pdmx-000007 | 编制完整的交响曲，声部多、频段挤，是 EQ 取舍的参照
+  - openscore-000005 | 人声随钢琴起伏，动态大，是压缩控制的参照
+  - cyberhymnal-000000 | 管风琴长音，尾音与空间分不开，是混响处理的参照
+  - atepp-001116 | 标注为转制的钢琴录音，嘶声与踏板噪声分层，是修复插件的参照
 sources:
   - 均衡、压缩与混响的参数分工；音频工程教材是主要依据。
   - 插件的授权、格式与过采样做法——依据来自厂商公开文档。
 tool_kind: guide
-tool_vendor: 本站
+tool_vendor: —
 tool_form: 流程
 tool_platforms: [通用]
 tool_price: 不适用

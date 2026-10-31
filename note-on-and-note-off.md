@@ -19,7 +19,7 @@ instances:
   - musicnet-000073 | 钢琴奏鸣曲，6615 条 Note Off 全用 0x80 写成，可与上一条对照
   - groove-000000 | 放克鼓循环，闭镲 42 键重复 101 次，靠 Note Off 切出长短
 sources:
-  - MIDI 1.0 规范对 Note On 与 Note Off 的定义，参考MMA 公开规范。
+  - MIDI 1.0 规范对 Note On 与 Note Off 的定义，参考 MMA 公开规范。
   - 力度 0 的旧约定与重叠音处理；音序器文档是主要依据。
 updated: 2026-10-28
 ---

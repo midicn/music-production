@@ -15,15 +15,15 @@ links:
   - "[[glossary:reference-track]]"
   - "[[instrument:popular-voice]]"
 instances:
-  - pdmx-002540 | 民歌旋律的完整呈现与收束，是 Demo 可听度的成品参照，不是本页演示
-  - thesession-021012 | 短小歌曲的句法与收束，可对照「一段循环」和「一首歌」的差别，不是本页演示
-  - pdmx-000442 | 旋律与伴奏的主次清楚，适合练粗混时的主次位置，不是本页演示
-  - abcmisc-000001 | 传统曲调的呼吸与结尾，可对照 Demo 该在何处停下，不是本页演示
+  - pdmx-002540 | 民歌旋律的完整呈现与收束，是 Demo 可听度的成品参照
+  - thesession-021012 | 短小歌曲的句法与收束，可对照「一段循环」和「一首歌」的差别
+  - pdmx-000442 | 旋律与伴奏的主次清楚，适合练粗混时的主次位置
+  - abcmisc-000001 | 传统曲调的呼吸与结尾，可对照 Demo 该在何处停下
 sources:
   - Demo 的结构、粗混与导出做法——依据来自音乐制作流程惯例。
   - 参考曲与手机外放判断的用法，对照混音教学惯例整理。
 tool_kind: guide
-tool_vendor: 本站
+tool_vendor: —
 tool_form: 流程
 tool_platforms: [通用]
 tool_price: 不适用

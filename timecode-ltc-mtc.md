@@ -19,31 +19,31 @@ instances:
   - oga-000011 | 一分三十六秒的 boss 曲，段落切换要与画面事件吻合
   - oga-000018 | 城堡场景配乐，进入与退出都要对齐画面
 sources:
-  - LTC 与 MTC 的帧格式和帧率定义，依时间码与 MIDI 规范核查，未抄文本
-  - 影视配乐的追逐与触发同步方式，依后期制作通识核查，未抄文本
+  - LTC 与 MTC 的帧格式和帧率定义；时间码与 MIDI 规范是主要依据。
+  - 影视配乐的追逐与触发同步方式——依据来自后期制作惯例。
 updated: 2026-10-28
 ---
 
 ::: zh
 时间码给每一个时刻一个帧地址，让音乐、画面与多台机器指向同一个位置。
 
-## 问题
+## 为什么会碰到
 
 配乐要跟画面，广告要跟镜头，现场要跟视频播放。按小节数拍对不上剪辑软件，必须有一把共同的时间尺。
 
-## 原理
+## 声音是怎么来的
 
 时间码写成时、分、秒、帧，帧率有二十四、二十五、三十与二十九点九七。LTC 把地址调制成音频，录在一条音轨上；MTC 把地址拆成 MIDI 的四分帧消息，每帧发四次。两者都只精确到帧。
 
-## 做法与参数
+## 旋钮与做法
 
 帧率必须与画面完全一致，二十九点九七要确认是否丢帧；设定统一的起点偏移，chase 模式让从机跟随，trigger 模式只在大位置跳转时对齐；LTC 录在独立音轨，避免被拉伸或变调处理。
 
-## 听什么
+## 耳朵要抓的点
 
 听同步点在十分钟后是否仍然吻合。开头对齐、结尾漂移，说明帧率或丢帧设置错了。
 
-## 常见误解
+## 容易弄错的
 
 时间码不是速度时钟，它不规定每分钟多少拍；MTC 也不传音频，只传位置。
 
@@ -55,11 +55,11 @@ updated: 2026-10-28
 ::: en
 Timecode gives every moment a frame address, so music, picture and several machines can point at the same place.
 
-## The problem
+## Why you meet it
 
 A score must follow picture, a commercial must follow shots, and a live show must follow video playback. Counting bars does not match an editing application, so a shared ruler is needed.
 
-## How it works
+## Where the sound comes from
 
 Timecode reads hours, minutes, seconds and frames, with rates of twenty-four, twenty-five, thirty and twenty-nine point nine seven. LTC modulates the address into audio and records it on a track; MTC splits it into MIDI quarter-frame messages, four per frame. Both resolve only to a frame.
 
@@ -67,7 +67,7 @@ Timecode reads hours, minutes, seconds and frames, with rates of twenty-four, tw
 
 Match the frame rate exactly, and confirm whether twenty-nine point nine seven uses drop frame. Set a common start offset; chase mode follows the master continuously, while trigger mode aligns only on large jumps. Record LTC on its own track and keep it away from stretching or pitch processing.
 
-## What to listen for
+## What the ear catches
 
 Check whether sync points still agree after ten minutes. Aligned at the start and drifting at the end means the frame rate or drop-frame setting is wrong.
 

@@ -21,8 +21,8 @@ instances:
   - oga-000045 | 两分多钟的管弦片段，适合对照画面与时间码的工作方式，是配乐类交付的参照，不是本页演示
   - atepp-001114 | 标注为现场演奏的叙事曲，一次成型，适合对照现场工作方式，是现场类交付的参照，不是本页演示
 sources:
-  - 各类 DAW 的编辑模型与时间线结构，依通行软件文档核查，未抄文本
-  - 录音、配乐与现场流程的差异，依音乐制作流程资料核查，未抄文本
+  - 各类 DAW 的编辑模型与时间线结构——依据来自软件文档。
+  - 录音、配乐与现场流程的差异，对照音乐制作流程资料整理。
 tool_kind: guide
 tool_vendor: 本站
 tool_form: 流程
@@ -58,7 +58,7 @@ updated: 2026-10-30
 
 ## 怎么开始
 
-用一周做四件真事：八小节循环、一次多轨录音的 comping、三十秒画面、一次彩排。哪件最顺手就选那款。读本站的常见 DAW 对比与数字音频工作站两页。
+用一周做四件真事：八小节循环、一次多轨录音的 comping、三十秒画面、一次彩排。哪件最顺手就选那款。读这里的常见 DAW 对比与数字音频工作站两页。
 
 ```audiolab
 {"type":"rhythm","sig":"4/4","pattern":"q q e e q q e e","bpm":100,"label":"一个循环里的两种密度","label_en":"Two densities inside one loop","hint":"先听四拍，再想第二小节加进来的是鼓还是和声","hint_en":"Hear the four beats, then decide whether drums or harmony enter in the second bar"}

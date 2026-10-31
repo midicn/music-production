@@ -19,31 +19,31 @@ instances:
   - atepp-000195 | 月光的速度自由起伏，量化会削掉呼吸
   - groove-000725 | 嘻哈鼓循环，踩镲的微差最容易被听出
 sources:
-  - 量化的网格分辨率与强度混合，依通行音序软件说明核查，未抄文本
-  - 音频切片量化的边界处理，依数字音频工作流通识核查，未抄文本
+  - 量化的网格分辨率与强度混合，对照音序软件说明整理。
+  - 音频切片量化的边界处理（数字音频工作流惯例）。
 updated: 2026-10-28
 ---
 
 ::: zh
 量化把音头吸到最近的网格线上，强度决定吸过去多少。
 
-## 问题
+## 卡住的地方
 
 演奏的音头总会偏离节拍，偏得整齐是律动，偏得零散是拖沓。量化要解决后者，而不是把所有偏差抹平。
 
-## 原理
+## 背后的机制
 
 引擎读每个音的起点，找最近的网格点，再按强度在原点与格点之间取中间值。网格可以是十六分、八分三连或摇摆格；音符终点与力度默认不动。音频的量化要先切片，再移动切片边界。
 
-## 做法与参数
+## 旋钮与做法
 
 先选能容纳最短音值的网格，宁可粗一点；强度从一半开始试，听不出改善再提高；只量化音头，保留尾音；三连音材料不要用直网格；鼓组保留人性的微差，贝斯与和弦可以更贴格。
 
-## 听什么
+## 耳朵要抓的点
 
 听音头是否一齐，以及重音有没有被吸走。踩镲与底鼓的关系最能暴露过度量化，军鼓稍微靠后常更有推力。
 
-## 常见误解
+## 容易弄错的
 
 量化不能修复写错的音符，也不能自动产生律动。百分之百贴格不是标准答案，很多时候一半强度更自然。
 
@@ -55,11 +55,11 @@ updated: 2026-10-28
 ::: en
 Quantise pulls each attack to the nearest grid line, and strength decides how far it travels.
 
-## The problem
+## Where it snags
 
 Attacks always sit off the beat; an even offset is groove, a scattered one is drag. Quantise fixes the second, not every deviation.
 
-## How it works
+## The mechanism
 
 The engine reads each note start, finds the nearest grid point, and blends between origin and grid by strength. The grid can be a sixteenth, an eighth triplet or a swing grid; note ends and velocity stay put by default. Audio is sliced first, and then slice edges move.
 
@@ -67,7 +67,7 @@ The engine reads each note start, finds the nearest grid point, and blends betwe
 
 Choose the coarsest grid that still holds the shortest value, start strength at half and raise it only if the result is unclear. Quantise onsets and keep tails, never put triplets on a straight grid, and leave drum micro-timing while bass and chords can sit tighter.
 
-## What to listen for
+## What the ear catches
 
 Hear whether attacks lock and whether accents are pulled away. The hat-to-kick relation exposes over-quantising, while a slightly late snare adds push.
 

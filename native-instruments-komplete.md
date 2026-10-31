@@ -28,8 +28,8 @@ instances:
   - groove-000014 | 爵士放克的鼓组律动，是 Battery 与 Studio Drummer 最常被要求的写法；这是该工具常见产出的参照，不是该工具的演示（C1，参照不是该库的演示）。
   - oga-000163 | 锯齿合成器与鼓的叠加，对应 Massive X 与 Reaktor 在游戏配乐里的用法；这是该工具常见产出的参照，不是该工具的演示（C1，参照不是该库的演示）。
 sources:
-  - 捆绑包版本分层与所含产品，依厂商公开页面核查，未抄文本
-  - Native Access 授权与升级方式，依厂商文档核查，未抄文本
+  - 捆绑包版本分层与所含产品，参考厂商公开页面。
+  - Native Access 授权与升级方式；厂商文档是主要依据。
 updated: 2026-10-30
 ---
 
@@ -52,7 +52,7 @@ updated: 2026-10-30
 
 ## 上手路径
 
-先学 Kontakt 的库管理与多输出、Battery 的分轨、Native Access 的安装。先在模板里固定三条总线，再读本站的采样库整理、合成器导论、微时序与律动三篇。
+先学 Kontakt 的库管理与多输出、Battery 的分轨、Native Access 的安装。先在模板里固定三条总线，再读这里的采样库整理、合成器导论、微时序与律动三篇。
 
 ```audiolab
 {"type":"instrument","gm":"Electric Piano 1","synth":"struck","phrase":["C3","E3","G3","B3","D4"],"label":"综合包里的一架电钢","label_en":"An electric piano from the bundle","hint":"先听音头与衰减，再想它该被当成钢琴还是当成音色层","hint_en":"Hear the attack and decay, then decide whether it is a piano or a layer"}

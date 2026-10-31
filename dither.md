@@ -19,7 +19,7 @@ instances:
   - openscore-000000 | 艺术歌曲人声与钢琴同时收弱，抖动与否在尾音上分得开（C1）
   - atepp-000369 | 格里格《夜曲》尾音渐弱，噪声整形把噪声推向高频后更耐听（C1）
 sources:
-  - Lipschitz 与 Vanderkooy 关于抖动的公开论文，依原文核查，未抄文本
+  - Lipschitz 与 Vanderkooy 关于抖动的公开论文——依据来自原文。
   - Pohlmann, Principles of Digital Audio, quantization chapters — background checked, not quoted
 updated: 2026-10-28
 ---

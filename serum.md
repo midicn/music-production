@@ -28,8 +28,8 @@ instances:
   - groove-000005 | 87 BPM 嘻哈鼓组循环，留出的低频空间正好试贝斯的占位（C1，参照不是该插件的演示）。
   - m21-002846 | 《SynthaReel》，以合成音色演奏的里尔舞曲，旋律与音色互相牵扯（C1，参照不是该插件的演示）。
 sources:
-  - Xfer Records 官方产品页的振荡器、波表编辑与调制说明，依公开资料核对，未抄原文
-  - 波表合成与减法合成的区别，依合成通识核对，未抄文本
+  - Xfer Records 官方产品页的振荡器、波表编辑与调制说明；公开资料是主要依据。
+  - 波表合成与减法合成的区别——依据来自合成惯例。
 updated: 2026-10-30
 ---
 
@@ -61,7 +61,7 @@ Vital 免费且调制方式接近；Pigments 的合成引擎更多；Massive X �
 
 ## 上手路径
 
-先学波表位置与滤波的配合，再学调制矩阵的连线，最后学失谐与效果段的取舍。配合本站「波表合成」「软件合成器」「合成器」三篇读。
+先学波表位置与滤波的配合，再学调制矩阵的连线，最后学失谐与效果段的取舍。配合「波表合成」「软件合成器」「合成器」三篇读。
 
 ```audiolab
 {"type":"instrument","gm":"Synth Bass 1","synth":"bowed","phrase":["C2","G2","C2","E2","G2","C2"],"label":"合成贝斯的目标音色","label_en":"A target tone for a synth bass","hint":"先听基频的稳定，再想波表位置移动时中频会多出什么","hint_en":"Hear the steady fundamental first, then imagine what moves into the midrange as the wavetable position shifts"}

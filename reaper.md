@@ -21,9 +21,9 @@ instances:
   - groove-000036 | 三分半的爵士放克鼓循环，可对照 take 与循环编辑；这是该工具常见产出的参照，不是该工具的演示
   - mutopia-000622 | 四十多秒的人声小曲，用来对照小工程的轻量开工；这是该工具常见产出的参照，不是该工具的演示
 sources:
-  - 厂商公开的产品说明、平台与授权方式，2026-10 核对，未抄文本
-  - 路由、take 与动作系统的功能范围，依官方文档与用户手册核查
-  - 工程交换与插件兼容的限制，依通行 DAW 文档核查
+  - 厂商公开的产品说明、平台与授权方式（2026-10 复核）。
+  - 路由、take 与动作系统的功能范围，参考官方文档与用户手册。
+  - 工程交换与插件兼容的限制；DAW 文档是主要依据。
 updated: 2026-10-30
 tool_kind: daw
 tool_vendor: Cockos
@@ -59,7 +59,7 @@ tool_verified: 2026-10-30
 
 ## 上手路径
 
-先学三件事：路由与轨道模板、take 与图层 comping、动作与快捷键。配合本站「缓冲区大小」「总线的处理」「冻结与渲染」读。
+先学三件事：路由与轨道模板、take 与图层 comping、动作与快捷键。配合「缓冲区大小」「总线的处理」「冻结与渲染」读。
 
 ```audiolab
 {"type":"rhythm","sig":"4/4","pattern":"e e e e e e e e","bpm":140,"label":"140 BPM 的连续八分","label_en":"A run of eighths at 140 BPM","hint":"先听它是否均匀，再想旧机器上加大缓冲会先牺牲什么","hint_en":"Hear whether it stays even, then ask what a larger buffer costs on an old machine"}

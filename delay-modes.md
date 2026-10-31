@@ -25,19 +25,19 @@ updated: 2026-10-28
 ---
 
 ::: zh
-## 问题
+## 难在哪
 
 延迟不只是「加个回声」。单声道、立体声与乒乓把回声放在不同位置，决定了它是填满中间，还是把两侧推开。
 
-## 原理
+## 背后的机制
 
 单声道只有一条延迟线，回声落在中央，最容易与主唱抢位置；立体声用两条时间略有差异的线，回声分居两侧；乒乓让反馈在左右之间交替，每次重复换边。反馈量决定重复次数，环路里的滤波让每次重复更暗。
 
-## 参数与听感
+## 旋钮与耳朵
 
 附点八分是常见选择，反馈 25–40% 已够形成尾迹；环路高通放在 200–400 Hz，低通放在 4–8 kHz，回声就不会糊住低频。乒乓很宽，但正中央的干声仍要留住，否则声像会空。
 
-## 听什么
+## 耳朵要抓的点
 
 放一段吉他短句，先听单声道回声与干声挤在中间，再切到乒乓，重复会从左跳到右。反馈加到 60% 以上，重复会堆成一片。
 
@@ -45,25 +45,25 @@ updated: 2026-10-28
 {"type":"instrument","gm":"Lead 2 (sawtooth)","synth":"bowed","phrase":["A4","C5","E5","A5"],"label":"合成器短句","label_en":"Synth phrase","hint":"先听干声，再想象回声在左右换边","hint_en":"Hear it dry, then imagine repeats changing sides"}
 ```
 
-## 常见误解
+## 容易弄错的
 
 以为乒乓一定更宽；认为延迟时值必须与速度对齐；把高反馈当成混响。
 :::
 
 ::: en
-## The question
+## Where it gets hard
 
 Delay is not just adding an echo. Mono, stereo and ping-pong place repeats differently, and that placement decides whether they fill the centre or open the sides.
 
-## How it works
+## The mechanism
 
 Mono uses one delay line, so repeats sit in the middle and compete with the lead. Stereo uses two lines with slightly different times, placing repeats on opposite sides. Ping-pong alternates feedback between left and right, so every repeat changes side. Feedback sets how many repeats survive, and filters in the loop make each one darker.
 
-## Settings and what you hear
+## Knobs and ears
 
 A dotted eighth is a common choice, with 25 to 40 percent feedback enough for a tail. A high-pass at 200 to 400 Hz and a low-pass at 4 to 8 kHz keep repeats out of the low end. Ping-pong is wide, but the dry signal must stay centred or the image empties out.
 
-## What to listen for
+## What the ear should catch
 
 Play a short guitar phrase, first with mono repeats crowding the centre, then switch to ping-pong and hear them jump left and right. Push feedback past 60 percent and the repeats pile into a wash.
 
@@ -71,7 +71,7 @@ Play a short guitar phrase, first with mono repeats crowding the centre, then sw
 {"type": "instrument", "gm": "Lead 2 (sawtooth)", "synth": "bowed", "phrase": ["A4", "C5", "E5", "A5"], "label": "Synth phrase", "label_en": "Synth phrase", "hint": "先听干声，再想象回声在左右换边", "hint_en": "Hear it dry, then imagine repeats changing sides"}
 ```
 
-## Common misconceptions
+## Easy to get wrong
 
 That ping-pong is always wider; that delay time must match the tempo; that high feedback is the same as reverb.
 :::

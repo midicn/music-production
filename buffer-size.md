@@ -19,7 +19,7 @@ instances:
   - giantmidi-001994 | 阿尔坎练习曲音符极密，缓冲拉大后连奏颗粒容易糊成一片（C1）
   - thesession-000040 | 吉格舞曲三拍连缀不断，块太大时装饰音挤在一起（C1）
 sources:
-  - 块大小与欠载的关系，依音频接口与宿主公开文档核查，未抄文本
+  - 块大小与欠载的关系；音频接口与宿主公开文档是主要依据。
   - Pohlmann, Principles of Digital Audio, real-time processing sections — background checked, not quoted
 updated: 2026-10-28
 ---

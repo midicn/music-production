@@ -26,22 +26,22 @@ instances:
   - wikifonia-000323 | 爵士标准曲的旋律，吉他或键盘直接进接口走箱体建模，省掉摆麦；这是该工具常见产出的参照，不是该工具的演示
   - openscore-000002 | 人声加钢琴的短歌，歌手需要听到带混响的返听才敢放声；这是该工具常见产出的参照，不是该工具的演示
 sources:
-  - 厂商公开的前置建模、DSP 与插件授权说明，按官方页面核对，未抄文本
-  - 录音监听延迟与插件运算的关系，按数字音频通识核对
+  - 厂商公开的前置建模、DSP 与插件授权说明——依据来自官方页面。
+  - 录音监听延迟与插件运算的关系，对照数字音频惯例整理。
 tool_verified: 2026-10-30
 updated: 2026-10-30
 ---
 
 ::: zh
-## 它能完成什么
+## 适用工作
 
 录主唱时就把压缩与混响送进监听，歌手听到的是接近成品的声音。用前置建模把一支普通动圈录出厚度，不必再接一台硬件话放。吉他直接进接口走箱体与话筒建模，省掉摆麦和试位。把鼓组先压住再录，减少后期返工。把插件运算放在板载芯片上跑，电脑处理器还能留给别的活。
 
-## 它怎么工作
+## 原理
 
 板载 DSP 让插件在接口内部运算，信号进电脑之前就已经处理过，所以监听几乎没有延迟。前置建模不只是加一段均衡：它改变输入阻抗与增益结构，让话筒看到的前级特性跟着变，这也是它和普通插件区别最大的地方。配套的控制软件负责返听混音与插件加载，授权绑定在硬件上，换机要重新登记。
 
-## 边界与坑
+## 边界
 
 - 买接口等于买插件库：DSP 插件跟着硬件走，转手与换机都要处理授权。
 - 算力有限，几个重型插件就能吃满一块芯片，通道一多只能取舍。
@@ -51,11 +51,11 @@ updated: 2026-10-30
 - 建模是别人的耳朵做的决定，不合适时你只能换一个模型，改不了它的骨架。
 - 接口本身不差，只是你付的钱有一半在软件上，算预算时别只比通道数。
 
-## 替代与搭配
+## 替代
 
 不需要建模，干净接口加原生插件更便宜也更快；要极稳的驱动与路由，RME 更省心；偏爱硬件染色，外接话放更直接。搭配外部时钟与数字扩展可以补通道数，但建模仍只在前几路上生效。
 
-## 上手路径
+## 上手
 
 先学三件事：返听混音、前置建模的增益结构、DSP 余量核算。再决定哪些插件必须实时、哪些留到混音。别一次装十个插件试音，先固定一条链再换。配合读话放、箱体建模、插件三条。
 
@@ -65,7 +65,7 @@ updated: 2026-10-30
 :::
 
 ::: en
-## What it lets you finish
+## Jobs it covers
 
 Put compression and reverb in the singer's cue while tracking, so they hear something close to the finished record. Give an ordinary dynamic microphone weight through preamp modelling without buying a hardware preamp. Plug a guitar straight in and use cabinet and microphone models instead of placing a mic. Compress the kit on the way in and save a pass later. Offload plug-in work to the on-board chips and leave the computer's processor for something else.
 
@@ -73,7 +73,7 @@ Put compression and reverb in the singer's cue while tracking, so they hear some
 
 The DSP chips run plug-ins inside the interface, before the signal reaches the computer, which is why monitoring feels almost immediate. Preamp modelling is more than an EQ curve: it changes input impedance and gain structure so the microphone sees a different front end. That is the part ordinary plug-ins cannot copy. The companion console software handles cue mixes and plug-in loading, and licences live with the hardware, so moving to another unit means re-registering.
 
-## Limits and traps
+## Limits
 
 - Buying the interface means buying into a plug-in library. DSP licences follow the box, and resale or replacement has paperwork.
 - The chips are finite. A few heavy plug-ins can fill one, so a big session forces choices.
@@ -82,11 +82,11 @@ The DSP chips run plug-ins inside the interface, before the signal reaches the c
 - Computer connectivity and OS support differ by model; older units may stop receiving updates.
 - The models are somebody else's taste. If one does not suit the source, you can swap models but not the underlying character.
 
-## Alternatives and pairings
+## Alternatives
 
 If you do not need modelling, a clean interface plus native plug-ins is cheaper and faster. For bulletproof drivers and routing, RME is calmer; for hardware colour, an external preamp is more direct. Add a clock and digital expansion for more channels, remembering that modelling only covers the first few inputs.
 
-## First three things to learn
+## First three things
 
 Learn the cue mix, the gain structure of preamp modelling, and how to budget DSP. Then decide which plug-ins must run live and which can wait for the mix. Read the preamp, amp simulator and plug-in entries alongside this one.
 

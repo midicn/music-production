@@ -21,8 +21,8 @@ instances:
   - musicnet-000248 | 木管五重奏，五份分谱各自独立，是多方交付的参照，不是本页演示
   - mutopia-000789 | 人声与钢琴的叙事小品，速度与力度变化多，是交换后要不要重建的参照，不是本页演示
 sources:
-  - AAF、OMF 与 MusicXML 能携带的内容，依通行 DAW 与制谱文档核查，未抄文本
-  - 声像法则、采样率与时间码对交换的影响，依后期流程资料核查，未抄文本
+  - AAF、OMF 与 MusicXML 能携带的内容——依据来自DAW 与制谱文档。
+  - 声像法则、采样率与时间码对交换的影响，对照后期流程资料整理。
 tool_kind: guide
 tool_vendor: 本站
 tool_form: 流程
@@ -59,7 +59,7 @@ updated: 2026-10-30
 
 ## 怎么开始
 
-先做一次空工程交换测试：一段音乐、一条对白、一个淡变，走完导出与导入再正式交付。读本站的工程交换格式、协作与工程交付、Stems 交付三页。
+先做一次空工程交换测试：一段音乐、一条对白、一个淡变，走完导出与导入再正式交付。读这里的工程交换格式、协作与工程交付、Stems 交付三页。
 
 ```audiolab
 {"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C4","E4","G4","B4","A4","G4","E4","D4"],"label":"一段要被别人接着改的素材","label_en":"Material someone else has to keep editing","hint":"听句尾有没有留出余地，再想交换后哪一处最难重建","hint_en":"Hear whether the phrase leaves room, then judge what would be hardest to rebuild after the handoff"}

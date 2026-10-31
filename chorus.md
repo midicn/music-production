@@ -25,19 +25,19 @@ updated: 2026-10-28
 ---
 
 ::: zh
-## 问题
+## 起点：一个问题
 
 合唱效果听起来像「变宽了」，于是常被当成空间效果。它其实靠的是几毫秒级的时间摆动，让同一条信号与自己错开，产生音高与相位的微小差别。
 
-## 原理
+## 它怎么工作
 
 输入分成两路，一路干燥，一路经过 15–35 ms 的延迟，延迟时间被 0.1–3 Hz 的 LFO 缓慢调制。延迟变短时音高略升，变长时略降，两路相加产生梳状滤波；多声部合唱用几个相位不同的 LFO，让摆动不整齐。湿声越多，直达声被削弱得越明显。
 
-## 参数与听感
+## 旋钮与耳朵
 
 速率低、深度浅时像双轨录音，适合人声与弦乐；速率快、深度大就接近颤音，钢琴会显得走音。立体声模式把两路分到左右，宽度立刻增加；低频不做单声道处理会散开。
 
-## 听什么
+## 耳朵要抓的点
 
 用清音电吉他弹一个长音，先听干声，再加合唱，注意音高轻微起伏与两侧差异。换到低音区，听它是否开始失焦。
 
@@ -45,13 +45,13 @@ updated: 2026-10-28
 {"type":"instrument","gm":"Electric Guitar (clean)","synth":"plucked","phrase":["E3","B3","E4","G4"],"label":"清音吉他","label_en":"Clean guitar","hint":"先听干声，再加浅速合唱","hint_en":"Hear it dry, then add a slow, shallow chorus"}
 ```
 
-## 常见误解
+## 容易弄错的
 
 把合唱当混响；以为声部越多越厚；在低频上大量使用却不检查单声道。
 :::
 
 ::: en
-## The question
+## Starting point: a problem
 
 Chorus sounds like width, so it is often filed as a space effect. It really works through a few milliseconds of time wobble, running a signal against a delayed copy and creating tiny differences in pitch and phase.
 
@@ -59,11 +59,11 @@ Chorus sounds like width, so it is often filed as a space effect. It really work
 
 The input splits into a dry path and a copy delayed by 15 to 35 ms, with the delay time modulated by a 0.1 to 3 Hz LFO. A shorter delay raises pitch slightly and a longer one lowers it, and summing the two paths creates comb filtering. Multi-voice chorus uses several LFOs at different phases so the wobble is not uniform. More wet signal weakens the direct sound.
 
-## Settings and what you hear
+## Knobs and ears
 
 Slow and shallow reads as double tracking, good on vocals and strings. Fast and deep approaches vibrato, and a piano starts to sound out of tune. Stereo mode splits the paths left and right for instant width; low frequencies spread apart unless they are kept mono.
 
-## What to listen for
+## What the ear should catch
 
 Hold a long note on a clean electric guitar, first dry, then with chorus, and notice the slight pitch movement and the difference between sides. Move down to the low register and hear whether it starts to lose focus.
 
@@ -71,7 +71,7 @@ Hold a long note on a clean electric guitar, first dry, then with chorus, and no
 {"type": "instrument", "gm": "Electric Guitar (clean)", "synth": "plucked", "phrase": ["E3", "B3", "E4", "G4"], "label": "Clean guitar", "label_en": "Clean guitar", "hint": "先听干声，再加浅速合唱", "hint_en": "Hear it dry, then add a slow, shallow chorus"}
 ```
 
-## Common misconceptions
+## Easy to get wrong
 
 That chorus is reverb; that more voices mean more thickness; that heavy use on bass is safe without a mono check.
 :::

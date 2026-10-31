@@ -21,19 +21,19 @@ instances:
   - oga-000045 | 管弦配乐层次多，适合观察总谱的系统断点与分谱抽取
   - mutopia-000789 | 人声与钢琴两个谱表，歌词与伴奏的对齐最考验间距
 sources:
-  - 传统雕版与当代制谱软件的间距、连线与分页规则，依公开规范核查，未抄文本
-  - 总谱与分谱的版面惯例，依出版与制谱资料核查，未抄文本
+  - 传统雕版与当代制谱软件的间距、连线与分页规则（公开规范）。
+  - 总谱与分谱的版面惯例，参考出版与制谱资料。
 updated: 2026-10-28
 ---
 
 ::: zh
 同一段音乐，间距、连线与分页不同，演奏者读到的难度完全不同。排版的目标不是漂亮，而是减少误读。
 
-## 问题
+## 难在哪
 
 谱表挤在一起，临时记号容易看错行；连线跨过系统，分句就断；翻页落在乐句中间，排练必然停。
 
-## 原理或流程
+## 它怎么运转
 
 水平间距按最短时值分配，再按和声密度、装饰音与歌词伸缩；垂直方向避免声部、符干与临时记号碰撞；连线避开符头；系统断点落在乐句之间，分页留出翻页时间。软件用碰撞检测与弹性间距实现，总谱与分谱分别排版。
 
@@ -41,11 +41,11 @@ updated: 2026-10-28
 
 先定谱表大小与页边距，再调节拍间距，最后处理连线与分页。检查同音连线是否跨行、临时记号是否重复、符干方向是否清楚；缩到七成看是否仍可读；总谱通过后再抽分谱。
 
-## 听什么
+## 耳朵要抓的点
 
 跟着慢速回放读谱，卡住的地方往往就是间距或连线的问题。听分句的气口，判断系统断点是否落在正确位置。
 
-## 常见误解
+## 容易弄错的
 
 自动排版不是一键完成；留白多不等于清楚；总谱好看不代表分谱可用。系统拉得太满时，页数少反而更难读。
 
@@ -57,11 +57,11 @@ updated: 2026-10-28
 ::: en
 The same music reads very differently with different spacing, slurs and page breaks. Engraving aims at fewer misreadings, not decoration.
 
-## The problem
+## Where it gets hard
 
 Crowded staves make accidentals point to the wrong line. A slur broken across a system cuts a phrase, and a page turn inside a phrase stops rehearsal.
 
-## How it works
+## How it runs
 
 Horizontal spacing follows the shortest duration, then stretches for dense harmony, ornaments and lyrics. Vertically, voices, stems and accidentals avoid collisions, and slurs clear noteheads. System breaks fall between phrases, and pages leave time to turn. Software uses collision detection and elastic spacing. Full and part scores are laid out separately.
 
@@ -69,11 +69,11 @@ Horizontal spacing follows the shortest duration, then stretches for dense harmo
 
 Set staff size and margins, adjust beat spacing, then slurs and page turns. Check tied notes across systems, repeated accidentals and stem direction between voices. Shrink to seventy percent to test legibility; extract parts after the full score.
 
-## What to listen for
+## What the ear catches
 
 Layout is silent, but reading along at slow playback shows where you stumble. Hear the breath at phrase ends and judge whether system breaks support it.
 
-## Common misunderstandings
+## Easy to get wrong
 
 Auto layout is not one click; white space is not clarity; a fine full score does not make a usable part. Fewer pages can read worse when systems are stretched full.
 

@@ -26,22 +26,22 @@ instances:
   - openscore-000009 | 人声加钢琴的短歌，两路输入刚好一唱一伴，最能看出这种接口的典型用法；这是该工具常见产出的参照，不是该工具的演示
   - giantmidi-000916 | 独奏钢琴的起伏，两路话筒录一台琴时要靠摆位而不是靠增益硬推；这是该工具常见产出的参照，不是该工具的演示
 sources:
-  - 厂商公开的输入输出、幻象电源与监听功能说明，按官方页面核对，未抄文本
-  - 话放增益与低灵敏度动圈话筒的匹配关系，按录音通识核对
+  - 厂商公开的输入输出、幻象电源与监听功能说明，参考官方页面。
+  - 话放增益与低灵敏度动圈话筒的匹配关系；录音惯例是主要依据。
 tool_verified: 2026-10-30
 updated: 2026-10-30
 ---
 
 ::: zh
-## 它能完成什么
+## 适用工作
 
 用一支电容话筒加一路 DI 录完一首人声小样。给播客或线上课程提供稳定输入，接上就能用。把合成器与鼓机的线路输出直接录成音频轨。带一支低灵敏度动圈录人声，只要肯把增益开大。两路同时录唱与吉他，事后对齐修一修就能发。在支持回环的型号上，把线上会议的发言与系统声音一起录下来。
 
-## 它怎么工作
+## 原理
 
 接口走 USB 总线供电，插上电脑就出现输入输出，不需要外接电源。每路有话放、幻象电源与增益旋钮，前面板能开直接监听，把输入原样送到耳机与主输出。部分型号带一个固定的高频提升开关，用来补动圈话筒的暗淡，也有型号把系统声音回环进来。旋钮没有刻度，增益只能看灯，回放时最好记下位置。转换与话放都是干净取向，够用但不出彩。
 
-## 边界与坑
+## 边界
 
 - 增益上限因代次而异。推低灵敏度动圈时常常要开到接近最大，底噪跟着上来。
 - 只有两路，录鼓或小乐队不够；扩展口在高端型号才有。
@@ -51,11 +51,11 @@ updated: 2026-10-30
 - 这个价位，钱更该花在房间与话筒上；它不会成为瓶颈，也不会救你。
 - 面板没有真正的电平表，只有颜色灯，判断余量最终要靠 DAW 表头。
 
-## 替代与搭配
+## 替代
 
 预算再紧，Behringer UMC 系列能完成同样的活；愿意多花一点，Audient iD 的话放更扎实；要更多通道与数字扩展，Clarett 或 MOTU M 系列更合适。搭配 Cloudlifter 一类的前置放大器，可以让低输出动圈在入门接口上工作得体面。
 
-## 上手路径
+## 上手
 
 先学三件事：增益结构、直接监听与软件监听的区别、幻象电源什么时候开。再练一次两话筒摆位，把一支话筒录到 -12 dBFS 再谈音色。配合读话放、电容话筒、音频接口三条。
 
@@ -65,7 +65,7 @@ updated: 2026-10-30
 :::
 
 ::: en
-## What it lets you finish
+## Jobs it covers
 
 Record a full vocal demo with one condenser and one DI. Give a podcast or online class a reliable input that works when plugged in. Capture a synth or drum machine from its line outputs as audio. Track a vocal on a low-output dynamic, provided you are willing to push the gain. Record voice and guitar together on two inputs and fix the alignment afterwards.
 
@@ -73,7 +73,7 @@ Record a full vocal demo with one condenser and one DI. Give a podcast or online
 
 The box is bus powered over USB, so inputs and outputs appear as soon as it is connected. Each channel has a preamp, phantom power and a gain knob, and a direct-monitor switch sends the input to the headphones and main outputs untouched. Some models add a fixed high-frequency lift to brighten dull dynamic mics, and some offer a loopback of the computer's output. Conversion and preamps are clean rather than characterful: serviceable, not memorable.
 
-## Limits and traps
+## Limits
 
 - Gain range varies by generation. With a low-output dynamic you often run near maximum, and the noise floor comes up with it.
 - Two inputs are not enough for a kit or a small band, and digital expansion appears only on the dearer models.
@@ -82,11 +82,11 @@ The box is bus powered over USB, so inputs and outputs appear as soon as it is c
 - The high-frequency switch is a fixed curve. It cannot repair a dull microphone, so do not treat it as a cure.
 - At this price the money belongs in the room and the mic. This box will not be your bottleneck, nor will it rescue you.
 
-## Alternatives and pairings
+## Alternatives
 
 On a smaller budget, the Behringer UMC range does the same job. Spending a little more buys the firmer preamps of an Audient iD; needing more channels and digital expansion points to Clarett or the MOTU M series. An inline booster such as a Cloudlifter lets a low-output dynamic behave on a starter interface.
 
-## First three things to learn
+## First three things
 
 Learn gain staging, the difference between direct and software monitoring, and when phantom power should be on. Then practise one two-microphone placement. Read the preamp, condenser microphone and audio interface entries alongside this one.
 

@@ -22,8 +22,8 @@ instances:
   - oga-000024 | 追逐曲，段落推进明显，适合对照强度参数，是追逐段落的参照，不是该工具的演示
   - oga-000088 | 二十多秒的循环，是循环点与过渡的参照，不是该工具的演示
 sources:
-  - FMOD Studio 的 Event、参数、Snapshot 与 Live Update，依 Firelight 公开文档核查，未抄文本
-  - 运行时的 bank 加载与引擎集成，依官方集成文档核查，未抄文本
+  - FMOD Studio 的 Event、参数、Snapshot 与 Live Update，对照Firelight 公开文档整理。
+  - 运行时的 bank 加载与引擎集成（官方集成文档）。
 tool_kind: middleware
 tool_vendor: Firelight Technologies
 tool_form: 桌面应用
@@ -60,7 +60,7 @@ Wwise 适合复杂状态与多平台大团队；Unity 内置音频够原型与�
 
 ## 上手路径
 
-先学 Event 与参数、Snapshot、bank 构建与 Live Update。读本站的游戏音频导论、交互音乐与自适应音频、游戏循环与交互层，用一个昼夜切换的场景走完导进到真机。
+先学 Event 与参数、Snapshot、bank 构建与 Live Update。读这里的游戏音频导论、交互音乐与自适应音频、游戏循环与交互层，用一个昼夜切换的场景走完导进到真机。
 
 ```audiolab
 {"type":"rhythm","sig":"4/4","pattern":"q e e q e e q q","bpm":110,"label":"随强度参数变化的脉冲","label_en":"A pulse that follows an intensity parameter","hint":"先听这个节奏型，再想参数升高时哪一层先加进来","hint_en":"Hear the pattern, then decide which layer enters first as the parameter rises"}

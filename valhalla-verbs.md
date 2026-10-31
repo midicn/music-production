@@ -27,8 +27,8 @@ instances:
   - atepp-000195 | 德彪西《月光》，踏板与长尾容易糊成一片，是设置衰减的参照（C1，参照不是该插件的演示）
   - pdmx-000070 | 巴伯《弦乐柔板》，弦乐群连续渐强，混响密度与高频吸收一听就分明（C1，参照不是该插件的演示）
 sources:
-  - Valhalla DSP 官方产品页的算法类型与参数说明，依公开资料核对，未抄原文
-  - 板式、房间与厅堂混响的听感差异，依录音通识核对，未抄文本
+  - Valhalla DSP 官方产品页的算法类型与参数说明（公开资料）。
+  - 板式、房间与厅堂混响的听感差异，参考录音惯例。
 updated: 2026-10-30
 ---
 
@@ -56,7 +56,7 @@ FabFilter Pro-R 2 的频率相关衰减更细；Eventide Blackhole 适合更极�
 
 ## 上手路径
 
-先学衰减与预延迟的关系，再学高低频吸收，最后学发送量与干湿的分工。配合本站「混响」「延迟」「空间感」三篇读。
+先学衰减与预延迟的关系，再学高低频吸收，最后学发送量与干湿的分工。配合「混响」「延迟」「空间感」三篇读。
 
 ```audiolab
 {"type":"instrument","gm":"Church Organ","synth":"reed","phrase":["C3","G3","C4","E4","G4"],"label":"管风琴长音与尾音","label_en":"An organ chord and its tail","hint":"先听干声的泛音，再想衰减加长后哪些泛音会先被吸收","hint_en":"Hear the dry overtones first, then imagine which of them the tail absorbs first"}

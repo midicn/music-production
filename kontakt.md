@@ -29,13 +29,13 @@ instances:
   - atepp-000195 | 德彪西《月光》，钢琴采样库的踏板共鸣与弱奏层次很难同时顾到（C1，参照不是该插件的演示）。
   - musicnet-000067 | 贝多芬弦乐四重奏，四件独奏乐器各自换弓，采样库的独立声部能力受考验（C1，参照不是该插件的演示）。
 sources:
-  - Native Instruments 官方产品页的采样引擎、脚本与授权说明，依公开资料核对，未抄原文
-  - 采样库的演奏法、键位切换与磁盘流式读取，依采样通识核对，未抄文本
+  - Native Instruments 官方产品页的采样引擎、脚本与授权说明，参考公开资料。
+  - 采样库的演奏法、键位切换与磁盘流式读取；采样惯例是主要依据。
 updated: 2026-10-30
 ---
 
 ::: zh
-## 它能完成什么
+## 适用工作
 
 - 用采样库把一段管弦乐谱弹成可听的 mockup。
 - 给流行与影视配乐铺真实乐器：弦乐、铜管、木管、打击乐。
@@ -44,11 +44,11 @@ updated: 2026-10-30
 - 给写好的 MIDI 换音色，比较不同库对同一段落的适配。
 - 用脚本做自定义的演奏逻辑，并把一套编制的键位与力度习惯固定下来，换曲目时少调一遍。
 
-## 它怎么工作
+## 原理
 
 采样器把录音切成音区与力度层，按键时按音高与力度选样本，再用包络、滤波与调制把衔接补平。Kontakt 的核心是库格式与脚本引擎：库作者把样本、映射、演奏法与界面打包，用户加载后通过键位或控制器切换。磁盘流式读取让大库不必全进内存，代价是首次发声的延迟与硬盘占用。多个音色可存成 multi，随工程一起调用。脚本能改响应曲线与演奏法逻辑，但脚本随库走，不通用。
 
-## 边界与坑
+## 边界
 
 - 免费 Player 只能跑厂商授权的库，第三方库通常要完整版，买库前先确认兼容。
 - 大库占硬盘与内存，流式读取依赖 SSD；机械盘上换音色会明显等待。
@@ -57,13 +57,13 @@ updated: 2026-10-30
 - 它是采样器不是合成器，做不出现有库之外的声音；要新音色得另找合成器。
 - 库与宿主有版本要求，工程交给别人前要核对 Kontakt 版本与库授权。
 
-## 替代与搭配
+## 替代
 
 Decent Sampler 免费且轻，适合小库；UVI Falcon 的合成与采样混合更灵活；HALion 在 Steinberg 生态里更顺。它常与 Superior Drummer 这类专用鼓采样器分工：Kontakt 管管弦与键盘，鼓组交给专用工具。轻量工程可先试免费采样器，确认音色方向再换大库。
 
-## 上手路径
+## 上手
 
-先学音区与力度层的概念，再学演奏法切换，最后学 multi 与内存管理。配合本站「采样器」「MIDI 协议」「配器」三篇读。
+先学音区与力度层的概念，再学演奏法切换，最后学 multi 与内存管理。配合「采样器」「MIDI 协议」「配器」三篇读。
 
 ```audiolab
 {"type":"instrument","gm":"Cello","synth":"bowed","phrase":["C3","G3","D4","A4","D4","G3"],"label":"一条待分句的大提琴线","label_en":"A cello line to phrase","hint":"先听换弓的缝隙，再想采样库的连奏要补哪一段","hint_en":"Hear the gaps between bow changes first, then imagine what a sampled legato has to fill"}
@@ -71,7 +71,7 @@ Decent Sampler 免费且轻，适合小库；UVI Falcon 的合成与采样混合
 :::
 
 ::: en
-## What it lets you finish
+## Jobs it covers
 
 - Play an orchestral score into an audible mockup with sampled instruments.
 - Put real-sounding strings, brass, woodwind and percussion under pop and film cues.
@@ -83,7 +83,7 @@ Decent Sampler 免费且轻，适合小库；UVI Falcon 的合成与采样混合
 
 A sampler cuts recordings into key ranges and velocity layers, chooses a sample from pitch and velocity, and smooths the joins with envelopes, filters and modulation. Kontakt's centre is its library format and script engine: a library author packages samples, mappings, articulations and an interface, and the player switches between them by key or controller. Disk streaming keeps large libraries out of RAM, at the cost of first-note latency and drive space. Several instruments can be stored as a multi and recalled with the project. Scripts can change response curves and articulation logic, but a script belongs to its library and does not travel.
 
-## Limits and traps
+## Limits
 
 - The free Player runs only vendor-authorised libraries; third-party libraries usually need the full version, so check compatibility before buying a library.
 - Large libraries consume drive space and RAM, and streaming needs an SSD; on a mechanical drive, patch changes wait.
@@ -92,11 +92,11 @@ A sampler cuts recordings into key ranges and velocity layers, chooses a sample 
 - Key switches differ between vendors, so unifying them across one ensemble takes extra time.
 - Libraries and hosts have version requirements, so confirm both before handing a session over.
 
-## Alternatives and pairings
+## Alternatives
 
 Decent Sampler is free and light for small libraries. UVI Falcon mixes sampling and synthesis more flexibly. HALion sits more naturally in a Steinberg workflow. Kontakt usually divides work with a dedicated drum sampler such as Superior Drummer: Kontakt covers orchestra and keys, the drum tool covers the kit. A light project can start with a free sampler to confirm the sound direction before moving to a large library.
 
-## First three things to learn
+## First three things
 
 Learn key ranges and velocity layers, then articulation switching, then multis and memory management. Read the site's pages on samplers, the MIDI protocol and orchestration alongside it.
 

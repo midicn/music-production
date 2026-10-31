@@ -19,8 +19,8 @@ instances:
   - musicnet-000301 | 同一组 GM 与 GS 复位，后面接 16 次音色切换
   - musicnet-000302 | 复位之后低音通道在 43 与 45 之间往返
 sources:
-  - MIDI 1.0 规范对系统专用消息的结构定义，依 MMA 公开规范核查，未抄文本
-  - GM System On 与 Roland GS 复位的字节序列，由本地文件解析核对，未抄文本
+  - MIDI 1.0 规范对系统专用消息的结构定义；MMA 公开规范是主要依据。
+  - GM System On 与 Roland GS 复位的字节序列，由本地文件解析核对
 updated: 2026-10-28
 ---
 

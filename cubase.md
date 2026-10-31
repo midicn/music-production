@@ -21,9 +21,9 @@ instances:
   - mutopia-000511 | 贝多芬《埃格蒙特》序曲，可对照管弦 mockup 的声部与动态；这是该工具常见产出的参照，不是该工具的演示
   - musicnet-000111 | 小提琴奏鸣曲乐章，用来对照演奏法与表情映射的处理；这是该工具常见产出的参照，不是该工具的演示
 sources:
-  - 厂商公开的产品说明、平台与插件格式要求，2026-10 核对，未抄文本
-  - MIDI 编辑、演奏法映射与时间码功能，依官方文档与配乐流程教材核查
-  - AAF 与 OMF 的交换范围，依通行后期文档核查
+  - 厂商公开的产品说明、平台与插件格式要求，参考2026-10 复核。
+  - MIDI 编辑、演奏法映射与时间码功能；官方文档与配乐流程教材是主要依据。
+  - AAF 与 OMF 的交换范围——依据来自后期文档。
 updated: 2026-10-30
 tool_kind: daw
 tool_vendor: Steinberg
@@ -59,7 +59,7 @@ Mac 上要一体化，Logic Pro 更省心；现场与电子，Ableton Live 更�
 
 ## 上手路径
 
-先学三件事：模板与音频连接、键编辑器加演奏法映射、视频轨与时间码。配合本站「配乐工作流程」「轮替采样与奏法切换」「参数自动化」读。
+先学三件事：模板与音频连接、键编辑器加演奏法映射、视频轨与时间码。配合「配乐工作流程」「轮替采样与奏法切换」「参数自动化」读。
 
 ```audiolab
 {"type":"rhythm","sig":"4/4","pattern":"e s s e s s e s s e s s","bpm":120,"label":"120 BPM 的十六分驱动","label_en":"A driving sixteenth pattern at 120 BPM","hint":"先听重音如何推动段落，再想配乐里哪一层该承担这个推力","hint_en":"Hear how the accents push the bar, then decide which layer carries that push"}

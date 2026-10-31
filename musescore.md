@@ -22,8 +22,8 @@ instances:
   - pdmx-000013 | 民歌改编的简易钢琴版，是入门改编谱的参照，不是该工具的演示
   - openscore-000001 | 人声与钢琴的艺术歌曲，歌词与伴奏都完整，是歌曲记谱的参照，不是该工具的演示
 sources:
-  - MuseScore Studio 的音符输入、谱表类型与导出格式，依官方文档核查，未抄文本
-  - MuseScore.com 与桌面应用的服务边界，依官方说明核查，未抄文本
+  - MuseScore Studio 的音符输入、谱表类型与导出格式，对照官方文档整理。
+  - MuseScore.com 与桌面应用的服务边界（官方说明）。
 tool_kind: notation
 tool_vendor: MuseScore
 tool_form: 桌面应用
@@ -59,7 +59,7 @@ Dorico 的免费版功能受限，但版面能力更强，值得在正式出版�
 
 ## 上手路径
 
-先学音符输入与时值、谱表与分谱、MusicXML 导出。读本站的记谱软件导论、打谱与排版规范、乐谱交换格式，用一首民歌走完录入到导出。
+先学音符输入与时值、谱表与分谱、MusicXML 导出。读这里的记谱软件导论、打谱与排版规范、乐谱交换格式，用一首民歌走完录入到导出。
 
 ```audiolab
 {"type":"instrument","gm":"Acoustic Guitar (nylon)","synth":"plucked","phrase":["E3","A3","C4","E4","A4"],"label":"六线谱上的一条分解和弦","label_en":"An arpeggio as it sits on a tab staff","hint":"听每个音的落点，再想它在六线谱上是第几弦第几品","hint_en":"Hear where each note lands, then picture the string and fret on a tab staff"}

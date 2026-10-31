@@ -21,19 +21,19 @@ instances:
   - oga-000045 | 配乐中间有速度变化，可对照速度事件是否写进文件
   - atepp-001875 | 三声部创意曲的连奏与断奏，导出后容易变成同一种音头
 sources:
-  - MIDI 1.0 规范中音符、速度与控制器消息的定义，依 MMA 公开规范核查，未抄文本
-  - 制谱软件导出 MIDI 的反复、装饰音与力度选项，依公开文档核查，未抄文本
+  - MIDI 1.0 规范中音符、速度与控制器消息的定义（MMA 公开规范）。
+  - 制谱软件导出 MIDI 的反复、装饰音与力度选项，参考公开文档。
 updated: 2026-10-28
 ---
 
 ::: zh
 谱面写的是记号，MIDI 要的是时间、音高与力度。导出就是把连续的表情折成离散事件。
 
-## 问题
+## 为什么会用到
 
 作曲家在谱上写渐强、延长记号与自由速度，回放却只有固定的拍点与有限的力度级。导出设置不同，同一份谱会得到完全不同的 MIDI。
 
-## 原理或流程
+## 它怎么运转
 
 每个音变成 Note On 与 Note Off，时值换算成 tick；速度记号写成 tempo 事件；力度记号映射成 velocity；连奏、踏板与颤音写成控制器。装饰音被分配极短时值，颤音有时被展开，反复记号按设置决定展开次数。量化会把演奏的微小偏移吸到网格上。
 
@@ -41,11 +41,11 @@ updated: 2026-10-28
 
 导出前确认反复是否展开、速度曲线是否写入、装饰音如何分配。到 DAW 里检查第一个音是否落在拍点、尾音是否被截断、和弦是否齐。需要保留演奏感时，把原始演奏轨单独留一份，不要让量化覆盖它。
 
-## 听什么
+## 耳朵要抓的点
 
 听和弦是否同时到达，长音是否被下一个音切掉，渐强是否变成一级一级的台阶。再听自由速度段落，判断导出后是否还剩呼吸。
 
-## 常见误解
+## 容易弄错的
 
 MIDI 能保留所有记号；音色选对就等于还原；量化越细越忠实。事实正相反，量化越细，越容易把分句磨平。
 
@@ -57,11 +57,11 @@ MIDI 能保留所有记号；音色选对就等于还原；量化越细越忠实
 ::: en
 A score carries signs; MIDI carries time, pitch and velocity. Export folds continuous expression into discrete events.
 
-## The problem
+## Why you reach for it
 
 Composers write crescendos, fermatas and rubato, but playback offers fixed beats and a limited set of velocity levels. Different export settings turn one score into very different MIDI.
 
-## How it works
+## How it runs
 
 Each note becomes Note On and Note Off, with duration in ticks. Tempo marks become tempo events; dynamics map to velocity; legato, pedals and trills become controller data. Grace notes receive very short durations, trills may be written out, and repeats may export once. Quantisation snaps small timing offsets to the grid.
 
@@ -69,11 +69,11 @@ Each note becomes Note On and Note Off, with duration in ticks. Tempo marks beco
 
 Before export, decide whether repeats unfold, whether the tempo curve is written and how grace notes divide time. In the DAW, check the first attack, truncated tails and chord alignment. Keep the original performance take when feel matters.
 
-## What to listen for
+## What the ear catches
 
 Hear whether chords arrive together, whether long notes are cut and whether a crescendo becomes a staircase. Then hear a rubato passage and ask whether any breath remains.
 
-## Common misunderstandings
+## Easy to get wrong
 
 MIDI keeps every mark; the right sound equals a faithful rendering; finer quantisation is more faithful. The opposite is common, because finer grids flatten phrasing.
 

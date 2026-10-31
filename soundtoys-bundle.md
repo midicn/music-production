@@ -27,8 +27,8 @@ instances:
   - mutopia-000005 | 阿瓜多古典吉他练习曲，拨弦干净，适合听延迟与调制是否盖住起音（C1，参照不是该插件的演示）
   - oga-000004 | 游戏战斗配乐，编制满、瞬态硬，失真与滤波的取舍比纯音乐更明显（C1，参照不是该插件的演示）
 sources:
-  - Soundtoys 官方产品页的插件清单与授权方式说明，依公开资料核对，未抄原文
-  - 饱和、延迟与调制类效果的常见用法，依混音通识核对，未抄文本
+  - Soundtoys 官方产品页的插件清单与授权方式说明（公开资料）。
+  - 饱和、延迟与调制类效果的常见用法，参考混音惯例。
 updated: 2026-10-30
 ---
 
@@ -56,7 +56,7 @@ updated: 2026-10-30
 
 ## 上手路径
 
-先学饱和的输入与输出补偿，再学延迟的反馈与滤波，最后学移调时的共振峰。配合本站「延迟」「谐波」「相位」三篇读。
+先学饱和的输入与输出补偿，再学延迟的反馈与滤波，最后学移调时的共振峰。配合「延迟」「谐波」「相位」三篇读。
 
 ```audiolab
 {"type":"instrument","gm":"Electric Guitar (clean)","synth":"plucked","phrase":["E3","G3","B3","E4","B3","G3"],"label":"一段干吉他，待加厚","label_en":"A dry guitar line to thicken","hint":"先听拨弦的起音，再想饱和会添哪些谐波、短延迟会不会糊掉它","hint_en":"Hear the pick attack first, then imagine which harmonics saturation adds and whether a short delay smears it"}

@@ -26,14 +26,14 @@ instances:
   - groove-000009 | 一〇二拍的灵魂乐鼓组，底鼓与贝斯的衔接在近场上要听得准；这是该工具常见产出的参照，不是该工具的演示
   - musicnet-000000 | 无伴奏小提琴，弓毛与琴腔的高频细节密集，容易检验音箱是否过亮；这是该工具常见产出的参照，不是该工具的演示
 sources:
-  - 厂商公开的高音结构、系列划分与背面调节说明，按官方页面核对，未抄文本
-  - 近场监听距离与高频判断的关系，按监听通识核对
+  - 厂商公开的高音结构、系列划分与背面调节说明；官方页面是主要依据。
+  - 近场监听距离与高频判断的关系——依据来自监听惯例。
 tool_verified: 2026-10-30
 updated: 2026-10-30
 ---
 
 ::: zh
-## 它能完成什么
+## 能替你做完什么
 
 听清二到五千赫兹的细节，做去齿音与亮度决定时不靠猜。在十几平米的房间里做流行与电子混音，层次能分开。用背面的房间调节压掉桌面与靠墙带来的多余低频。长时间编曲时听到更多高频信息，编配不容易糊。与小尺寸低音音箱搭配，补上电子素材的下潜。
 
@@ -41,7 +41,7 @@ updated: 2026-10-30
 
 气动高音把振膜折成手风琴状，同样的行程能推动更多空气，高频的瞬态与细节因此更明显。中低音单元与箱体负责其余频段，分频点与斜率在出厂设定。部分系列带数字处理，可以在背面或用软件调整低频、桌面与高架的增益，这些是固定的几个滤波器，不是完整的房间校正。前导向孔让靠墙摆放更容易，但墙仍然会加强低频。
 
-## 边界与坑
+## 哪里会坑你
 
 - 高音亮，长时间工作容易疲劳，也容易把混音做得比实际更暗。
 - 亮不等于准。细节多会让人误以为听到了全部，低频的判断仍要靠尺寸与房间。
@@ -51,11 +51,11 @@ updated: 2026-10-30
 - 它的声音取向明显，换到别的系统上可能需要第二次平衡。
 - 靠墙摆放会抬高低频，前导向孔解决的是距离，不是反射。
 
-## 替代与搭配
+## 换成什么
 
 Genelec 的取向更中性，适合长时间判断；Focal 在中频的呈现不同，值得对比；预算有限，Yamaha HS 能用更低的价格得到可信的中频。搭配一只测试话筒、基本的吸音与一首熟悉的参照曲，能把它的亮度用在正确的地方。
 
-## 上手路径
+## 先学三件事
 
 先学三件事：高音轴对准耳朵、背面各组开关的用途、用参照曲校准判断。再练一次从自己混音到车载系统的平移检查。配合读近场监听、参照曲、房间处理三条。
 
@@ -65,7 +65,7 @@ Genelec 的取向更中性，适合长时间判断；Focal 在中频的呈现不
 :::
 
 ::: en
-## What it lets you finish
+## What it finishes for you
 
 Hear what happens between two and five kilohertz so de-essing and brightness calls stop being guesses. Mix pop and electronic music in a small room with the layers still separated. Use the rear controls to pull down excess low end from a desk or a nearby wall. Keep arrangements from turning to mush over long writing sessions because more high-frequency information is audible. Add a small subwoofer for the bottom octave that electronic material needs.
 
@@ -73,7 +73,7 @@ Hear what happens between two and five kilohertz so de-essing and brightness cal
 
 The folded ribbon tweeter pleats its diaphragm like an accordion, moving more air over the same excursion, which makes high-frequency transients and detail stand out. A woofer and cabinet cover the rest, with crossover points fixed at the factory. Some series include digital processing, adjustable on the rear panel or in software, for low shelf, desk and high shelf — a few fixed filters, not a full room correction. A front port makes close-to-wall placement easier, though the wall still reinforces bass.
 
-## Limits and traps
+## Where it bites
 
 - The top end is bright. Long sessions fatigue the ear and tempt you to mix darker than the record should be.
 - Bright is not the same as accurate. Detail can fool you into thinking you hear everything, while bass judgement still depends on size and the room.
@@ -82,11 +82,11 @@ The folded ribbon tweeter pleats its diaphragm like an accordion, moving more ai
 - Sit too close and the two tweeter axes never meet, so the image drifts.
 - The voicing is opinionated. Moving to another system may need a second balancing pass.
 
-## Alternatives and pairings
+## What to swap in
 
 Genelec is more neutral for long judgement calls; Focal presents the midrange differently and is worth comparing; on a budget the Yamaha HS range buys honest mids for less. A measurement microphone, basic absorption and one familiar reference track put the brightness to good use.
 
-## First three things to learn
+## First three things
 
 Learn to aim the tweeter axis at your ears, what the rear settings do, and how to calibrate your judgement with a reference track. Then check one of your mixes in a car. Read the nearfield monitor, reference track and room treatment entries alongside this one.
 

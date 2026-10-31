@@ -27,8 +27,8 @@ instances:
   - groove-000010 | 80 BPM 放克鼓循环，低频与瞬态都清楚，适合检验限幅器是否压扁鼓点（C1，参照不是该插件的演示）
   - oga-000057 | 三分钟的电子游戏曲，峰值密，适合先定响度目标再动最大化器（C1，参照不是该插件的演示）
 sources:
-  - iZotope 官方产品页的模块、参考匹配与响度说明，依公开资料核对，未抄原文
-  - 母带链顺序与响度标准的常见做法，依母带通识核对，未抄文本
+  - iZotope 官方产品页的模块、参考匹配与响度说明，对照公开资料整理。
+  - 母带链顺序与响度标准的常见做法（母带惯例）。
 updated: 2026-10-30
 ---
 
@@ -57,7 +57,7 @@ Ozone 把母带常用模块排成可重排的链，信号自上而下经过。EQ
 
 ## 上手路径
 
-先学增益分级与余量，再学限幅器的释放与真峰，最后学参考对照的用法。配合本站「母带」「限幅器」「动态余量」三篇读。
+先学增益分级与余量，再学限幅器的释放与真峰，最后学参考对照的用法。配合「母带」「限幅器」「动态余量」三篇读。
 
 ```audiolab
 {"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C3","G3","D4","A4","E4","C4"],"label":"一段弦乐，待做母带","label_en":"A string passage headed for mastering","hint":"先听渐强的顶，再想限幅器会把哪一段削平、宽度处理会不会让低频变薄","hint_en":"Hear the top of the crescendo first, then imagine where the limiter flattens it and whether width processing thins the low end"}

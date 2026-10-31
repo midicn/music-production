@@ -21,8 +21,8 @@ instances:
   - cyberhymnal-000000 | 管风琴长音，尾音与空间分不开，是混响处理的参照，不是本页演示
   - atepp-001116 | 标注为转制的钢琴录音，嘶声与踏板噪声分层，是修复插件的参照，不是本页演示
 sources:
-  - 均衡、压缩与混响的参数分工，依音频工程教材核查，未抄文本
-  - 插件的授权、格式与过采样做法，依厂商公开文档核查，未抄文本
+  - 均衡、压缩与混响的参数分工；音频工程教材是主要依据。
+  - 插件的授权、格式与过采样做法——依据来自厂商公开文档。
 tool_kind: guide
 tool_vendor: 本站
 tool_form: 流程
@@ -59,7 +59,7 @@ EQ 用宿主原厂做削减，共振用 Pro-Q 的动态均衡，母带用线性�
 
 ## 怎么开始
 
-先只用原厂插件做完一首，再按最痛的一处补一个。每加一个插件，做一次 A/B 并记录它解决了什么。读本站的均衡器的三种形态、压缩器的五个参数、混响的空间感三页。
+先只用原厂插件做完一首，再按最痛的一处补一个。每加一个插件，做一次 A/B 并记录它解决了什么。读这里的均衡器的三种形态、压缩器的五个参数、混响的空间感三页。
 
 ```audiolab
 {"type":"instrument","gm":"Cello","synth":"bowed","phrase":["C3","G3","D4","A4"],"label":"先听这段的中低频","label_en":"Hear the low mids first","hint":"听哪个音最浑，再想 EQ 要削的是音高还是共振","hint_en":"Hear which note muddies the line, then decide whether EQ should cut level or resonance"}

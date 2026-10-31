@@ -20,19 +20,19 @@ instances:
   - m21-000001 | 众赞歌节奏方正，适合逐小节对比往返前后的音符数
   - atepp-000369 | 自由速度的夜曲，往返后重音与呼吸最容易移位
 sources:
-  - MusicXML 与标准 MIDI 文件在符号与事件上的差异，依公开规范核查，未抄文本
-  - 制谱软件与 DAW 之间交换工程的通行做法，依公开文档核查，未抄文本
+  - MusicXML 与标准 MIDI 文件在符号与事件上的差异，参考公开规范。
+  - 制谱软件与 DAW 之间交换工程的通行做法；公开文档是主要依据。
 updated: 2026-10-28
 ---
 
 ::: zh
 在 DAW 里改完回谱，或在谱里改完回 DAW，两次转换都要经过格式，每次都会重新解释一部分信息。
 
-## 问题
+## 卡住的地方
 
 谱面关心分句、连线、力度记号与排练号，DAW 关心精确时间、控制器与自动化。两边都以为自己保存了完整信息，交换后才发现各少一半。
 
-## 原理或流程
+## 原理与流程
 
 MusicXML 保存符号与版面，MIDI 保存事件与时间。连奏在谱上是连线，在 MIDI 里是音尾重叠或 CC64；渐强在谱上是发夹记号，在 MIDI 里是一串力度值。往返时轨道名、速度图与小节编号常被重写。
 
@@ -40,11 +40,11 @@ MusicXML 保存符号与版面，MIDI 保存事件与时间。连奏在谱上是
 
 先定一个主版本，结构修改只在一端进行。谱面交换用 MusicXML，演奏交换用 MIDI。每次往返后对比小节数、速度事件、轨道数与首尾音；总谱与分谱分开管理；交付前冻结一次。
 
-## 听什么
+## 耳朵要抓的点
 
 听连奏是否变成断奏，重音是否移位，渐强是否还在。把往返前后的同一段接起来听，接缝处的音头最说明问题。
 
-## 常见误解
+## 容易弄错的
 
 往返无损；格式开放就通用；DAW 的量化可以替代谱面分句。量化只对齐时间，不会替你决定哪里换气。
 
@@ -56,11 +56,11 @@ MusicXML 保存符号与版面，MIDI 保存事件与时间。连奏在谱上是
 ::: en
 Revise in the DAW and return to the score, or revise the score and return to the DAW. Each trip goes through a format, and each can lose something.
 
-## The problem
+## Where it snags
 
 A score cares about phrasing, slurs, dynamics and rehearsal marks. A DAW cares about exact time, controllers and automation. Both assume they hold everything until the exchange shows what is missing.
 
-## How it works
+## Principle and process
 
 MusicXML keeps symbols and layout; MIDI keeps events and time. A slur is a curve in the score, but overlapping tails or CC64 in MIDI. A hairpin is a mark on the page, but a stream of velocity values. Track names, tempo maps and bar numbers are rewritten on the way.
 
@@ -68,11 +68,11 @@ MusicXML keeps symbols and layout; MIDI keeps events and time. A slur is a curve
 
 Choose one master version and make structural edits at one end only. Exchange notation with MusicXML and performance with MIDI. After each trip compare bar count, tempo events, track count and first and last notes. Keep full and part scores separate, then freeze before delivery.
 
-## What to listen for
+## What the ear catches
 
 Hear whether legato turns into staccato, accents shift or the crescendo survives. Join the passage from before and after; the attack at the seam tells the story.
 
-## Common misunderstandings
+## Easy to get wrong
 
 Round trips are lossless; an open format works everywhere; DAW quantisation replaces phrasing. Quantisation aligns time, not breath.
 

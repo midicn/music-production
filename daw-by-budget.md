@@ -21,8 +21,8 @@ instances:
   - mutopia-000497 | 交响曲乐章，工程大、轨道多，适合对照订阅与买断的取舍，是大工程的参照，不是本页演示
   - pdmx-000600 | 两分钟的进行曲，适合检验一笔预算能否撑住一次完整交付，是短周期交付的参照，不是本页演示
 sources:
-  - 各家 DAW 的授权方式与教育版条件，依官方销售页面核查，未抄文本
-  - 订阅与买断的长期成本结构，依公开授权说明核查，未抄文本
+  - 各家 DAW 的授权方式与教育版条件，参考官方销售页面。
+  - 订阅与买断的长期成本结构；公开授权说明是主要依据。
 tool_kind: guide
 tool_vendor: 本站
 tool_form: 流程
@@ -58,7 +58,7 @@ updated: 2026-10-30
 
 ## 怎么开始
 
-先列一张三年账：软件、升级、音源、插件、云服务。再用同一首短曲在免费方案里走完录音到导出，确认缺的到底是功能还是经验。读本站的常见 DAW 对比与插件格式两页。
+先列一张三年账：软件、升级、音源、插件、云服务。再用同一首短曲在免费方案里走完录音到导出，确认缺的到底是功能还是经验。读这里的常见 DAW 对比与插件格式两页。
 
 ```audiolab
 {"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C4","E4","G4","C5","G4","E4","D4","C4"],"label":"八小节能不能撑住一次交付","label_en":"Can eight bars carry one delivery","hint":"听它有没有开头与收束，再想这套工具够不够把它做完","hint_en":"Hear whether it opens and closes, then judge whether the tools can finish it"}

@@ -28,13 +28,13 @@ instances:
   - groove-000000 | 138 BPM 放克鼓组，节奏密，合成贝斯只能占中低频的一条缝（C1，参照不是该插件的演示）。
   - groove-000010 | 80 BPM 放克循环，速度慢，长音与滑音的空间更大（C1，参照不是该插件的演示）。
 sources:
-  - Vital 官方产品页的振荡器、频谱变换与授权档位说明，依公开资料核对，未抄原文
-  - 波表合成与调制矩阵的常见做法，依合成通识核对，未抄文本
+  - Vital 官方产品页的振荡器、频谱变换与授权档位说明；公开资料是主要依据。
+  - 波表合成与调制矩阵的常见做法——依据来自合成惯例。
 updated: 2026-10-30
 ---
 
 ::: zh
-## 它能完成什么
+## 适用工作
 
 - 不花钱就做出可用的合成贝斯、主奏与铺底。
 - 用频谱变换把一条波表改成另一种谐波分布，得到非常规音色。
@@ -43,11 +43,11 @@ updated: 2026-10-30
 - 用采样振荡器读一段素材，再把它当波表来扫。
 - 把同一套调制用到多轨，保持音色家族的一致性。
 
-## 它怎么工作
+## 原理
 
 振荡器读波表，波表位置可以手绘、导入或由内置表变形得到。Vital 的特色在频谱变换：在波表上做频率轴的拉伸、谐波权重的重排与相位扰动，得到用普通滤波做不到的谐波结构。三个滤波器可以串联或并联，调制矩阵把 LFO、包络、随机源与 MIDI 连到几乎任何参数上，界面用动画显示调制深度。两个频段各自扫，能得到会分叉的音色。采样振荡器读入音频后按音高重放，但它不是完整的采样器。
 
-## 边界与坑
+## 边界
 
 - 频谱变换与多层失谐很吃 CPU，几轨铺底同时开就会顶到上限。
 - 免费档不含官方预设包与部分云功能，预设生态要靠社区与自建。
@@ -56,13 +56,13 @@ updated: 2026-10-30
 - 采样振荡器只做单音重放，不能切片、不能做多重采样映射。
 - 界面动画多，老机器上会拖累显示；音频线程与界面线程要分开看。
 
-## 替代与搭配
+## 替代
 
 Serum 的波表编辑与预设生态更成熟；Surge XT 同样免费且偏减法与混合合成；Pigments 的引擎更多。它适合与采样器分工：Vital 做合成层，采样器做真实乐器，混音时两边频段分开。
 
-## 上手路径
+## 上手
 
-先学波表位置与滤波的分工，再学频谱变换的三个轴向，最后学调制矩阵的深度控制。配合本站「波表合成」「软件合成器」「合成器」三篇读。
+先学波表位置与滤波的分工，再学频谱变换的三个轴向，最后学调制矩阵的深度控制。配合「波表合成」「软件合成器」「合成器」三篇读。
 
 ```audiolab
 {"type":"instrument","gm":"Pad 2 (warm)","synth":"bowed","phrase":["C3","G3","D4","E4"],"label":"一层待变形的铺底","label_en":"A pad waiting to be warped","hint":"先听它的静态谐波，再想频谱拉伸后哪一段会变亮","hint_en":"Hear the static harmonics first, then imagine which region brightens when the spectrum is stretched"}
@@ -70,7 +70,7 @@ Serum 的波表编辑与预设生态更成熟；Surge XT 同样免费且偏减�
 :::
 
 ::: en
-## What it lets you finish
+## Jobs it covers
 
 - Make usable synth bass, leads and pads without spending anything.
 - Reshape a wavetable's harmonic distribution with spectral warping for unconventional tones.
@@ -83,7 +83,7 @@ Serum 的波表编辑与预设生态更成熟；Surge XT 同样免费且偏减�
 
 The oscillators read wavetables whose position can be drawn, imported, or produced by morphing the built-in tables. Vital's distinguishing feature is spectral warping: stretching the frequency axis, reweighting harmonics and disturbing phase produce harmonic structures that ordinary filtering cannot reach. Three filters can run in series or parallel, and a modulation matrix connects LFOs, envelopes, random sources and MIDI to nearly every parameter, with depth shown as animation. Two bands sweeping at once produce a tone that splits apart. The sample oscillator reads audio and plays it at pitch, but it is not a full sampler.
 
-## Limits and traps
+## Limits
 
 - Spectral warping and layered detune are CPU-hungry; a few pad tracks at once will reach the ceiling.
 - The free tier excludes the official preset packs and some cloud features, so the preset ecosystem depends on the community and on your own patches.
@@ -92,11 +92,11 @@ The oscillators read wavetables whose position can be drawn, imported, or produc
 - The sample oscillator plays one note at a time and does not slice or map multisamples.
 - The interface is animation-heavy and slows down on older machines; audio threads and display threads have to be judged separately.
 
-## Alternatives and pairings
+## Alternatives
 
 Serum has the more mature wavetable editor and preset ecosystem. Surge XT is also free and leans toward subtractive and hybrid synthesis. Pigments offers more engines. Vital works well beside a sampler: Vital supplies the synthetic layer, the sampler the real instruments, and the mix keeps their ranges apart.
 
-## First three things to learn
+## First three things
 
 Learn wavetable position against filtering, then the three axes of spectral warping, then modulation depth. Read the site's pages on wavetable synthesis, software synths and the synthesizer alongside it.
 

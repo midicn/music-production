@@ -20,19 +20,19 @@ instances:
   - oga-000033 | 游戏配乐层层叠加，适合判断音频生成能否做出同样的层次
   - atepp-000369 | 自由速度的夜曲，最能检验生成结果有没有演奏呼吸
 sources:
-  - 符号音乐生成与音频生成的综述结论，依 ISMIR 公开论文核查，未抄文本
-  - 生成式音乐工具的输入条件与输出形态，依公开文档核查，未抄文本
+  - 符号音乐生成与音频生成的综述结论（ISMIR 公开论文）。
+  - 生成式音乐工具的输入条件与输出形态，参考公开文档。
 updated: 2026-10-28
 ---
 
 ::: zh
 让机器写出一段像某风格的音乐，今天不难；难的是让它服从结构、可以修改、权利清楚。
 
-## 问题
+## 为什么会用到
 
 一段音乐包含音高、节奏、和声、配器与演奏表情。生成哪一层，决定了输出能不能改、像不像、归谁。
 
-## 原理或流程
+## 原理与流程
 
 符号域把音符与控制器当数据，在事件层面学习上下文，输出 MIDI 或乐谱，改一个音很容易。音频域直接在波形或频谱上生成，听感完整，却难以拆开。训练把大量作品压成统计规律，生成时按提示与条件采样；风格、段落与时长分别由不同条件控制。
 
@@ -40,11 +40,11 @@ updated: 2026-10-28
 
 先明确要的是小样、素材还是成品。要改就选符号或分层输出，要成品就选音频。检查能否指定调性、段落与时长，保留人工编辑环节，记录工具版本与提示，方便复现和替换。
 
-## 听什么
+## 耳朵要抓的点
 
 听段落转折是否生硬，和声是否长期停在同一个区域，重复是否机械。再听尾音与混响，判断它是音乐结束还是文件结束。
 
-## 常见误解
+## 容易弄错的
 
 AI 会作曲；听起来像就等于合法；一次生成就能交付。工具能给出候选，判断仍要由人做。
 
@@ -56,11 +56,11 @@ AI 会作曲；听起来像就等于合法；一次生成就能交付。工具�
 ::: en
 Making a machine produce music in a recognisable style is no longer hard. Making it follow structure, stay editable and carry clear rights is.
 
-## The problem
+## Why you reach for it
 
 Music involves pitch, rhythm, harmony, orchestration and performance expression. Which layer is generated decides whether the output can be edited, how convincing it sounds and who owns it.
 
-## How it works
+## Principle and process
 
 Symbolic systems treat notes and controllers as data, learn context at the event level and output MIDI or notation, where one note is easy to change. Audio systems generate waveforms or spectra, sounding complete but hard to take apart. Training compresses a corpus into statistical patterns; generation samples under a prompt and conditions for style, section and length.
 
@@ -68,11 +68,11 @@ Symbolic systems treat notes and controllers as data, learn context at the event
 
 Decide whether you need a demo, material or a finished track. Choose symbolic or layered output when edits matter, audio when the finished sound matters. Check key, section and duration controls, keep a human editing stage, and log tool versions and prompts for reproduction.
 
-## What to listen for
+## What the ear catches
 
 Hear whether section changes are abrupt, harmony sits in one place and repetition feels mechanical. Then hear tails and reverb, and ask whether the music ends or the file ends.
 
-## Common misunderstandings
+## Easy to get wrong
 
 AI composes; sounding similar is lawful; one generation is deliverable. Tools offer candidates; judgement remains human.
 

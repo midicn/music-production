@@ -19,31 +19,31 @@ instances:
   - atepp-000195 | 自由速度的钢琴独奏，无法跟随固定时钟
   - mutopia-001330 | 多声部合奏，各声部必须共用一条时间线
 sources:
-  - MIDI 时钟的二十四拍分辨率与字时钟定义，依 MIDI 规范核查，未抄文本
-  - 主从同步链路与漂移的排查方法，依录音棚工程通识核查，未抄文本
+  - MIDI 时钟的二十四拍分辨率与字时钟定义——依据来自MIDI 规范。
+  - 主从同步链路与漂移的排查方法，对照录音棚工程惯例整理。
 updated: 2026-10-28
 ---
 
 ::: zh
 多台设备一起工作时，只能有一个时钟源，其余设备跟随它走。
 
-## 问题
+## 为什么会碰到
 
 音源、鼓机、音频接口各有自己的晶振，频率不会完全一致。两台设备各走各的时钟，几分钟后就会错开，录进来的音轨对不上。
 
-## 原理
+## 它怎么工作
 
 主设备发出时钟脉冲，从设备按脉冲推进。MIDI 时钟每四分音符发二十四拍，精度到消息级；字时钟是音频采样的节拍；两者解决的对象不同。主从链越长，累积的抖动越多。
 
-## 做法与参数
+## 旋钮与做法
 
 只设一个主时钟，通常让音频接口当主，DAW 跟随外部时钟；从设备切到外部同步并确认采样率一致；避免把多台设备串成过长的链，能用分配器就用分配器；录音前先跑一分钟，检查有没有漂移。
 
-## 听什么
+## 耳朵要抓的点
 
 两台设备漂移时，同一材料会慢慢出现梳状滤波般的金属声。稳定时声像不动，不稳定时高频会周期性摆动。
 
-## 常见误解
+## 容易弄错的
 
 MIDI 时钟不传音频，字时钟也不传音符。设备越多不代表同步越好，主从关系混乱才是常见故障源。
 
@@ -55,7 +55,7 @@ MIDI 时钟不传音频，字时钟也不传音符。设备越多不代表同步
 ::: en
 When several devices play together, only one can be the clock source and the rest must follow it.
 
-## The problem
+## Why you meet it
 
 Synths, drum machines and audio interfaces each run on their own crystal, and the frequencies never match exactly. Two free-running clocks drift apart within minutes, and the recorded tracks no longer line up.
 
@@ -67,7 +67,7 @@ A master sends pulses and slaves advance on them. MIDI clock sends twenty-four p
 
 Set one master, usually the audio interface, with the DAW following external clock. Switch slaves to external sync and confirm matching sample rates. Avoid long chains and use a distributor where possible. Run for a minute before recording and check for drift.
 
-## What to listen for
+## What the ear catches
 
 Drift between two devices adds a metallic, comb-filtered colour to the same material. When locked, the image stays still; when not, high frequencies sway periodically.
 

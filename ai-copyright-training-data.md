@@ -21,19 +21,19 @@ instances:
   - mutopia-000439 | 巴赫众赞歌属公有领域，做风格参照时风险最低
   - abcmisc-000139 | 现代作曲家写的克莱兹默圆舞曲，风格传统而作品不旧
 sources:
-  - 美国版权局关于 AI 生成材料登记政策的公开说明，依官方文件核查，未抄文本
-  - 知识共享许可 4.0 的署名与再分发条款，依官方文本核查，未抄文本
+  - 美国版权局关于 AI 生成材料登记政策的公开说明；官方文件是主要依据。
+  - 知识共享许可 4.0 的署名与再分发条款——依据来自官方文本。
 updated: 2026-10-28
 ---
 
 ::: zh
 模型从大量作品里学统计规律，输出又常与原作相似。权利归谁、署名给谁、训练是否合法，三件事要分开谈。
 
-## 问题
+## 难在哪
 
 一首歌有两层权利，词曲与录音；MIDI 曲目涉及的是词曲与演奏数据。训练数据来自公有领域、授权曲库或网络抓取，来源不同，风险不同。
 
-## 原理或流程
+## 原理与流程
 
 风格本身不受版权保护，具体的旋律、和声进行与编曲可以受版权保护。判断侵权看输出与原作是否实质相似，不看模型是否听过。文本与数据挖掘的例外在各司法辖区不同，商用与研究的边界也不同。
 
@@ -41,11 +41,11 @@ updated: 2026-10-28
 
 记录数据来源与许可，避免用受保护作品做明确模仿。生成后做相似度检查，商用前确认平台条款与输出权利归属，保留人类修改的证据。用公有领域作品做风格参照，风险最低。
 
-## 听什么
+## 耳朵要抓的点
 
 听旋律轮廓是否与原曲重合，听标志性和声与节奏型是否被照搬。再听编曲层，配器与织体常比旋律更容易露出原型。
 
-## 常见误解
+## 容易弄错的
 
 非商业就不侵权；标注来源就没事；风格可以版权。标注只解决署名，不解决授权。
 
@@ -57,11 +57,11 @@ updated: 2026-10-28
 ::: en
 Models learn statistical patterns from many works, and their output resembles existing music. Ownership, credit and the legality of training are three separate questions.
 
-## The problem
+## Where it gets hard
 
 A song carries two layers of rights, composition and recording; MIDI tracks involve composition and performance data. Training data comes from the public domain, licensed libraries or scraping, and each source carries different risk.
 
-## How it works
+## Principle and process
 
 Style itself is not protected, while a specific melody, harmonic progression or arrangement may be. Infringement turns on substantial similarity between output and original, not on whether the model heard it. Text and data mining exceptions differ by jurisdiction, and the line between research and commercial use differs too.
 
@@ -69,11 +69,11 @@ Style itself is not protected, while a specific melody, harmonic progression or 
 
 Record sources and licences, and avoid deliberate imitation of protected works. Run a similarity check after generation, confirm platform terms and output ownership before commercial use, and keep evidence of human edits. Public domain works make the safest style references.
 
-## What to listen for
+## What the ear catches
 
 Hear whether a melodic contour matches an existing song, or a signature harmony and rhythm is copied. Then hear the arrangement; orchestration and texture reveal a prototype more than the melody.
 
-## Common misunderstandings
+## Easy to get wrong
 
 Non-commercial use cannot infringe; crediting the source settles it; style can be copyrighted. Credit answers attribution, not permission.
 

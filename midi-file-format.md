@@ -19,8 +19,8 @@ instances:
   - musicnet-000300 | format 1，18 条 MTrk，速度表里有多次变速
   - oga-000077 | format 1，32 条 MTrk，却只用 16 个通道
 sources:
-  - SMF 1.0 规范对 MThd 与 MTrk 的结构定义，依 MMA 公开规范核查，未抄文本
-  - format 0、1、2 与 division 的用法，依通行音序器文档核查，未抄文本
+  - SMF 1.0 规范对 MThd 与 MTrk 的结构定义（MMA 公开规范）。
+  - format 0、1、2 与 division 的用法，参考音序器文档。
 updated: 2026-10-28
 ---
 

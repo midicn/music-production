@@ -25,19 +25,19 @@ updated: 2026-10-28
 ---
 
 ::: zh
-## 问题
+## 难在哪
 
 预延迟常被当成「混响开始前的一点空隙」，于是随手设 20 ms。它其实决定了直达声与空间是否被听成同一件事，也决定了人声还清不清楚。
 
-## 原理
+## 背后的机制
 
 预延迟是混响开始输出前的等待。20 ms 以内，延迟声与直达声在听觉上融合，只增加响度与厚度；30–60 ms 之后，耳朵开始把两者分开，空间显得更大，字音也不再被尾音糊住。它不改变混响的衰减，只改变时间关系。
 
-## 参数与听感
+## 数值怎么变成声音
 
 人声常用 10–30 ms，既保住辅音又拉开距离；给鼓加 40–80 ms 会让房间明显变大，太短却会与直达声产生梳状滤波，太长则像两个独立的声音。按歌曲速度换算成音符时值，还能得到有节奏的反射。
 
-## 听什么
+## 耳朵要抓的点
 
 同一句人声，分别用 0、30、60 ms 的预延迟，注意「s」与「t」是否还被尾音盖住。在军鼓上拉长预延迟，房间会从贴身移到身后。
 
@@ -45,25 +45,25 @@ updated: 2026-10-28
 {"type":"instrument","gm":"Choir Aahs","synth":"vocal","phrase":["C4","E4","G4"],"label":"合唱长音","label_en":"Sustained choir","hint":"先听干声，再用 0 与 40 ms 预延迟对比","hint_en":"Hear it dry, then compare 0 and 40 ms of pre-delay"}
 ```
 
-## 常见误解
+## 容易弄错的
 
 把预延迟当成延迟效果器；以为越长空间越大；认为混响应当紧贴直达声开始。
 :::
 
 ::: en
-## The question
+## Where it gets hard
 
 Pre-delay is often treated as a small gap before the reverb starts, so 20 ms gets dialled in without thought. It actually decides whether direct sound and space are heard as one event, and whether a vocal stays clear.
 
-## How it works
+## The mechanism
 
 Pre-delay is the wait before a reverb begins to output. Within about 20 ms the reflection fuses with the direct sound, adding loudness and body. From roughly 30 to 60 ms the ear starts to separate them, the space seems larger and consonants stop being smeared by the tail. It does not change decay, only the timing relationship.
 
-## Settings and what you hear
+## From numbers to sound
 
 Vocals often take 10 to 30 ms, keeping consonants while adding distance. On drums, 40 to 80 ms makes a room noticeably larger, but too short causes comb filtering with the direct sound and too long sounds like a separate event. Converting the value to a note length can produce rhythmic reflections.
 
-## What to listen for
+## What the ear should catch
 
 Take one vocal line with pre-delay at 0, 30 and 60 ms and hear whether the s and t sounds are still covered by the tail. Stretch pre-delay on a snare and the room moves from close to behind.
 
@@ -71,7 +71,7 @@ Take one vocal line with pre-delay at 0, 30 and 60 ms and hear whether the s and
 {"type": "instrument", "gm": "Choir Aahs", "synth": "vocal", "phrase": ["C4", "E4", "G4"], "label": "Sustained choir", "label_en": "Sustained choir", "hint": "先听干声，再用 0 与 40 ms 预延迟对比", "hint_en": "Hear it dry, then compare 0 and 40 ms of pre-delay"}
 ```
 
-## Common misconceptions
+## Easy to get wrong
 
 That pre-delay is a delay effect; that longer always means bigger; that reverb should begin right against the direct sound.
 :::

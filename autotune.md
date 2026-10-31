@@ -28,8 +28,8 @@ instances:
   - mutopia-000546 | 勃拉姆斯《萨福颂》，半音进行多，音阶设错会把经过音拉走（C1，参照不是该插件的演示）。
   - mutopia-000522 | 贝多芬《欢乐颂》的声乐版本，旋律朴素，跑音位置容易定位（C1，参照不是该插件的演示）。
 sources:
-  - Antares 官方产品页的实时修音、共振峰与音阶说明，依公开资料核对，未抄原文
-  - 音高检测与共振峰补偿的常见做法，依人声制作通识核对，未抄文本
+  - Antares 官方产品页的实时修音、共振峰与音阶说明，参考公开资料。
+  - 音高检测与共振峰补偿的常见做法；人声制作惯例是主要依据。
 updated: 2026-10-30
 ---
 
@@ -62,7 +62,7 @@ Melodyne 更适合逐音精细编辑与多声部素材；Waves Tune Real-Time �
 
 ## 上手路径
 
-先学音阶与修正速度的配合，再学共振峰的作用，最后学分段处理转调。配合本站「音高」「流行唱法」「人声」三篇读。
+先学音阶与修正速度的配合，再学共振峰的作用，最后学分段处理转调。配合「音高」「流行唱法」「人声」三篇读。
 
 ```audiolab
 {"type":"instrument","gm":"Voice Oohs","synth":"vocal","phrase":["G3","A3","B3","D4","B3","A3","G3"],"label":"一条待修的声乐线","label_en":"A vocal line to tune","hint":"先听每个音的起音，再想慢速修音会留下多少滑音","hint_en":"Hear the onset of each note first, then imagine how much glide a slow retune leaves behind"}

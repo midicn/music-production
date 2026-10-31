@@ -19,29 +19,29 @@ instances:
   - giantmidi-003263 | 萨蒂《玄秘曲》速度慢，变调后共振峰的移动很容易听出
   - mutopia-000546 | 布拉姆斯艺术歌曲有人声与钢琴，变调时共振峰是否保留一听便知
 sources:
-  - Curtis Roads, The Computer Music Tutorial — 相位声码器与颗粒合成的说明核对，未抄原文
-  - Jean Laroche, Mark Dolson, Improved Phase Vocoder Time-Scale Modification — 瞬态处理的结论核对，未抄原文
+  - Curtis Roads, The Computer Music Tutorial — 用于核对相位声码器与颗粒合成的说明。
+  - Jean Laroche, Mark Dolson, Improved Phase Vocoder Time-Scale Modification — 用于核对瞬态处理的结论。
 updated: 2026-10-28
 ---
 
 ::: zh
-## 问题
+## 起点：一个问题
 
 把一段录音放慢，为什么音高不变，但鼓点会变得黏糊？
 
-## 原理
+## 声音是怎么来的
 
 时间拉伸改变时长而保持音高，音高变换改变音高而保持时长。常见算法有相位声码器、颗粒合成与瞬态保留。相位声码器把信号切成短帧，在频域移动相位，适合持续音，但对瞬态不友好，鼓点会被抹开。颗粒合成把声音切成小片重新排列，拉伸比例大时会出现重复与金属味。音高变换可以靠重采样加快慢，也可以改共振峰。保留共振峰的变调更像同一个人换音高，不保留则像加速录音。
 
-## 做法与参数
+## 旋钮与做法
 
 拉伸比例控制在正负 15% 以内，超过就换录音或重奏。鼓与贝斯优先用瞬态保留模式，人声优先保留共振峰。大幅拉伸时先切片对齐瞬态，再对小片做拉伸。变调超过五个半音时，检查齿音与呼吸是否自然。处理前后对齐响度，避免把变响误当成变好。
 
-## 听什么
+## 耳朵要抓的点
 
 听鼓循环放慢后的军鼓，瞬态会从一击变成一片。听人声降调，共振峰不保留时会像慢放磁带。听钢琴升调，低音区的共鸣整体上移，变得单薄。听持续弦乐，拉伸过度会出现周期性的颤动。
 
-## 常见误解
+## 容易弄错的
 
 以为拉伸与变调是同一件事；以为任何素材都能大幅拉伸；以为保留共振峰只是音色偏好。
 
@@ -51,23 +51,23 @@ updated: 2026-10-28
 :::
 
 ::: en
-## The problem
+## Starting point: a problem
 
 When a recording is slowed down, why does the pitch stay put while the drums turn mushy?
 
-## How it works
+## Where the sound comes from
 
 Time stretching changes duration while holding pitch; pitch shifting changes pitch while holding duration. Common methods include the phase vocoder, granular synthesis and transient preservation. A phase vocoder cuts the signal into frames and moves phase in the frequency domain; it suits sustained tones but smears transients, so drums spread out. Granular synthesis rearranges small grains, producing repetition and a metallic edge at large ratios. Pitch shifting can resample or move formants. Keeping formants makes a transposed voice sound like the same person; dropping them sounds like a sped-up tape.
 
-## Practice and settings
+## Knobs and practice
 
 Keep stretching within about 15 percent; beyond that, re-record or replay. Use transient-preserving modes for drums and bass, and formant preservation for voice. For large stretches, slice and align transients first, then stretch the slices. Above five semitones of shift, check sibilance and breath. Match loudness before and after, so louder is not mistaken for better.
 
-## What to listen for
+## What the ear catches
 
 Hear a slowed drum loop: the snare turns from a hit into a smear. Hear a voice shifted down without formant preservation and it sounds like slow tape. Hear a piano shifted up: the low resonance moves up and thins. Hear sustained strings, where heavy stretching adds periodic wobble.
 
-## Common misconceptions
+## Easy to get wrong
 
 That stretching and pitch shifting are the same operation; that any material can be stretched far; that formant preservation is only a colour preference.
 

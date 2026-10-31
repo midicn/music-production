@@ -19,8 +19,8 @@ instances:
   - musicnet-000301 | 同一组复位，18 条轨只用 5 个通道，弦乐仍按 GS 分声部
   - musicnet-000302 | 复位后低音提琴通道在 43 与 45 号音色之间往返
 sources:
-  - Roland GS 复位与 Yamaha XG System On 的字节序列，依公开规范核查，未抄文本
-  - GM System On 与库选择控制器的约定，依通用 MIDI 规范核查，未抄文本
+  - Roland GS 复位与 Yamaha XG System On 的字节序列——依据来自公开规范。
+  - GM System On 与库选择控制器的约定，对照通用 MIDI 规范整理。
 updated: 2026-10-28
 ---
 

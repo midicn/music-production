@@ -20,7 +20,7 @@ instances:
   - giantmidi-003263 | 萨蒂《裸体歌舞》整体很轻，噪声底与量化台阶在安静段最清楚（C1）
 sources:
   - Pohlmann, Principles of Digital Audio, sampling and conversion chapters — background checked, not quoted
-  - 转换器滤波模式与时钟的差异，依厂商公开技术文档核查，未抄文本
+  - 转换器滤波模式与时钟的差异（厂商公开技术文档）。
 updated: 2026-10-28
 ---
 

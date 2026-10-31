@@ -19,8 +19,8 @@ instances:
   - mutopia-000004 | 英语叙事歌曲的字尾齿音清楚，压过头会立刻听出大舌头
   - mutopia-000038 | 合唱圣歌的声部叠加，齿音互相累积后比独唱更刺
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, equalizers and dynamics sections — background checked, not quoted
-  - Huber and Runstein, Modern Recording Techniques, vocal processing chapter — typical ranges checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Huber and Runstein, Modern Recording Techniques, vocal processing chapter.
 updated: 2026-10-28
 ---
 

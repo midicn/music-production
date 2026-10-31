@@ -20,8 +20,8 @@ instances:
   - oga-000002 | 鼓与合成贝斯并置，侧链让位是否自然一听便知
   - groove-000006 | 流行鼓组密集，检查侧链释放是否拖慢律动
 sources:
-  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012 — background checked, not quoted
-  - Bobby Owsinski, The Mixing Engineer's Handbook, sidechain section — background checked, not quoted
+  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012.
+  - Bobby Owsinski, The Mixing Engineer's Handbook, sidechain section.
 updated: 2026-10-28
 ---
 

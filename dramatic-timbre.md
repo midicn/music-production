@@ -20,7 +20,7 @@ instances:
   - pdmx-002592 | 木管、竖琴与钟琴轮换颜色，谐谑场面靠音色推进
 sources:
   - Adler, Samuel，The Study of Orchestration（Norton）— 音色与角色分配章节核对，未引用
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Orchestration", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Orchestration".
 updated: 2026-10-28
 ---
 

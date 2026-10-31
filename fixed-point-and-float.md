@@ -19,8 +19,7 @@ instances:
   - oga-000001 | 游戏管弦编曲轨数多、音色杂，总线求和的余量不足就会削波（C1）
   - musicnet-000067 | 四重奏四个声部同时强奏，密集和声处的峰值为浮点留出余量（C1）
 sources:
-  - 浮点与定点音频通路的差异——依据来自 DAW 厂商公开文档。
-  - Pohlmann, Principles of Digital Audio, DSP chapters — background checked, not quoted
+  - 浮点与定点音频通路的差异.
 updated: 2026-10-28
 ---
 

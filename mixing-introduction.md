@@ -20,8 +20,8 @@ instances:
   - pdmx-000450 | 勃拉姆斯《德意志安魂曲》动态跨度大，合唱与乐队的关系清楚
   - groove-000000 | 放克鼓循环材料单一，适合先建立音量与频段的基线
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, balance and monitoring chapters — background checked, not quoted
-  - Huber and Runstein, Modern Recording Techniques, mixdown chapter — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, balance and monitoring chapters.
+  - Huber and Runstein, Modern Recording Techniques, mixdown chapter.
 updated: 2026-10-28
 ---
 

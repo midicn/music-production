@@ -20,8 +20,8 @@ instances:
   - openscore-000007 | 长句多的法语艺术歌曲，气口与释音时间容易判断
   - openscore-000018 | 无词练声曲，旋律连续，适合先练压缩与均衡
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, vocal mixing chapter — background checked, not quoted
-  - David Gibson, The Art of Mixing, lead vocal treatment — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, vocal mixing chapter.
+  - David Gibson, The Art of Mixing, lead vocal treatment.
 updated: 2026-10-28
 ---
 

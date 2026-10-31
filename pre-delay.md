@@ -19,8 +19,8 @@ instances:
   - pdmx-000450 | 合唱与乐队层次多，预延迟太短会让歌词与尾音糊在一起
   - mutopia-001411 | 萨蒂《裸体歌舞》第一首音符稀疏，能听清直达声与反射的分界
 sources:
-  - Välimäki, Parker and Savioja, Fifty Years of Artificial Reverberation, IEEE TASLP 2012 — pre-delay and early reflections checked, not quoted
-  - Huber and Runstein, Modern Recording Techniques, reverberation chapter — background checked, not quoted
+  - Välimäki, Parker and Savioja, Fifty Years of Artificial Reverberation, IEEE TASLP 2012.
+  - Huber and Runstein, Modern Recording Techniques, reverberation chapter.
 updated: 2026-10-28
 ---
 

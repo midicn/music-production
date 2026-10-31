@@ -21,7 +21,7 @@ instances:
   - mutopia-000497 | 贝多芬《第五交响曲》第一乐章，弦乐组的齐奏与分奏形成对比
 sources:
   - 通行配器教材所述弦乐声部、弓法与分奏原则，用于事实核对，未引用原文
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "String instruments", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "String instruments".
 updated: 2026-10-28
 ---
 

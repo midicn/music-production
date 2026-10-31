@@ -20,8 +20,8 @@ instances:
   - oga-000004 | 游戏战斗循环几乎全程满能量，容易听出动态被压平（C1）
   - atepp-000369 | 格里格《夜曲》钢琴强弱跨度大，适合对照段落对比（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, dynamic control and bus compression — background checked, not quoted
-  - David Gibson, The Art of Mixing, energy and section contrast — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, dynamic control and bus compression.
+  - David Gibson, The Art of Mixing, energy and section contrast.
 updated: 2026-10-28
 ---
 

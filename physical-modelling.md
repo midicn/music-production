@@ -20,8 +20,8 @@ instances:
   - oga-000097 | 三味线与钢琴并置，拨弦的短促衰减与琴弦张力感清楚
   - oga-000134 | 日本筝旋律配气氛铺底，拨弦的共鸣与按弦变化可辨
 sources:
-  - Julius O. Smith, Physical Audio Signal Processing — waveguide and Karplus-Strong models checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — physical modelling overview checked, not quoted
+  - Julius O. Smith, Physical Audio Signal Processing.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

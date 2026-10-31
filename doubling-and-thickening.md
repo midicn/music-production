@@ -21,7 +21,7 @@ instances:
   - mutopia-000497 | 贝多芬《第五交响曲》第一乐章，木管与弦乐的齐奏可听加法的效果
 sources:
   - 通行配器教材所述加倍、音区与平衡原则，用于事实核对，未引用原文
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Orchestration", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Orchestration".
 updated: 2026-10-28
 ---
 

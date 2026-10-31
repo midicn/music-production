@@ -20,8 +20,8 @@ instances:
   - oga-000143 | 拉杆风琴、管钟与哨音分层，谐波叠加与金属泛音的差别清楚
   - oga-000286 | 锯齿主音配合成贝斯，电子音色的骨架由振荡器与滤波器撑起
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — synthesis chain checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — synthesis methods overview checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

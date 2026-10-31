@@ -19,8 +19,8 @@ instances:
   - oga-000306 | 雪景音乐以稀疏长音为主，陷波移动不会被鼓点遮住
   - groove-000014 | 爵士放克鼓循环里的踩镲持续，能听出扫动经过高频的位置
 sources:
-  - Vadim Zavalishin, The Art of VA Filter Design — all-pass stages checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, modulation chapter — background checked, not quoted
+  - Vadim Zavalishin, The Art of VA Filter Design.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

@@ -21,7 +21,7 @@ instances:
   - pdmx-001156 | 维尔纳《第一交响曲》管弦乐改编版，小号、长号与管风琴、弦乐形成铜管与乐队的对置
 sources:
   - 通行配器教材所述铜管音域、泛音列与力度原则，用于事实核对，未引用原文
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Brass instruments", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Brass instruments".
 updated: 2026-10-28
 ---
 

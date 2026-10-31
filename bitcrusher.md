@@ -19,8 +19,8 @@ instances:
   - oga-000014 | 8-bit 编曲的鼓点短促，降采样率的镜像在高频最明显
   - oga-000015 | 同类 8-bit 战斗曲的贝斯线低而连续，适合听量化台阶
 sources:
-  - Curtis Roads, The Computer Music Tutorial, quantization sections — background checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, bitstream processing chapter — background checked, not quoted
+  - Curtis Roads, The Computer Music Tutorial, quantization sections.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

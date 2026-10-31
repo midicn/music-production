@@ -20,8 +20,8 @@ instances:
   - musicnet-000097 | 弦乐四重奏只有四层，顺序错了会立刻听出来（C1）
   - openscore-000008 | 人声与钢琴关系清楚，适合先定主唱再铺伴奏（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, mix preparation and workflow — background checked, not quoted
-  - David Gibson, The Art of Mixing, building a mix from foundation upward — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, mix preparation and workflow.
+  - David Gibson, The Art of Mixing, building a mix from foundation upward.
 updated: 2026-10-28
 ---
 

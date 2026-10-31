@@ -20,8 +20,8 @@ instances:
   - oga-000135 | 合唱铺底连奏整段，峰位移动带来的元音变化清楚
   - oga-000040 | 合唱与打击乐并置，人声的喉音与气声可分开听
 sources:
-  - Miller Puckette, The Theory and Technique of Electronic Music — formant synthesis checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — vocal synthesis checked, not quoted
+  - Miller Puckette, The Theory and Technique of Electronic Music.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

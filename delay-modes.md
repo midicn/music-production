@@ -19,8 +19,8 @@ instances:
   - oga-000011 | 头目段落的织体重复性强，反馈量增加时尾迹堆积听得清
   - mutopia-001411 | 钢琴分解和弦间隔均匀，附点八分延迟与拍点是否打架一听便知
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, delay lines chapter — background checked, not quoted
-  - Sound On Sound, delay effects explained — mono, stereo and ping-pong topologies checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Sound On Sound, delay effects explained.
 updated: 2026-10-28
 ---
 

@@ -20,8 +20,8 @@ instances:
   - pdmx-000087 | 钢琴宽织体，单声道下低音与和弦的平衡更容易判断
   - groove-000000 | 鼓组展宽后折成单声道，镲片与军鼓是否变薄一听便知
 sources:
-  - Huber and Runstein, Modern Recording Techniques, mono compatibility — background checked, not quoted
-  - David Gibson, The Art of Mixing, phase and mono chapter — background checked, not quoted
+  - Huber and Runstein, Modern Recording Techniques, mono compatibility.
+  - David Gibson, The Art of Mixing, phase and mono chapter.
 updated: 2026-10-28
 ---
 

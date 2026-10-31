@@ -20,8 +20,8 @@ instances:
   - oga-000270 | 吉他泛音与金属铺底叠置，高频边缘比常规锯齿更硬
   - oga-000160 | 钢鼓与卡林巴并置，硬亮瞬态适合对照相位折线
 sources:
-  - Casio CZ-101 Owner's Manual — phase distortion description checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — digital synthesis methods checked, not quoted
+  - Casio CZ-101 Owner's Manual.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

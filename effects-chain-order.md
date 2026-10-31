@@ -20,8 +20,8 @@ instances:
   - mutopia-000546 | 女声与钢琴需要先修齿音再压缩，顺序错了会放大刺耳感
   - oga-000001 | 管弦铺底层次多，总线上先 EQ 后压缩更容易听出低频触发
 sources:
-  - Pirkle, Designing Audio Effect Plugins in C++ — signal flow sections checked, not quoted
-  - Huber and Runstein, Modern Recording Techniques, effects and signal processing chapter — background checked, not quoted
+  - Pirkle, Designing Audio Effect Plugins in C++.
+  - Huber and Runstein, Modern Recording Techniques, effects and signal processing chapter.
 updated: 2026-10-28
 ---
 

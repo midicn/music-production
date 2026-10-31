@@ -20,8 +20,8 @@ instances:
   - oga-000195 | 尼龙弦与闷音吉他交替，拨弦噪声与衰减来自录音而非振荡器
   - oga-000143 | 拉杆风琴与管钟并置，持续音与击发音是两类采样
 sources:
-  - Curtis Roads, The Computer Music Tutorial — sampling and playback checked, not quoted
-  - MIDI Association, General MIDI 1 Sound Set — program list checked, not quoted
+  - Curtis Roads, The Computer Music Tutorial.
+  - MIDI Association, General MIDI 1 Sound Set.
 updated: 2026-10-28
 ---
 

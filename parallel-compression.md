@@ -20,8 +20,8 @@ instances:
   - groove-000011 | 长循环超过三分钟，适合反复对比厚度与瞬态
   - pdmx-000450 | 大型合唱动态大，并行压缩可抬弱声而不动强声
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, parallel compression section — background checked, not quoted
-  - Huber and Runstein, Modern Recording Techniques, dynamics processing — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, parallel compression section.
+  - Huber and Runstein, Modern Recording Techniques, dynamics processing.
 updated: 2026-10-28
 ---
 

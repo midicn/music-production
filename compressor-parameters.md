@@ -20,8 +20,8 @@ instances:
   - groove-000011 | 鼓与贝斯交替出现，释放过长时会听到整体随低频抽吸
   - pdmx-000450 | 勃拉姆斯《德意志安魂曲》动态跨度大，适合观察压缩对强弱层次的保留
 sources:
-  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012 — background checked, not quoted
-  - Huber and Runstein, Modern Recording Techniques, dynamics chapter — typical ranges checked, not quoted
+  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012.
+  - Huber and Runstein, Modern Recording Techniques, dynamics chapter.
 updated: 2026-10-28
 ---
 

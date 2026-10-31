@@ -20,8 +20,8 @@ instances:
   - cyberhymnal-000000 | 管风琴持续和弦多，能听出混响是否盖住声部（C1）
   - musicnet-000000 | 小提琴独奏线条清楚，适合判断前次反射与距离（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, reverb and depth — background checked, not quoted
-  - David Gibson, The Art of Mixing, front-to-back placement — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, reverb and depth.
+  - David Gibson, The Art of Mixing, front-to-back placement.
 updated: 2026-10-28
 ---
 

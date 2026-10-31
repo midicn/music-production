@@ -21,7 +21,7 @@ instances:
   - mutopia-000514 | 贝多芬《第七交响曲》第一乐章，定音鼓在长时间里保持紧张
 sources:
   - 通行配器教材所述打击乐记谱、音高与余响原则，用于事实核对，未引用原文
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Percussion instruments", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Percussion instruments".
 updated: 2026-10-28
 ---
 

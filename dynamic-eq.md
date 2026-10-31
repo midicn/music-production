@@ -19,8 +19,8 @@ instances:
   - groove-000002 | 灵魂乐鼓循环的底鼓有固定共鸣，弱击时不该被一起切掉
   - giantmidi-000000 | 夜曲低音区的轰鸣只在大声和弦出现，动态 EQ 可只处理强奏
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, filters and dynamics sections — background checked, not quoted
-  - Bristow-Johnson, Cookbook Formulae for Audio EQ Biquad Filter Coefficients — filter shapes checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Bristow-Johnson, Cookbook Formulae for Audio EQ Biquad Filter Coefficients.
 updated: 2026-10-28
 ---
 

@@ -20,8 +20,8 @@ instances:
   - musicnet-000019 | 巴赫赋格声部交织，总线均衡一动就能听出声部变化（C1）
   - groove-000010 | 放克鼓组长循环，适合对照鼓总线压缩前后的紧度（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, mix bus processing — background checked, not quoted
-  - David Gibson, The Art of Mixing, subgroup and master bus strategy — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, mix bus processing.
+  - David Gibson, The Art of Mixing, subgroup and master bus strategy.
 updated: 2026-10-28
 ---
 

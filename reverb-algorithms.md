@@ -19,8 +19,8 @@ instances:
   - pdmx-000070 | 巴伯《弦乐慢板》持续音多，板式的密度与厅堂的扩散容易对比
   - mutopia-001413 | 萨蒂《裸体歌舞》第三首留白多，混响尾巴不再被音符遮住
 sources:
-  - Välimäki, Parker and Savioja, Fifty Years of Artificial Reverberation, IEEE TASLP 2012 — background checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, reverberation chapter — background checked, not quoted
+  - Välimäki, Parker and Savioja, Fifty Years of Artificial Reverberation, IEEE TASLP 2012.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

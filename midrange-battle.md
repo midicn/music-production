@@ -20,8 +20,8 @@ instances:
   - musicnet-000067 | 弦乐四重奏在中音区交织，适合判断谁该退半步（C1）
   - groove-000002 | 灵魂乐鼓组军鼓与踩镲集中在中频，适合对照疲劳感（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, midrange and vocal clarity — background checked, not quoted
-  - David Gibson, The Art of Mixing, midrange density and listener fatigue — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, midrange and vocal clarity.
+  - David Gibson, The Art of Mixing, midrange density and listener fatigue.
 updated: 2026-10-28
 ---
 

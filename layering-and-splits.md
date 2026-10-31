@@ -20,8 +20,8 @@ instances:
   - oga-000033 | 弦乐分低高两区，钟琴与管钟再叠在高音区
   - oga-000309 | 大号、弦乐与钢琴共占低音区，音效层单独在高处
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — keyboard layering checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — multi-voice control checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

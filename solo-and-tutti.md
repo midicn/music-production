@@ -21,7 +21,7 @@ instances:
   - pdmx-000120 | 科普兰《普通人的号角》，铜管齐奏以同步建立重量
 sources:
   - 通行配器教材所述独奏、全奏与织体对比原则，用于事实核对，未引用原文
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Concerto", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Concerto".
 updated: 2026-10-28
 ---
 

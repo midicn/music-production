@@ -21,7 +21,7 @@ instances:
   - pdmx-000007 | 莫扎特《第四十交响曲》，长笛、双簧管、单簧管与巴松形成标准和声
 sources:
   - 通行配器教材所述木管音域、发音与组合原则，用于事实核对，未引用原文
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Woodwind", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Woodwind".
 updated: 2026-10-28
 ---
 

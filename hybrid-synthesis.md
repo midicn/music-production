@@ -20,8 +20,8 @@ instances:
   - oga-000327 | 失真吉他、弦乐与锯齿主音叠置，采样与合成共用一个编曲
   - oga-000319 | 方波、锯齿与合成弦乐并置，电子音色里仍有钢琴与贝斯
 sources:
-  - Curtis Roads, The Computer Music Tutorial — hybrid synthesis checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, hybrid instruments checked, not quoted
+  - Curtis Roads, The Computer Music Tutorial.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

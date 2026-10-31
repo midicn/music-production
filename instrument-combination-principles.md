@@ -21,7 +21,7 @@ instances:
   - pdmx-000120 | 科普兰《普通人的号角》，铜管各组与定音鼓、低音鼓的分工清楚
 sources:
   - 通行配器教材所述音域、移调与平衡原则，用于事实核对，未引用原文
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Instrumentation", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Instrumentation".
 updated: 2026-10-28
 ---
 

@@ -19,8 +19,8 @@ instances:
   - giantmidi-000000 | 钢琴低音区有多个接近的共鸣峰，宽窄 Q 的差别很清楚
   - mutopia-000546 | 女声与钢琴同时出现，窄 Q 会先抓住某一个元音
 sources:
-  - Bristow-Johnson, Cookbook Formulae for Audio EQ Biquad Filter Coefficients — formulas checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, filters chapter — background checked, not quoted
+  - Bristow-Johnson, Cookbook Formulae for Audio EQ Biquad Filter Coefficients.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

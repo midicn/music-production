@@ -20,8 +20,8 @@ instances:
   - groove-001103 | 四拍迪斯科鼓，底鼓落点稳定，适合先定基频
   - pdmx-000450 | 合唱低音声部下探很低，可与底鼓对照让位
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, low-end chapter — background checked, not quoted
-  - Huber and Runstein, Modern Recording Techniques, rhythm section mixing — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, low-end chapter.
+  - Huber and Runstein, Modern Recording Techniques, rhythm section mixing.
 updated: 2026-10-28
 ---
 

@@ -20,8 +20,8 @@ instances:
   - groove-000000 | 放克鼓组材料单一，适合先建立音量与频段的基线（C1）
   - openscore-000008 | 叙事歌曲角色与钢琴互相让位，能听出目标是否清楚（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, balance and monitoring chapters — background checked, not quoted
-  - David Gibson, The Art of Mixing, visual mapping of clarity and balance — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, balance and monitoring chapters.
+  - David Gibson, The Art of Mixing, visual mapping of clarity and balance.
 updated: 2026-10-28
 ---
 

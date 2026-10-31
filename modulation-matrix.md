@@ -20,8 +20,8 @@ instances:
   - oga-000327 | 弯音事件密集，音高作为调制目标被反复推动
   - oga-000270 | 多条通道各自写入 CC91 与 CC93，混响与合唱深度分开控制
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — modulation routing checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — modulation and control signals checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

@@ -20,8 +20,8 @@ instances:
   - pdmx-000087 | 钢琴织体宽，左右拉得太开会与低音争夺中心
   - openscore-000018 | 声乐线加钢琴，主奏必须留在中心
 sources:
-  - David Gibson, The Art of Mixing, stereo field chapter — background checked, not quoted
-  - Huber and Runstein, Modern Recording Techniques, panning and monitoring — background checked, not quoted
+  - David Gibson, The Art of Mixing, stereo field chapter.
+  - Huber and Runstein, Modern Recording Techniques, panning and monitoring.
 updated: 2026-10-28
 ---
 

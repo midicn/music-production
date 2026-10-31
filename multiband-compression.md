@@ -19,8 +19,8 @@ instances:
   - oga-000001 | 管弦乐铺底的低音与高音层次清楚，适合观察分频点相位
   - mutopia-000546 | 女声与钢琴的低频容易互相遮挡，分段压缩能减少整体抽吸
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, dynamics and multiband sections — background checked, not quoted
-  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012 — topology context checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012.
 updated: 2026-10-28
 ---
 

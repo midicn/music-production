@@ -20,8 +20,8 @@ instances:
   - oga-000286 | 锯齿主音与两种合成贝斯同场，低频共振的突出感容易比较
   - oga-000111 | 锯齿低音与音乐盒高音对照，截止高低造成的明暗差别明显
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — filter and resonance behaviour checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, filter chapter checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

@@ -20,7 +20,7 @@ instances:
   - thesession-000040 | 吉格舞曲三拍连缀不断，块太大时装饰音挤在一起（C1）
 sources:
   - 块大小与欠载的关系；音频接口与宿主公开文档是主要依据。
-  - Pohlmann, Principles of Digital Audio, real-time processing sections — background checked, not quoted
+  - Pohlmann, Principles of Digital Audio, real-time processing sections.
 updated: 2026-10-28
 ---
 

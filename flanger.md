@@ -19,8 +19,8 @@ instances:
   - oga-000057 | 太空题材的铺底长音多，缓慢扫动会形成连续的呼啸
   - mutopia-000005 | 古典吉他分解和弦颗粒清楚，梳状陷波经过时音色会变空
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, modulation chapter — background checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial, delay and comb filtering sections — background checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Curtis Roads, The Computer Music Tutorial, delay and comb filtering sections.
 updated: 2026-10-28
 ---
 

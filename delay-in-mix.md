@@ -20,8 +20,8 @@ instances:
   - oga-000018 | 游戏城堡段结构清楚，重复容易听出是否落进空隙（C1）
   - openscore-000018 | 练声曲长句多，适合听延迟如何补住句尾（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, delay and spatial effects — background checked, not quoted
-  - David Gibson, The Art of Mixing, rhythmic delay placement — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, delay and spatial effects.
+  - David Gibson, The Art of Mixing, rhythmic delay placement.
 updated: 2026-10-28
 ---
 

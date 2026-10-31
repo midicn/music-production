@@ -20,8 +20,8 @@ instances:
   - oga-000014 | 8-bit 头目曲的鼓组走噪声通道，嘶声与音高感可直接分辨
   - oga-000098 | 废墟场景叠入海浪与掌声采样，宽带噪声铺满背景
 sources:
-  - Curtis Roads, The Computer Music Tutorial — noise spectra and filtering checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, noise generation chapter — background checked, not quoted
+  - Curtis Roads, The Computer Music Tutorial.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

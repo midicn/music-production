@@ -19,8 +19,8 @@ instances:
   - oga-000009 | 游戏场景铺底音色本来就宽，加合唱后能判断宽度是否过头
   - mutopia-001412 | 钢琴与弦乐混合，低音区加合唱后是否失焦一听便知
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, modulation chapter — background checked, not quoted
-  - Sound On Sound, chorus and vibrato explained — typical rates and depths checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Sound On Sound, chorus and vibrato explained.
 updated: 2026-10-28
 ---
 

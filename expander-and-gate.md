@@ -19,8 +19,8 @@ instances:
   - groove-000000 | 放克鼓循环间隙短，适合观察保持时间如何防止门抖动
   - groove-000011 | 鼓与贝斯在同一循环里交替，门跟随底鼓开合时对比明显
 sources:
-  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012 — expander and gate topologies checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, dynamics chapter — background checked, not quoted
+  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

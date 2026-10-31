@@ -20,8 +20,8 @@ instances:
   - oga-000004 | 游戏战斗段层数多，适合找谁在抢同一块中低频（C1）
   - musicnet-000119 | 木管六重奏音色接近，和弦排列稍密就会互相遮盖（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, frequency masking and EQ chapters — background checked, not quoted
-  - David Gibson, The Art of Mixing, frequency range ownership — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, frequency masking and EQ chapters.
+  - David Gibson, The Art of Mixing, frequency range ownership.
 updated: 2026-10-28
 ---
 

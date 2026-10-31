@@ -19,8 +19,8 @@ instances:
   - oga-000004 | 战斗音乐的铜管齐奏厚，过载会让齐奏边缘先变硬
   - mutopia-000005 | 古典吉他的拨弦颗粒细，少量失真会把指尖噪声一起放大
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, nonlinear processing chapter — background checked, not quoted
-  - Julius O. Smith, Physical Audio Signal Processing, nonlinear distortion sections — background checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Julius O. Smith, Physical Audio Signal Processing, nonlinear distortion sections.
 updated: 2026-10-28
 ---
 

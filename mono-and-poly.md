@@ -20,8 +20,8 @@ instances:
   - oga-000143 | 风琴同时按出六个音，厚和弦靠复音堆起来
   - oga-000330 | 钢琴、电钢琴与贝斯各自成声部，复音数被分给多层
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — monophonic and polyphonic behaviour checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — voice allocation checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

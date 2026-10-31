@@ -20,8 +20,8 @@ instances:
   - oga-000033 | 钟琴与管钟占据高音区，高频分音一层层堆叠
   - oga-000079 | 弦乐与金属音效交叠，宽带成分让频谱边界变模糊
 sources:
-  - Miller Puckette, The Theory and Technique of Electronic Music — spectral analysis checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, spectral processing checked, not quoted
+  - Miller Puckette, The Theory and Technique of Electronic Music.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

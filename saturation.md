@@ -19,8 +19,8 @@ instances:
   - oga-000004 | 战斗段落的合成器与打击密集，小量饱和后整体是否变密一听便知
   - groove-000007 | 摇滚鼓循环本身偏厚，加饱和后镲片起沙的程度容易判断
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, nonlinear processing chapter — background checked, not quoted
-  - Sound On Sound, saturation explained — harmonic behaviour checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Sound On Sound, saturation explained.
 updated: 2026-10-28
 ---
 

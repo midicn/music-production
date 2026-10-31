@@ -20,8 +20,8 @@ instances:
   - mutopia-001411 | 萨蒂《裸体歌舞》织体稀疏，窄带提升的染色很容易听出
   - pdmx-000070 | 弦乐慢板频段连续，适合比较搁架与参量在整体亮度上的差别
 sources:
-  - Huber and Runstein, Modern Recording Techniques, equalisation chapter — background checked, not quoted
-  - Sound On Sound, EQ Explained by Hugh Robjohns — definitions and typical ranges checked, not quoted
+  - Huber and Runstein, Modern Recording Techniques, equalisation chapter.
+  - Sound On Sound, EQ Explained by Hugh Robjohns.
 updated: 2026-10-28
 ---
 

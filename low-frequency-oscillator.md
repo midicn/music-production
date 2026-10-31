@@ -20,8 +20,8 @@ instances:
   - oga-000067 | 长弦乐与金属铺底贯穿，颤音快慢对紧张感的影响明显
   - oga-000270 | 多层吉他与暖铺底并存，缓慢摆动的宽度可与其他层分开听
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — LFO routing checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — low-frequency modulation checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

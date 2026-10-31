@@ -19,8 +19,8 @@ instances:
   - mutopia-001412 | 钢琴与弦乐的混合织体，高通逐级上移时能听出哪一层先退
   - groove-000010 | 鼓组循环含明显低频与镲片，适合比较高通与带通对两端的取舍
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, filters chapter — background checked, not quoted
-  - Sound On Sound, synthesizer filter primer — slopes and resonance checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Sound On Sound, synthesizer filter primer.
 updated: 2026-10-28
 ---
 

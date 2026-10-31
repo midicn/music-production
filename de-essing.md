@@ -20,8 +20,8 @@ instances:
   - openscore-000021 | 西班牙语歌曲辅音清晰，适合检查齿音是否被压过头（C1）
   - openscore-000024 | 女高音高音多，齿音与高频泛音容易混淆（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, vocal sibilance and de-essing — background checked, not quoted
-  - David Gibson, The Art of Mixing, vocal consonant preservation — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, vocal sibilance and de-essing.
+  - David Gibson, The Art of Mixing, vocal consonant preservation.
 updated: 2026-10-28
 ---
 

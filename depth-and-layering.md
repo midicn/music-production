@@ -20,8 +20,8 @@ instances:
   - oga-000002 | 游戏场景元素多，干湿差异大，层次容易糊
   - groove-000007 | 慢速摇滚鼓，近场敲击与房间感的差别容易听
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, depth and reverb chapter — background checked, not quoted
-  - David Gibson, The Art of Mixing, front-to-back perspective — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, depth and reverb chapter.
+  - David Gibson, The Art of Mixing, front-to-back perspective.
 updated: 2026-10-28
 ---
 

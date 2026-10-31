@@ -19,8 +19,8 @@ instances:
   - groove-000010 | 放克鼓循环有轻有重，可检验整形器是否随力度改变结果
   - pdmx-000031 | 拉威尔《波莱罗》钢琴版节奏重复，音头变化不会被人声遮住
 sources:
-  - Udo Zölzer, DAFX — Digital Audio Effects, dynamics chapter — transient shaping background checked, not quoted
-  - Sound On Sound, transient shaping explained — typical attack and sustain ranges checked, not quoted
+  - Udo Zölzer, DAFX.
+  - Sound On Sound, transient shaping explained.
 updated: 2026-10-28
 ---
 

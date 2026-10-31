@@ -19,7 +19,7 @@ instances:
   - atepp-000195 | 德彪西《月光》弱奏层次多，位深不够时最轻的触键先糊掉（C1）
   - giantmidi-003263 | 萨蒂《裸体歌舞》整体很轻，噪声底与量化台阶在安静段最清楚（C1）
 sources:
-  - Pohlmann, Principles of Digital Audio, sampling and conversion chapters — background checked, not quoted
+  - Pohlmann, Principles of Digital Audio, sampling and conversion chapters.
   - 转换器滤波模式与时钟的差异（厂商公开技术文档）。
 updated: 2026-10-28
 ---

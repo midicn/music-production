@@ -20,8 +20,8 @@ instances:
   - oga-000287 | 电子贝斯与锯齿主音分层，适合听滤波器怎样削掉高频
   - oga-000067 | 合成贝斯与方波、锯齿主音同场，滤波与共振的差别容易比较
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — subtractive synthesis principles checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, filters and oscillators chapter — background checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

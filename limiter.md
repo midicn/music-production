@@ -19,8 +19,8 @@ instances:
   - groove-000000 | 放克鼓循环密集，释放太短会让整体随底鼓抽吸
   - oga-000004 | 战斗音乐铜管齐奏多，高频砂纸感会先暴露过量限制
 sources:
-  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012 — limiter topology checked, not quoted
-  - ITU-R BS.1770-4, Algorithms to Measure Audio Programme Loudness and True-peak Level — true-peak method checked, not quoted
+  - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012.
+  - ITU-R BS.1770-4, Algorithms to Measure Audio Programme Loudness and True-peak Level.
 updated: 2026-10-28
 ---
 

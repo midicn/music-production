@@ -20,8 +20,8 @@ instances:
   - oga-000004 | 短循环反复听不累，说明平衡经得起重复（C1）
   - musicnet-000069 | 慢乐章尾巴长，适合检查结尾与过渡是否干净（C1）
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, mix evaluation and revision — background checked, not quoted
-  - David Gibson, The Art of Mixing, translation across playback systems — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, mix evaluation and revision.
+  - David Gibson, The Art of Mixing, translation across playback systems.
 updated: 2026-10-28
 ---
 

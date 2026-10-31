@@ -19,8 +19,8 @@ instances:
   - oga-000211 | 电钢琴与管钟并置，非谐波泛音造成的钟形听感最明显
   - oga-000143 | 管钟与金属铺底，击发瞬间的明亮泛音适合辨 FM 类音色
 sources:
-  - John Chowning, The Synthesis of Complex Audio Spectra by Means of Frequency Modulation — sideband theory checked, not quoted
-  - Gordon Reid, Sound On Sound Synth Secrets — FM ratios and index checked, not quoted
+  - John Chowning, The Synthesis of Complex Audio Spectra by Means of Frequency Modulation.
+  - Gordon Reid, Sound On Sound Synth Secrets.
 updated: 2026-10-28
 ---
 

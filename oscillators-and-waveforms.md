@@ -20,8 +20,8 @@ instances:
   - oga-000163 | 锯齿主音谐波连续，与同曲的陶笛音色对照最清楚
   - oga-000334 | 单声部气氛铺底音色柔和，适合与方波、锯齿的锐利边缘对照
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — waveform spectra checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, oscillators and aliasing chapter — background checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

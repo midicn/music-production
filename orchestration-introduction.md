@@ -21,7 +21,7 @@ instances:
   - pdmx-000166 | 巴赫《第四勃兰登堡协奏曲》，两支竖笛与弦乐、羽管键琴形成清楚的独奏与伴奏关系
 sources:
   - 通行配器教材所述音域、移调与平衡原则，用于事实核对，未引用原文
-  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Orchestration", used for fact-checking only, not quoted
+  - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Orchestration".
 updated: 2026-10-28
 ---
 

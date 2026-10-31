@@ -20,8 +20,8 @@ instances:
   - oga-000000 | 三轨小编制，声部少，平衡问题不会被遮住
   - groove-000002 | 灵魂乐鼓组，各件之间的平衡先于任何处理
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, fader balance chapter — background checked, not quoted
-  - David Gibson, The Art of Mixing, visual mapping of level and pan — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, fader balance chapter.
+  - David Gibson, The Art of Mixing, visual mapping of level and pan.
 updated: 2026-10-28
 ---
 

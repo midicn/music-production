@@ -20,8 +20,8 @@ instances:
   - oga-000143 | 管钟与拉杆风琴同曲，击发后的长衰减和持续音形成对照
   - oga-000195 | 尼龙弦吉他与闷音吉他交替，拨弦的起音与衰减长短不同
 sources:
-  - Gordon Reid, Sound On Sound Synth Secrets — envelope stages checked, not quoted
-  - Curtis Roads, The Computer Music Tutorial — amplitude envelopes checked, not quoted
+  - Gordon Reid, Sound On Sound Synth Secrets.
+  - Curtis Roads, The Computer Music Tutorial.
 updated: 2026-10-28
 ---
 

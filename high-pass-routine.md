@@ -20,8 +20,8 @@ instances:
   - groove-000006 | 流行鼓组各件切点不同，镲片与底鼓要分开判断
   - essen-000000 | 单声部民歌曲调，切点过高会削掉旋律厚度
 sources:
-  - Bobby Owsinski, The Mixing Engineer's Handbook, EQ chapter — background checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, filter section — background checked, not quoted
+  - Bobby Owsinski, The Mixing Engineer's Handbook, EQ chapter.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

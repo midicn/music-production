@@ -20,8 +20,8 @@ instances:
   - oga-000309 | 铃音与空灵铺底叠置，高频分音一层层加上去
   - oga-000233 | 教堂管风琴以整倍数泛音叠加，低音区厚、高音区亮
 sources:
-  - Curtis Roads, The Computer Music Tutorial — additive synthesis checked, not quoted
-  - Jean-Baptiste Fourier, Théorie analytique de la chaleur — harmonic decomposition background checked, not quoted
+  - Curtis Roads, The Computer Music Tutorial.
+  - Jean-Baptiste Fourier, Théorie analytique de la chaleur.
 updated: 2026-10-28
 ---
 

@@ -20,8 +20,8 @@ instances:
   - oga-000116 | 洞穴场景用 charang 主音与金属铺底，音色明暗随段落滑动
   - oga-000163 | 锯齿主音配扫频铺底，适合听同一波形被连续塑形
 sources:
-  - Curtis Roads, The Computer Music Tutorial — wavetable synthesis checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, wavetable and interpolation chapter — background checked, not quoted
+  - Curtis Roads, The Computer Music Tutorial.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

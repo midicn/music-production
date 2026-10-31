@@ -20,8 +20,8 @@ instances:
   - oga-000079 | 金属铺底与音效层交叠，短碎音散布在长音之间
   - oga-000167 | 山洞场景叠入海浪与音效，细碎声粒在宽声场里浮动
 sources:
-  - Curtis Roads, Microsound — grain windows and clouds checked, not quoted
-  - Udo Zölzer, DAFX — Digital Audio Effects, granular processing chapter — background checked, not quoted
+  - Curtis Roads, Microsound.
+  - Udo Zölzer, DAFX.
 updated: 2026-10-28
 ---
 

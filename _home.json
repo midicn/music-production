@@ -1,0 +1,372 @@
+{
+  "hero": {
+    "kicker": {
+      "zh": "音频与音乐制作",
+      "en": "Audio and Music Production"
+    },
+    "title": {
+      "zh": "把声音做出来，也把活干完",
+      "en": "Make the sound, then finish the job"
+    },
+    "lead": {
+      "zh": "从声学、录音、混音到 MIDI 与交付：按“你现在卡在哪”来读，而不是按设备清单。每条都带可听的例子和能上手的步骤。",
+      "en": "From acoustics and recording to mixing, MIDI and delivery — organised by where you are stuck, not by gear lists. Every entry pairs listening examples with steps you can use."
+    }
+  },
+  "needs_title": {
+    "zh": "你现在卡在哪一步",
+    "en": "Where are you stuck"
+  },
+  "needs_sub": {
+    "zh": "先定位问题，再进对应的条目；顺序错了，工具越多越乱。",
+    "en": "Locate the problem first. Get the order wrong and more tools only make it worse."
+  },
+  "needs": [
+    {
+      "icon": "起",
+      "t": {
+        "zh": "刚开始做音乐",
+        "en": "Just starting out"
+      },
+      "d": {
+        "zh": "先搭一条能重复的工作流：文件怎么放、轨道怎么命名、参考曲放哪。",
+        "en": "Build a repeatable workflow first: where files live, how tracks are named, where references sit."
+      },
+      "links": [
+        {
+          "id": "project-file-management"
+        },
+        {
+          "id": "daw-comparison"
+        },
+        {
+          "id": "idea-to-finished-track"
+        }
+      ]
+    },
+    {
+      "icon": "混",
+      "t": {
+        "zh": "混音总是糊、刺、闷",
+        "en": "The mix is muddy, harsh or dull"
+      },
+      "d": {
+        "zh": "先能听出四种症状，再决定动哪个插件；判断不准时，别加处理。",
+        "en": "Hear the four symptoms before touching a plug-in. If the judgement is unsure, stop processing."
+      },
+      "links": [
+        {
+          "id": "common-mix-mistakes"
+        },
+        {
+          "id": "mix-completion"
+        },
+        {
+          "id": "dynamics-in-mix"
+        }
+      ]
+    },
+    {
+      "icon": "录",
+      "t": {
+        "zh": "录音与监听",
+        "en": "Recording and monitoring"
+      },
+      "d": {
+        "zh": "房间与摆位决定了一半结果，话筒和话放只决定另一半。",
+        "en": "Room and placement decide half the result; mic and preamp the other half."
+      },
+      "links": [
+        {
+          "id": "recording-chain"
+        },
+        {
+          "id": "polar-patterns"
+        },
+        {
+          "id": "monitor-room-treatment"
+        }
+      ]
+    },
+    {
+      "icon": "键",
+      "t": {
+        "zh": "MIDI 与音源",
+        "en": "MIDI and instruments"
+      },
+      "d": {
+        "zh": "力度、时钟与映射弄对了，软音源才像乐器；否则只是会响的采样。",
+        "en": "Velocity, clock and mapping make a virtual instrument feel played; otherwise it is just samples that sound."
+      },
+      "links": [
+        {
+          "id": "midi-message-structure"
+        },
+        {
+          "id": "multisampling-and-velocity-layers"
+        },
+        {
+          "id": "mpe"
+        }
+      ]
+    },
+    {
+      "icon": "画",
+      "t": {
+        "zh": "给画面配乐",
+        "en": "Scoring to picture"
+      },
+      "d": {
+        "zh": "先对齐剪辑与情绪曲线，再写主题；交付要按画面版本管理。",
+        "en": "Align with the cut and the emotional curve before writing themes; manage delivery by picture version."
+      },
+      "links": [
+        {
+          "id": "film-scoring-introduction"
+        },
+        {
+          "id": "music-picture-sync"
+        },
+        {
+          "id": "score-delivery-and-stems"
+        }
+      ]
+    },
+    {
+      "icon": "活",
+      "t": {
+        "zh": "接一件活，从哪开始",
+        "en": "Taking on a job"
+      },
+      "d": {
+        "zh": "先拆交付物和时间点，再决定编曲密度与制作顺序。",
+        "en": "Break the deliverable and deadlines down first, then decide arrangement density and order of work."
+      },
+      "links": [
+        {
+          "id": "job-demo-song"
+        },
+        {
+          "id": "job-cover-song"
+        },
+        {
+          "id": "job-film-cue"
+        }
+      ]
+    },
+    {
+      "icon": "谱",
+      "t": {
+        "zh": "制谱、拾音与母带交付",
+        "en": "Notation, miking and mastering delivery"
+      },
+      "d": {
+        "zh": "从总谱到分谱、从鼓组到人声、从母带到 DDP，这三段最容易在交接时出错。",
+        "en": "Score to parts, drums to voice, master to DDP: three places where hand-offs break."
+      },
+      "links": [
+        {
+          "id": "notation-dorico"
+        },
+        {
+          "id": "drum-miking"
+        },
+        {
+          "id": "mastering-chain-order"
+        },
+        {
+          "id": "ddp-delivery"
+        }
+      ]
+    }
+  ],
+  "ladder_title": {
+    "zh": "一条从听到交付的路线",
+    "en": "From listening to delivery"
+  },
+  "ladder_sub": {
+    "zh": "顺序有讲究：听不准，后面每一步都会加倍返工。",
+    "en": "Order matters: if you cannot hear it, every later step doubles the rework."
+  },
+  "ladder": [
+    {
+      "n": "01",
+      "t": {
+        "zh": "先把耳朵校准",
+        "en": "Calibrate the ear"
+      },
+      "d": {
+        "zh": "知道房间和耳机的偏差，再谈好坏。",
+        "en": "Know your room and headphone bias before judging quality."
+      },
+      "href": "hearing-protection"
+    },
+    {
+      "n": "02",
+      "t": {
+        "zh": "把声音录干净",
+        "en": "Capture it cleanly"
+      },
+      "d": {
+        "zh": "增益结构、相位与摆位先过关。",
+        "en": "Gain structure, phase and placement first."
+      },
+      "href": "recording-chain"
+    },
+    {
+      "n": "03",
+      "t": {
+        "zh": "混到能交付",
+        "en": "Mix to a deliverable"
+      },
+      "d": {
+        "zh": "按症状处理，不按插件顺序处理。",
+        "en": "Work by symptom, not by plug-in order."
+      },
+      "href": "common-mix-mistakes"
+    },
+    {
+      "n": "04",
+      "t": {
+        "zh": "按规格交付",
+        "en": "Deliver to spec"
+      },
+      "d": {
+        "zh": "响度、真峰值、分轨命名，一样都不能少。",
+        "en": "Loudness, true peak and stem naming, all of them."
+      },
+      "href": "loudness-standards"
+    }
+  ],
+  "picks_title": {
+    "zh": "六条最常用的底稿",
+    "en": "Six working references"
+  },
+  "picks_sub": {
+    "zh": "从选 DAW 到混音判断，覆盖最常被问的几步。",
+    "en": "From choosing a DAW to judging a mix, covering the questions that come up most."
+  },
+  "picks": [
+    {
+      "id": "daw-comparison",
+      "why": {
+        "zh": "先选工作方式，再选软件；别反过来。",
+        "en": "Choose the workflow before the software, not the other way round."
+      }
+    },
+    {
+      "id": "common-mix-mistakes",
+      "why": {
+        "zh": "四种症状对应四类动作，听完能自查。",
+        "en": "Four symptoms, four kinds of move; you can self-check after one listen."
+      }
+    },
+    {
+      "id": "recording-chain",
+      "why": {
+        "zh": "一条链上每个环节都能毁掉录音。",
+        "en": "Every link in the chain can ruin a take."
+      }
+    },
+    {
+      "id": "midi-vs-audio",
+      "why": {
+        "zh": "先分清楚你改的是演奏还是声音。",
+        "en": "Know whether you are editing a performance or a sound."
+      }
+    },
+    {
+      "id": "film-scoring-introduction",
+      "why": {
+        "zh": "配乐的时间码、版本与交付从第一天就要管。",
+        "en": "Timecode, versions and delivery need managing from day one."
+      }
+    },
+    {
+      "id": "job-demo-song",
+      "why": {
+        "zh": "一件真实的活，怎么从需求走到成品。",
+        "en": "A real job, from brief to finished track."
+      }
+    },
+    {
+      "id": "notation-dorico",
+      "why": {
+        "zh": "制谱不是打字，缩编与分谱才是工作量。",
+        "en": "Engraving is not typing; condensing and parts are the work."
+      }
+    },
+    {
+      "id": "drum-miking",
+      "why": {
+        "zh": "鼓组拾音先解决相位，再换话筒。",
+        "en": "Fix phase before changing microphones."
+      }
+    },
+    {
+      "id": "mastering-chain-order",
+      "why": {
+        "zh": "母带链的顺序错了，后面每个插件都在补前一个的错。",
+        "en": "Wrong chain order makes every later plug-in fix the previous mistake."
+      }
+    }
+  ],
+  "trails_title": {
+    "zh": "三条能落地的路线",
+    "en": "Three routes you can follow"
+  },
+  "trails_sub": {
+    "zh": "从灵感到成品、从录音到混音、从画面到配乐。",
+    "en": "Idea to finished track, recording to mix, picture to score."
+  },
+  "trails": [
+    {
+      "t": {
+        "zh": "从灵感到成品",
+        "en": "Idea to finished track"
+      },
+      "d": {
+        "zh": "结构、编曲、混音、交付，一站不停。",
+        "en": "Structure, arrangement, mix, delivery, without skipping."
+      },
+      "stops": [
+        "idea-to-finished-track",
+        "chorus-lift",
+        "common-mix-mistakes",
+        "loudness-standards"
+      ]
+    },
+    {
+      "t": {
+        "zh": "录一首歌",
+        "en": "Record a song"
+      },
+      "d": {
+        "zh": "先解决房间与相位，再谈话筒品牌。",
+        "en": "Solve the room and phase before discussing microphone brands."
+      },
+      "stops": [
+        "recording-chain",
+        "phase-problems",
+        "overdubbing",
+        "mix-completion"
+      ]
+    },
+    {
+      "t": {
+        "zh": "做一条配乐",
+        "en": "Score a scene"
+      },
+      "d": {
+        "zh": "音画关系、主题动机与分轨交付。",
+        "en": "Picture sync, thematic motifs and stem delivery."
+      },
+      "stops": [
+        "film-scoring-introduction",
+        "music-picture-sync",
+        "leitmotif-in-film",
+        "score-delivery-and-stems"
+      ]
+    }
+  ]
+}

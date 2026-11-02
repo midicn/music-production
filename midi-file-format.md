@@ -19,9 +19,11 @@ instances:
   - musicnet-000300 | format 1，18 条 MTrk，速度表里有多次变速
   - oga-000077 | format 1，32 条 MTrk，却只用 16 个通道
 sources:
+  - https://mido.github.io/mido/files/midi.html
+  - https://midi.org/standard-midi-files
   - SMF 1.0 规范对 MThd 与 MTrk 的结构定义（MMA 公开规范）。
   - format 0、1、2 与 division 的用法，参考音序器文档。
-updated: 2026-10-28
+updated: 2026-11-03
 ---
 
 ::: zh
@@ -37,7 +39,7 @@ updated: 2026-10-28
 
 ## 参数与做法
 
-编曲用 format 1，分轨清楚。交换文件也用 format 1，兼容性最好。小型播放器可以吃 format 0。改速度时确认改在 tempo 轨上。
+先确认接收软件支持的格式，再选择导出：format 1 便于保留同步分轨；只支持单轨文件的设备可能要求 format 0。合并成 format 0 不等于改成单通道。交接时复核速度图、拍号、通道与音色切换；MIDI 文件通常不包含插件、音频录音或完整 DAW 工程设置，重要音色另附音频参考。
 
 ## 听什么
 
@@ -65,7 +67,7 @@ A file begins with MThd, a 6-byte field holding format, ntrks and division, so t
 
 ## Settings and practice
 
-Use format 1 for arranging and exchange, since tracks stay separate and compatibility is best. Small players may prefer format 0. When changing tempo, edit the tempo track.
+Check the receiving application first. Format 1 preserves synchronized tracks; a single-track player may require format 0. Merging tracks does not merge their MIDI channels. Verify tempo changes, meter, channels and program changes after import. MIDI alone does not preserve the complete DAW project, plug-ins or recorded audio; include an audio reference when the sound matters.
 
 ## What to listen for
 

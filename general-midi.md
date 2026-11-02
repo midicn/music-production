@@ -19,9 +19,11 @@ instances:
   - musicnet-000300 | 弦乐按 40 到 43 分配，钢琴用 0 号音色
   - groove-000007 | 只有第 10 通道，没有音色切换，完全依赖 GM 鼓映射
 sources:
+  - https://midi.org/general-midi-level-1
+  - https://midi.org/general-midi
   - 通用 MIDI 一级规范对音色表与通道的约定——依据来自 MMA 公开规范。
   - GM 2 增加的音色库与控制器，对照通用 MIDI 规范整理。
-updated: 2026-10-28
+updated: 2026-11-03
 ---
 
 ::: zh
@@ -37,7 +39,7 @@ GM 规定 128 个旋律音色，按 16 个族排列，每族 8 个。通道 10 �
 
 ## 参数与做法
 
-播放前确认设备处于 GM 模式。鼓固定在第 10 通道。不要依赖扩展音色。默认用 0 号钢琴最安全。跨设备交换时，把音色号写进元数据。
+播放前确认设备处于 GM 模式。鼓固定在第 10 通道。不要依赖扩展音色。按声部选择对应的 GM 音色，不要把所有声部都改成钢琴。将所需 Program Change 写在对应通道首个音符之前，并注明软件使用 0–127 还是 1–128 编号；说明文件中的文字音色名不能代替实际消息。交付前在目标播放器回放，检查旋律音色和鼓键映射。
 
 ## 听什么
 
@@ -45,7 +47,7 @@ GM 钢琴在哪台设备上都认得出，但亮度与尾音不同；弦乐齐�
 
 ## 常见误解
 
-GM 不是音质标准。GM 音色号不等于厂商音色号。第 10 通道的鼓不受音色号影响。
+GM 规定兼容行为与音色名称，不规定具体采样或音质。这里的固定鼓映射以 GM 1 为边界；GM 2、GS、XG 的鼓组选择与扩展行为应另查相应规范。
 
 ```audiolab
 {"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","E4","G4","C5"],"label":"GM 弦乐的共同底线","label_en":"The common floor of GM strings","hint":"听齐奏的厚度，再想同一份文件在另一台设备上的差别","hint_en":"Hear the unison weight, then imagine the same file on another device"}
@@ -65,7 +67,7 @@ GM defines 128 melodic programs in 16 families of eight. Channel 10 is always dr
 
 ## Settings and practice
 
-Confirm the device is in GM mode before playback. Keep drums on channel 10. Do not depend on extension sounds. Program 0 is the safest default. For exchange, write the program numbers into the metadata.
+Confirm the device is in GM mode before playback. Keep drums on channel 10. Do not depend on extension sounds. Choose the GM program appropriate to each part instead of replacing every part with piano. Place Program Change messages before the first note on the relevant channel and state whether the software uses 0–127 or 1–128 numbering. A written instrument name does not replace the actual message. Verify melodic sounds and drum mappings in the receiving player.
 
 ## What to listen for
 
@@ -73,7 +75,7 @@ A GM piano is recognisable everywhere, but brightness and tails differ. String e
 
 ## Common misunderstandings
 
-GM is not a sound-quality standard. GM numbers are not vendor numbers. Drums on channel 10 ignore the program number.
+GM specifies compatible behavior and sound names, not a particular sample set or sound quality. The fixed drum-map discussion here concerns GM 1; consult the relevant specification for GM 2, GS or XG kit-selection behavior.
 
 ```audiolab
 {"type": "instrument", "gm": "String Ensemble 1", "synth": "bowed", "phrase": ["C4", "E4", "G4", "C5"], "label": "The common floor of GM strings", "label_en": "The common floor of GM strings", "hint": "听齐奏的厚度，再想同一份文件在另一台设备上的差别", "hint_en": "Hear the unison weight, then imagine the same file on another device"}

@@ -19,9 +19,11 @@ instances:
   - oga-000004 | 游戏战斗曲分层明显，交付时可按鼓、低音与旋律拆组
   - groove-000010 | 放克鼓循环的时值与力度层次，适合练分组的命名与对齐
 sources:
+  - https://help.ableton.com/hc/en-us/articles/360000843404-Importing-and-exporting-stems
+  - https://www.ableton.com/en/manual/managing-files-and-sets/
   - Stems 与分轨、总线的区别，对照影视声音与母带交付惯例整理。
   - 48 kHz、24 bit 与等长起点等交付惯例（后期交付规范）。
-updated: 2026-10-28
+updated: 2026-11-03
 ---
 
 ::: zh
@@ -37,7 +39,7 @@ Stems 通常按乐器组拆，比如鼓、贝斯、吉他、键盘、人声、�
 
 ## 参数与取舍
 
-常见交付是 48 kHz、24 bit。峰值留余量，别在 stem 上做最终限制。附一份说明，写清有没有做总线处理、速度与调性。无处理版与打印版要分开。
+先按接收方要求确定分组、采样率、位深与处理版本，不把 48 kHz、24 bit 当作唯一标准。所有文件使用同一起点与完整尾音范围，关闭逐条归一化，并附立体声参考混音。说明返回效果、组总线和主总线处理怎样分配；经过压缩、限制或饱和等非线性总线处理时，逐组独立导出再相加未必能精确重建原混音。
 
 ## 耳朵要抓的点
 
@@ -65,7 +67,7 @@ Stems are usually split by instrument group, such as drums, bass, guitars, keys,
 
 ## Settings and trade-offs
 
-A common delivery is 48 kHz and 24 bit. Leave peak headroom and do not limit individual stems. Include a note on bus processing, tempo and key. Keep an unprocessed set separate from the printed set.
+Agree on grouping, sample rate, bit depth and processing with the recipient rather than prescribing one universal format. Use a common start and a complete tail range, disable per-file normalization and include a stereo reference. Document shared returns and group/main processing: separately rendered groups may not exactly reconstruct a mix that used nonlinear bus compression, limiting or saturation.
 
 ## What the ear catches
 

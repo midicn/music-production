@@ -4,8 +4,8 @@ site: prod
 cat: B1
 title: Note On 与 Note Off
 title_en: Note On and Note Off
-summary: 音符的开始与结束是两条消息，收尾方式决定重叠音与鼓的时值。
-summary_en: Note On starts a note and Note Off ends it, and the way it ends shapes overlaps and drum decay.
+summary: 区分按键事件与实际止音，核对力度零、延音踏板和接收音源的处理
+summary_en: Distinguish key events from audible note endings, including zero velocity, sustain and receiver behaviour
 level: standard
 tags: [MIDI, 音符, 力度, 事件]
 tags_en: [MIDI, note, velocity, event]
@@ -17,11 +17,13 @@ links:
 instances:
   - musicnet-000265 | 钢琴四重奏，7702 条 Note Off 全写成力度 0 的 Note On
   - musicnet-000073 | 钢琴奏鸣曲，6615 条 Note Off 全用 0x80 写成，可与上一条对照
-  - groove-000000 | 放克鼓循环，闭镲 42 键重复 101 次，靠 Note Off 切出长短
+  - groove-000000 | 放克鼓循环，闭镲 42 键重复 101 次；其实际止音行为须结合接收音源检查
 sources:
+  - https://docs.oracle.com/en/java/javase/26/docs/api/java.desktop/javax/sound/midi/MidiChannel.html
+  - https://midi.org/about-midi-part-3midi-messages
   - MIDI 1.0 规范对 Note On 与 Note Off 的定义，参考 MMA 公开规范。
   - 力度 0 的旧约定与重叠音处理；音序器文档是主要依据。
-updated: 2026-10-28
+updated: 2026-11-03
 ---
 
 ::: zh
@@ -37,7 +39,7 @@ Note On 用 0x9n 加键号与力度，Note Off 用 0x8n。力度为 0 的 Note O
 
 ## 参数与做法
 
-钢琴长音用 CC64 延音，不要靠拉长 Note Off。鼓通常忽略 Note Off，一次触发就放完整采样。写断奏时把结束提前，而不是把力度压低。
+先区分按键时长与踏板：音符结束位置表示何时松键，CC64 另行表示延音踏板，两者不能互相替代。鼓是否响应 Note Off 取决于音源的单次触发、门控及止音组设置；不要把鼓的音符长度当作通用尾音控制。重复同音和踏板释放都应在目标音源上复核。
 
 ## 听什么
 
@@ -45,7 +47,7 @@ Note On 用 0x9n 加键号与力度，Note Off 用 0x8n。力度为 0 的 Note O
 
 ## 常见误解
 
-Note Off 的释放力度不是音量。不是所有音源都接受力度 0 的写法。音符长度也不等于响度。
+Note Off 的释放力度不是音量。在 MIDI 1.0 中，力度为 0 的 Note On 是规定的关音写法；若目标设备处理异常，应检查实现或事件路由。音符长度也不等于响度。
 
 ```audiolab
 {"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C4","C4","E4","G4"],"label":"重复音怎样收尾","label_en":"How a repeated note ends","hint":"听第二个 C4 进来时，前一个音是否被干净地关掉","hint_en":"When the second C4 arrives, hear whether the first one was closed cleanly"}
@@ -65,7 +67,7 @@ Note On uses 0x9n with key and velocity, Note Off uses 0x8n. A Note On with velo
 
 ## Settings and practice
 
-Hold piano notes with CC64 rather than a stretched Note Off. Drums usually ignore Note Off and play the whole sample after a trigger. For staccato, move the end earlier instead of lowering velocity.
+Distinguish key duration from the sustain pedal: note endings represent key release, while CC64 carries pedal state. Neither substitutes for the other. Drum response to Note Off depends on one-shot, gated and choke-group behavior in the receiving instrument. Check repeated pitches and pedal release on the target sound source.
 
 ## What to listen for
 
@@ -73,7 +75,7 @@ Staccato and legato differ at the moment of release, and twenty milliseconds cha
 
 ## Common misunderstandings
 
-Release velocity is not volume. Not every instrument accepts velocity 0 as Note Off. Note length is not loudness.
+Release velocity is not volume. In MIDI 1.0, a zero-velocity Note On is a defined note-ending form; unexpected behavior calls for checking the receiver or routing. Note length is not loudness.
 
 ```audiolab
 {"type": "instrument", "gm": "Acoustic Grand Piano", "synth": "struck", "phrase": ["C4", "C4", "E4", "G4"], "label": "How a repeated note ends", "label_en": "How a repeated note ends", "hint": "听第二个 C4 进来时，前一个音是否被干净地关掉", "hint_en": "When the second C4 arrives, hear whether the first one was closed cleanly"}

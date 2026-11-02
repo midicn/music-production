@@ -19,9 +19,12 @@ instances:
   - oga-000327 | 14 个通道共 5848 条弯音，主音与节奏吉他各占一条通道
   - oga-000003 | 176 条弯音有 173 条在第 1 通道，150 个音一起承受
 sources:
+  - https://www.steinberg.help/r/halion/7.5/en/halion/topics/midi_editing_and_controllers/mpe_editor_r.html
+  - https://midi.org/mpe-midi-polyphonic-expression
+  - https://cdn-resources.ableton.com/resources/pdfs/push-manual/3/2024-11-05/push3-manual-en.pdf
   - MPE 规范对 Zone、主通道与成员通道的约定，对照 MMA 公开规范整理。
   - 每音弯音与 RPN 6 的配置方式（公开实现文档）。
-updated: 2026-10-28
+updated: 2026-11-03
 ---
 
 ::: zh
@@ -33,11 +36,11 @@ updated: 2026-10-28
 
 ## 协议或消息
 
-MPE 用一音一通道。一个 Zone 分为主通道与成员通道，主通道发全局设置，成员通道各管一个音。默认弯音范围是 48 个半音，CC74 管音色，通道压力管力度。RPN 6 用来声明 Zone 的范围。上行与下行 Zone 可以分居两端，互不干扰。
+MPE 用一音一通道。一个 Zone 分为主通道与成员通道，主通道发全局设置，成员通道各管一个音。成员通道常用的默认弯音范围为 ±48 半音；主通道的弯音范围可能不同，须在发送端与接收端分别核对，CC74 传递音色维度，通道压力传递持续压力；它们如何影响滤波、音量等参数，由音色的调制映射决定。RPN 6 用来声明 Zone 的范围。上行与下行 Zone 可以分居两端，互不干扰。
 
 ## 参数与做法
 
-控制器与音源都要开 MPE 模式，否则弯音范围对不上。每音的表情要画在对应通道上。和弦密集时注意成员通道数量，16 个通道很快用完。录完检查通道分配，别把两个音叠进同一条。
+控制器与音源都要开 MPE 模式，否则弯音范围对不上。每音的表情要画在对应通道上。成员通道数决定可独立控制的表情数量，不能直接等同于音源的总复音数。某些实现会在通道紧张时复用成员通道，此时共用通道的音会共用相关表情。录完保留原有通道与控制器数据，避免普通“合并通道”操作破坏每音表情。
 
 ## 听什么
 
@@ -61,11 +64,11 @@ A string quartet, a bent guitar note and a synth solo all need expression per no
 
 ## Protocol or message
 
-MPE uses one channel per note. A zone has a master channel for global settings and member channels for individual notes. The default bend range is 48 semitones, CC74 carries timbre and channel pressure carries force. RPN 6 declares the zone. Lower and upper zones can sit at opposite ends without interfering.
+MPE uses one channel per note. A zone has a master channel for global settings and member channels for individual notes. A common default for member-channel bend is ±48 semitones; check master/manager and member ranges separately on both devices, CC74 carries the timbre dimension and channel pressure carries continuous pressure; the patch determines their audible modulation targets. RPN 6 declares the zone. Lower and upper zones can sit at opposite ends without interfering.
 
 ## Settings and practice
 
-Enable MPE on both the controller and the sound source, or the bend ranges will disagree. Draw per-note expression on the matching channel. Watch the member count, because sixteen channels vanish fast. Check the channel map after recording so two notes never share a channel.
+Enable MPE on both the controller and the sound source, or the bend ranges will disagree. Draw per-note expression on the matching channel. Member count limits independent expression, not necessarily the instrument’s total polyphony. Some implementations reuse member channels under pressure, making notes on that channel share expression. Preserve channel assignments and controller data; a generic merge-channels operation can destroy per-note control.
 
 ## What to listen for
 

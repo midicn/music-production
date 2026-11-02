@@ -31,7 +31,7 @@ MIDI 谱例可帮助辨认音符、节奏、声部和控制消息，不能直接
 
 从[做音乐](https://home.midicn.com/make/)按写作、录音、混音或交付目标进入；本站首页也提供分类与主题路径。遇到术语可查[音乐词典](https://gloss.midicn.com/)。
 
-发现错误，请到[项目反馈页](https://github.com/midicn/home/issues)注明页面、原句、设备或版本以及可核验依据。
+发现错误，请到[项目反馈页](https://github.com/midicn/midi-library/issues)注明页面、原句、设备或版本以及可核验依据。
 :::
 
 ::: en
@@ -49,5 +49,5 @@ Settings are examples of a method, not universal presets for every device and so
 
 Use [Create music](https://home.midicn.com/en/make/) to enter by writing, recording, mixing or delivery, or follow this site's categories and topic paths. Check unfamiliar terms in the [glossary](https://gloss.midicn.com/en/).
 
-Report a page, disputed wording, device or version and supporting evidence through the [project issue page](https://github.com/midicn/home/issues).
+Report a page, disputed wording, device or version and supporting evidence through the [project issue page](https://github.com/midicn/midi-library/issues).
 :::

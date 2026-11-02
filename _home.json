@@ -5,12 +5,12 @@
       "en": "Audio and Music Production"
     },
     "title": {
-      "zh": "把声音做出来，也把活干完",
-      "en": "Make the sound, then finish the job"
+      "zh": "录音、编曲与混音",
+      "en": "Recording, arranging and mixing"
     },
     "lead": {
-      "zh": "从声学、录音、混音到 MIDI 与交付：按“你现在卡在哪”来读，而不是按设备清单。每条都带可听的例子和能上手的步骤。",
-      "en": "From acoustics and recording to mixing, MIDI and delivery — organised by where you are stuck, not by gear lists. Every entry pairs listening examples with steps you can use."
+      "zh": "查制作原理、工程操作与交付方法；音频处理的比较需要同源素材和受控设置。",
+      "en": "Find principles, session techniques and delivery methods. Audio-processing comparisons require controlled settings and the same source."
     }
   },
   "needs_title": {

@@ -15,13 +15,15 @@ links:
   - "[[glossary:latency]]"
   - "[[glossary:monitoring]]"
 instances:
-  - groove-000010 | 放克鼓循环踩镲连续，块太大时实时跟打会粘（C1）
-  - giantmidi-001994 | 阿尔坎练习曲音符极密，缓冲拉大后连奏颗粒容易糊成一片（C1）
-  - thesession-000040 | 吉格舞曲三拍连缀不断，块太大时装饰音挤在一起（C1）
+  - groove-000010 | 鼓点时序参照；预先播放不测量实时输入延迟（C1） | Drum-event timing reference; scheduled playback does not measure live-input latency (C1)
+  - giantmidi-001994 | 密集钢琴音型参照；缓冲大小不会自动改变文件内的连奏（C1） | Dense piano figures; buffer size does not automatically alter the file’s legato (C1)
+  - thesession-000040 | 吉格舞曲的拍点与装饰音参照，不是不同缓冲设置的处理结果（C1） | Jig beats and ornaments, not renders using different buffer settings (C1)
 sources:
+  - "https://help.ableton.com/hc/en-us/articles/209070329-How-to-avoid-crackles-and-audio-dropouts"
+  - "https://help.ableton.com/hc/en-us/articles/360010545559-How-Latency-Works"
   - 块大小与欠载的关系；音频接口与宿主公开文档是主要依据。
   - Pohlmann, Principles of Digital Audio, real-time processing sections.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -31,18 +33,18 @@ updated: 2026-10-28
 
 ## 原理
 
-缓冲时间等于块大小除以采样率。48 kHz 下 64 个样点约 1.3 毫秒，1024 个样点约 21.3 毫秒。CPU 必须在下一块到来前算完，否则欠载，出现咔嗒或静音。插件越多、越吃算力，能稳定运行的最小块就越大。
+单个缓冲块的时长等于样点数除以采样率。48 kHz 下，64 样点约为 1.33 ms，1024 样点约为 21.33 ms；这不是整条监听链路的总延迟。输入与输出缓冲、转换器、驱动和带前瞻的插件还会增加时间。实时处理来不及交付下一块数据时，可能出现爆音或中断。
 
 ## 参数与做法
 
-录音用 64 到 128，混音用 256 到 512，母带与离线渲染用 1024。重插件先冻结或渲染。实时演奏时减小块，导出时加大。出现爆音先看 CPU 占用与驱动，不要一味加大缓冲。换工程后重测最小稳定值。
+从接口支持的较小块开始，边演奏边观察是否稳定，再逐档增大。64–128 样点可作为录音时的试验起点，不是所有电脑都能稳定使用；混音不需实时跟手时可放宽。冻结重插件、检查驱动和后台负载，往往比一直改数值更有效。离线导出不必服从声卡的实时缓冲设置，取决于 DAW 的渲染实现。
 
 ## 听什么
 
-在放克鼓循环里听踩镲的连续击打，在阿尔坎练习曲里听快速音型的颗粒，在吉格舞曲里听三拍连缀。块太大时实时跟打会粘连，块太小时出现周期性咔嗒，间隔正好等于缓冲时间。
+用实际键盘或录音输入测试跟手程度，单纯播放已经排好的 MIDI 不能说明演奏延迟。再用同一工程逐档改变缓冲，记录爆音次数和 DAW 报告的总延迟。爆音通常与调度、驱动或瞬时负载有关，不保证以一个缓冲块的周期出现。
 
 ```audiolab
-{"type":"rhythm","sig":"4/4","pattern":"s s s s s s s s s s s s s s s s","bpm":120,"label":"连续的短击","label_en":"A run of short hits","hint":"先听它是否均匀，再想缓冲加大后哪里会粘","hint_en":"Hear whether it stays even, then imagine where a larger block would smear it"}
+{"type":"rhythm","sig":"4/4","pattern":"s s s s s s s s s s s s s s s s","bpm":120,"label":"连续短击","label_en":"Repeated short attacks","hint":"听短击的节奏关系。这里没有改变音频接口缓冲；缓冲延迟要用实际演奏输入与返回声音测量。","hint_en":"Listen to attack timing. This block does not change the audio-interface buffer; measure buffer latency using live input and returned sound."}
 ```
 
 ## 常见误解
@@ -57,18 +59,18 @@ An interface works in blocks, processing only when one fills. A large block save
 
 ## How it works
 
-Buffer time is block size divided by sample rate. At 48 kHz, 64 samples last about 1.3 ms and 1024 samples about 21.3 ms. The CPU must finish each block before the next arrives, or it underruns into clicks or silence. More and heavier plug-ins raise the smallest stable block.
+One buffer lasts its sample count divided by sample rate: about 1.33 ms for 64 samples at 48 kHz, or 21.33 ms for 1024. That is not the total monitoring delay. Input and output buffers, converters, drivers and look-ahead plug-ins add time. Missing a real-time processing deadline can cause clicks or dropouts.
 
 ## Settings and practice
 
-Use 64 to 128 samples for tracking, 256 to 512 for mixing, and 1024 for mastering or offline rendering. Freeze or render heavy plug-ins. Shrink the block when playing and enlarge it when exporting. If clicks appear, check CPU and drivers before raising the buffer.
+Start with a small supported block, play through the session, and increase it if stability suffers. A 64–128-sample tracking buffer is a trial starting point, not a guarantee for every computer. Mixing can tolerate more delay. Freeze heavy plug-ins and check drivers and background load. Offline rendering may use a different processing scheme and need not follow the interface's real-time buffer setting.
 
 ## What to listen for
 
-In a funk loop, hear the hi-hat. In Alkan etudes, hear the grain of fast figures. In a jig, hear the three-beat run. Too large a block smears live playing; too small a block clicks at intervals equal to the buffer time.
+Test responsiveness with a keyboard or live recording input; playing a pre-sequenced MIDI file does not measure playing latency. Change the buffer one step at a time in the same session and record dropout count and reported overall latency. Dropouts can depend on scheduling, drivers and load spikes; their spacing need not equal one buffer period.
 
 ```audiolab
-{"type": "rhythm", "sig": "4/4", "pattern": "s s s s s s s s s s s s s s s s", "bpm": 120, "label": "A run of short hits", "label_en": "A run of short hits", "hint": "先听它是否均匀，再想缓冲加大后哪里会粘", "hint_en": "Hear whether it stays even, then imagine where a larger block would smear it"}
+{"type":"rhythm","sig":"4/4","pattern":"s s s s s s s s s s s s s s s s","bpm":120,"label":"Repeated short attacks","label_en":"Repeated short attacks","hint":"Listen to attack timing. This block does not change the audio-interface buffer; measure buffer latency using live input and returned sound.","hint_en":"Listen to attack timing. This block does not change the audio-interface buffer; measure buffer latency using live input and returned sound."}
 ```
 
 ## Common misconceptions

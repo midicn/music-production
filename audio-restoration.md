@@ -15,13 +15,14 @@ links:
   - "[[glossary:bit-depth]]"
   - "[[glossary:timbre]]"
 instances:
-  - cyberhymnal-000003 | 早期赞美诗的管风琴录音，本底噪声与机械声混在长音里（C1）
-  - thesession-022200 | 爱尔兰传统曲调，弓弦摩擦与呼吸声在降噪过度后会变成水声（C1）
-  - atepp-001111 | 肖邦早期录音转制，钢琴的踏板噪声与磁带嘶声需要分别处理（C1）
+  - cyberhymnal-000003 | 管风琴MIDI声部，不包含原录音本底或机械声（C1） | Organ MIDI parts without original recording noise or mechanical sounds (C1)
+  - thesession-022200 | 传统曲调的音符参照，不记录弓弦摩擦或呼吸（C1） | Traditional-tune notes without recorded bow friction or breathing (C1)
+  - atepp-001111 | 钢琴演奏的音符数据，不包含磁带嘶声或踏板机械噪声（C1） | Piano-performance note data without tape hiss or pedal mechanism noise (C1)
 sources:
+  - "https://www.izotope.com/community/blog/audio-artifacts"
   - 谱减法与频域降噪的原理，参考音频修复公开资料。
   - 去嗡与去咔嗒的处理顺序；录音修复惯例是主要依据。
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -31,18 +32,18 @@ updated: 2026-10-28
 
 ## 原因
 
-降噪常用频域谱减法：估计噪声的频谱，从信号里减掉。噪声估计越准，残留越少；估计不准就会连音乐一起减，留下金属味的伪影。去嗡针对 50 或 60 Hz 的电源谐波，用窄带陷波逐个削掉。去咔嗒靠检测瞬态并插值填补。去齿音与去呼吸是另外两类问题，处理顺序错了会把问题放大。所有修复都是在信息丢失与噪声残留之间做交换。
+修复方法因问题而异：去嗡可跟踪窄带基频与谐波，去点击可检测局部异常并插值，宽带降噪可利用噪声统计或学习模型，频谱修复可按时间频率选区处理。不是所有算法都简单地从原频谱减掉一份噪声。原始信息与噪声严重重叠时，处理通常存在残留和误伤的取舍。
 
 ## 怎么绕过去
 
-先清洗再降噪，先处理明显事件再处理本底。噪声采样要选纯噪声段。降噪量从小往大试，找到伪影刚出现的临界点再退一步。低频嗡声用陷波，别用宽带降噪。咔嗒用短窗修复，别把整段一起抹。修复后与原版 A/B，确认瞬态还在。存档时保留未修复版本，修复版另存。
+保留原始文件，选一个代表性片段设参数。先处理会干扰后续分析的明显事件是否更合适，要实际比较；没有适用于所有录音的固定顺序。需要噪声样本的工具应选真实底噪，不要把弱音当噪声。每一步都匹配电平做旁通，并监听差分信号，检查是否移除了有用声音。
 
 ## 听这几处
 
-在赞美诗管风琴的长音里听噪声是否退到背景而音色未变闷，在传统曲调的弓弦上听摩擦声处理后是否变成水声，在早期钢琴录音里听踏板噪声是否被误当成音乐成分。好的修复让人忘记噪声存在，而不是让人注意到修复痕迹。
+用实际录音中的一段持续音、一处瞬态和一段停顿分别检查：噪声是否下降，原音的起落是否保留，是否新增颤动、金属声或断裂。既检查独奏片段，也回到完整节目判断修复是否分散注意力。
 
 ```audiolab
-{"type":"instrument","gm":"Violin","synth":"bowed","phrase":["G4","B4","D5","G5","D5","B4","G4","D4"],"label":"弓弦与噪声的边界","label_en":"Where bow meets noise","hint":"弓毛摩擦与琴身噪声频谱接近，降噪过度时这里最先变水","hint_en":"Bow noise sits close to the string spectrum, so over-cleaning turns it watery here"}
+{"type":"instrument","gm":"Violin","synth":"bowed","phrase":["G4","B4","D5","G5","D5","B4","G4","D4"],"label":"弦乐音色参照","label_en":"String-timbre reference","hint":"本段只播放合成音色，不含可去除的录音底噪。请用实际带噪音频检查修复后音乐细节是否保留。","hint_en":"This block plays synthesis without recorded background noise to remove. Check detail retention with actual noisy audio."}
 ```
 :::
 
@@ -53,17 +54,17 @@ Old recordings carry hiss, hum, clicks and room noise. Restoration does not aim 
 
 ## The reason
 
-Noise reduction usually works by spectral subtraction: estimate the noise spectrum and subtract it from the signal. A good estimate leaves little residue; a poor one removes music along with noise and leaves metallic artefacts. Hum removal targets the 50 or 60 Hz mains harmonics with narrow notches. Click repair detects transients and interpolates over them. De-essing and breath removal are different problems, and handling them in the wrong order makes things worse. Every restoration move trades lost information against remaining noise.
+Restoration methods differ: de-hum may track narrow fundamentals and harmonics, de-click may detect local anomalies and interpolate, denoising may use noise statistics or learned models, and spectral repair can target time-frequency regions. Not every algorithm subtracts one noise spectrum. When unwanted and wanted material overlap strongly, residual noise and damage require a trade-off.
 
 ## How to get around it
 
-Clean obvious events before reducing the noise floor. Sample noise from a genuinely silent stretch. Increase reduction gradually and back off one step from where artefacts appear. Notch low hum rather than treating it with broadband reduction. Repair clicks with short windows instead of smearing a whole passage. A/B against the original to confirm transients survive. Archive the untreated file and save the restored version separately.
+Preserve the original and set parameters on a representative excerpt. Test whether obvious events should be removed before later analysis; no single order suits all recordings. Where a noise sample is required, use genuine background rather than quiet wanted sound. Match levels for bypass comparisons and listen to the removed signal for lost content.
 
 ## Listen to these
 
-On the organ's long notes, whether noise recedes without dulling the tone; on the fiddle bow, whether friction turns watery after processing; on the early piano transfer, whether pedal noise is mistaken for music. Good restoration makes you forget the noise; bad restoration makes you notice the repair.
+Check a sustained sound, a transient and a pause in the actual recording: has noise fallen, does the wanted envelope remain, and are there new modulation, metallic or discontinuity artifacts? Inspect excerpts and the complete programme to judge whether the repair distracts.
 
 ```audiolab
-{"type":"instrument","gm":"Violin","synth":"bowed","phrase":["G4","B4","D5","G5","D5","B4","G4","D4"],"label":"Where bow meets noise","label_en":"Where bow meets noise","hint":"Bow noise sits close to the string spectrum, so over-cleaning turns it watery here","hint_en":"Bow noise sits close to the string spectrum, so over-cleaning turns it watery here"}
+{"type":"instrument","gm":"Violin","synth":"bowed","phrase":["G4","B4","D5","G5","D5","B4","G4","D4"],"label":"String-timbre reference","label_en":"String-timbre reference","hint":"This block plays synthesis without recorded background noise to remove. Check detail retention with actual noisy audio.","hint_en":"This block plays synthesis without recorded background noise to remove. Check detail retention with actual noisy audio."}
 ```
 :::

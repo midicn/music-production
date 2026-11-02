@@ -15,13 +15,13 @@ links:
   - "[[glossary:reverb]]"
   - "[[glossary:automation]]"
 instances:
-  - oga-000002 | 游戏配乐的合成器短句音头清楚，乒乓回声的换边最容易追踪
-  - oga-000011 | 头目段落的织体重复性强，反馈量增加时尾迹堆积听得清
-  - mutopia-001411 | 钢琴分解和弦间隔均匀，附点八分延迟与拍点是否打架一听便知
+  - oga-000002 | 短乐句的音符素材，尚未施加乒乓延迟 | Short-phrase notes without ping-pong delay processing
+  - oga-000011 | 重复织体参照，可另送延迟器检查反馈叠加 | Repeated texture that can be separately sent to a delay to check feedback
+  - mutopia-001411 | 分解和弦的节拍参照，未添加附点八分回声 | Arpeggiated beat reference without added dotted-eighth echoes
 sources:
   - Udo Zölzer, DAFX.
   - Sound On Sound, delay effects explained.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -35,14 +35,14 @@ updated: 2026-10-28
 
 ## 旋钮与耳朵
 
-附点八分是常见选择，反馈 25–40% 已够形成尾迹；环路高通放在 200–400 Hz，低通放在 4–8 kHz，回声就不会糊住低频。乒乓很宽，但正中央的干声仍要留住，否则声像会空。
+四分音符延迟时间为 60000/BPM 毫秒；120 BPM 时是 500 ms，八分音符为 250 ms，附点八分为 375 ms。先用低反馈听清第一遍重复，再增加回声数量，避免强回声盖住下一句。把处理后信号折成单声道，检查左右延迟叠加后是否变空或过响。
 
 ## 耳朵要抓的点
 
 放一段吉他短句，先听单声道回声与干声挤在中间，再切到乒乓，重复会从左跳到右。反馈加到 60% 以上，重复会堆成一片。
 
 ```audiolab
-{"type":"instrument","gm":"Lead 2 (sawtooth)","synth":"bowed","phrase":["A4","C5","E5","A5"],"label":"合成器短句","label_en":"Synth phrase","hint":"先听干声，再想象回声在左右换边","hint_en":"Hear it dry, then imagine repeats changing sides"}
+{"type":"instrument","gm":"Lead 2 (sawtooth)","synth":"bowed","phrase":["A4","C5","E5","A5"],"label":"合成器短句","label_en":"Synthesizer phrase","hint":"注意短句之间留下的空隙。播放器没有乒乓延迟控件；可另将同一音频送入延迟器，检查回声是否占用这些空隙。","hint_en":"Notice gaps between phrases. There is no ping-pong delay control here; send the same audio to a delay separately and check where repeats fall."}
 ```
 
 ## 容易弄错的
@@ -61,14 +61,14 @@ Mono uses one delay line, so repeats sit in the middle and compete with the lead
 
 ## Knobs and ears
 
-A dotted eighth is a common choice, with 25 to 40 percent feedback enough for a tail. A high-pass at 200 to 400 Hz and a low-pass at 4 to 8 kHz keep repeats out of the low end. Ping-pong is wide, but the dry signal must stay centred or the image empties out.
+A quarter-note delay lasts 60000/BPM milliseconds: at 120 BPM this is 500 ms, with an eighth at 250 ms and a dotted eighth at 375 ms. Begin with low feedback to hear the first repeat clearly, then add repeats without masking the next phrase. Fold the result to mono and check for cancellation or excessive level.
 
 ## What the ear should catch
 
 Play a short guitar phrase, first with mono repeats crowding the centre, then switch to ping-pong and hear them jump left and right. Push feedback past 60 percent and the repeats pile into a wash.
 
 ```audiolab
-{"type": "instrument", "gm": "Lead 2 (sawtooth)", "synth": "bowed", "phrase": ["A4", "C5", "E5", "A5"], "label": "Synth phrase", "label_en": "Synth phrase", "hint": "先听干声，再想象回声在左右换边", "hint_en": "Hear it dry, then imagine repeats changing sides"}
+{"type":"instrument","gm":"Lead 2 (sawtooth)","synth":"bowed","phrase":["A4","C5","E5","A5"],"label":"Synthesizer phrase","label_en":"Synthesizer phrase","hint":"Notice gaps between phrases. There is no ping-pong delay control here; send the same audio to a delay separately and check where repeats fall.","hint_en":"Notice gaps between phrases. There is no ping-pong delay control here; send the same audio to a delay separately and check where repeats fall."}
 ```
 
 ## Easy to get wrong

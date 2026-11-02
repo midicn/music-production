@@ -15,13 +15,14 @@ links:
   - "[[glossary:bit-depth]]"
   - "[[glossary:latency]]"
 instances:
-  - groove-000000 | 138 BPM 放克鼓组，镲片与军鼓边击的高频最先暴露重采样留下的毛刺（C1）
-  - atepp-001115 | 肖邦第一叙事曲，钢琴泛音密集，转换后尾音的颗粒与空气感会变（C1）
-  - cyberhymnal-008729 | 管风琴赞美诗，低频与长混响检验重采样是否引入振铃（C1）
+  - groove-000000 | 鼓组音符素材，可另渲染为受控重采样实验的源音频（C1） | Drum notes that can be separately rendered as source audio for a controlled resampling test (C1)
+  - atepp-001115 | 钢琴音符与衰减素材，不包含转换前后的音频版本（C1） | Piano notes and decays without before-and-after resampling files (C1)
+  - cyberhymnal-008729 | 持续和声的 MIDI 参照，不能验证转换器的振铃（C1） | Sustained-harmony MIDI reference that does not test converter ringing (C1)
 sources:
+  - "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.resample_poly.html"
   - 采样定理与重建滤波的表述，参考数字音频惯例教材。
   - 常见采样率之间的整数与非整数比关系；公开技术资料是主要依据。
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -31,7 +32,7 @@ updated: 2026-10-28
 
 ## 为什么会这样
 
-重采样先在原采样率上插值出连续波形，再按新采样率重新取点。理想插值需要无限长的 sinc 核，实际用有限长度的滤波器近似，长度与滚降决定质量。降采样前必须先低通，把超过新奈奎斯特频率的成分滤掉，否则它们折回可听频段变成混叠。44.1 与 48 的比值是 147 比 160，属非整数比，需要更长的滤波器；48 与 96 是整数比，处理简单得多。实时转换为了低延迟会缩短滤波器，离线转换可以慢慢算。
+数字重采样可看作插值、低通滤波与重新取样，不必先真实转换成连续模拟波形。以 44.1 转 48 kHz 为例，比例可约成 160/147，实际实现常用多相滤波避免计算后来会丢掉的样点。滤波器的通带、阻带衰减、相位响应和计算预算共同影响结果；不能只凭转换比例是否为整数判断音质。降采样需要限制新奈奎斯特频率以上的能量，避免混叠。
 
 ## 怎么绕过去
 
@@ -39,10 +40,10 @@ updated: 2026-10-28
 
 ## 听这几处
 
-在放克鼓组的镲片上听高频是否发毛，在钢琴叙事曲的尾音上听泛音是否变薄，在管风琴长音上听低频是否有嗡鸣。转换质量差时，声音不会明显变糟，只会变得不那么干净。
+从同一条高采样率录音导出两个目标采样率相同、转换质量设置不同的版本，关闭其他处理并匹配电平。用盲听与频谱检查寻找差别；没有听出差别也是有效结果。这里的 MIDI 与合成器演示不是重采样处理前后对照，不能拿它证明某个转换器改变了泛音、低频或瞬态。
 
 ```audiolab
-{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C6","E6","G6","C7","G6","E6","C6","G5"],"label":"高把位泛音","label_en":"High-register overtones","hint":"最高几个音的能量集中在高频，重采样滤波不当时这里最先失去光泽","hint_en":"The top notes live in the high band, where a poor resampling filter dulls first"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C6","E6","G6","C7","G6","E6","C6","G5"],"label":"高音区旋律","label_en":"High-register phrase","hint":"这段只提供高音区的音符素材，不切换重采样算法。要验证转换，须从同一音频制作已知设置的渲染版本。","hint_en":"This supplies high-register notes, not switchable resampling algorithms. Test conversion using known-setting renders of the same audio."}
 ```
 :::
 
@@ -53,7 +54,7 @@ Material arrives at 44.1 kHz from records, 48 kHz from video projects and 96 kHz
 
 ## Why it happens
 
-Resampling interpolates a continuous waveform at the old rate, then samples it again at the new one. Ideal interpolation needs an infinitely long sinc kernel; real converters approximate it with finite filters whose length and roll-off set the quality. Before downsampling, everything above the new Nyquist frequency must be filtered out, or it folds back into the audible band as aliasing. The ratio between 44.1 and 48 is 147 to 160, a non-integer, so the filter must be longer; 48 to 96 is an integer ratio and much simpler. Real-time conversion shortens filters to keep latency low, while offline conversion can take its time.
+Digital resampling can be understood as interpolation, low-pass filtering and sampling on a new grid; it need not construct an analogue waveform. For 44.1 to 48 kHz, the ratio reduces to 160/147. Polyphase implementations avoid calculating samples that would later be discarded. Passband, stopband attenuation, phase response and computation budget all matter; an integer ratio alone does not establish better sound. Downsampling must limit energy above the new Nyquist frequency to prevent aliasing.
 
 ## How to get around it
 
@@ -61,9 +62,9 @@ Keep one sample rate per project and convert as few times as possible. For pictu
 
 ## Listen to these
 
-On the funk kit, listen for grit on the cymbals; on the Chopin ballade, for thinning overtones in the tail; on the organ hymn, for hum in the low pedal. Bad conversion rarely sounds obviously broken, it just sounds less clean.
+Export one high-rate recording twice to the same target rate using different converter quality settings, with other processing off and levels matched. Use blinded listening and spectrum inspection; finding no audible difference is a valid result. The MIDI and synthesizer examples here are not before/after resampling renders and cannot demonstrate a converter's effect on harmonics, bass or transients.
 
 ```audiolab
-{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C6","E6","G6","C7","G6","E6","C6","G5"],"label":"High-register overtones","label_en":"High-register overtones","hint":"The top notes live in the high band, where a poor resampling filter dulls first","hint_en":"The top notes live in the high band, where a poor resampling filter dulls first"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C6","E6","G6","C7","G6","E6","C6","G5"],"label":"High-register phrase","label_en":"High-register phrase","hint":"This supplies high-register notes, not switchable resampling algorithms. Test conversion using known-setting renders of the same audio.","hint_en":"This supplies high-register notes, not switchable resampling algorithms. Test conversion using known-setting renders of the same audio."}
 ```
 :::

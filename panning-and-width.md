@@ -4,8 +4,8 @@ site: prod
 cat: A6
 title: 声像与宽度
 title_en: Panning and Stereo Width
-summary: 宽度来自声部差异与稳定的中心，而不是把乐器推到两边。
-summary_en: Width comes from differences between parts and a steady centre, not from hard panning.
+summary: 用声像、左右差异和中心层次安排宽度，同时检查单声道兼容性。
+summary_en: Arrange width through panning, left/right differences and centre balance, while checking mono compatibility.
 level: standard
 tags: [混音, 声像, 宽度, 单声道]
 tags_en: [mixing, panning, width, mono]
@@ -16,34 +16,34 @@ links:
   - "[[instrument:drum-kit]]"
   - "[[period:classical]]"
 instances:
-  - oga-000004 | 管弦与打击分层明显，声像铺开后各层位置可辨
-  - pdmx-000087 | 钢琴织体宽，左右拉得太开会与低音争夺中心
-  - openscore-000018 | 声乐线加钢琴，主奏必须留在中心
+  - oga-000004 | 可在 DAW 将管弦与打击分组，比较居中与左右声像布局 | Group orchestral and percussion parts in a DAW to compare centred and left/right layouts
+  - pdmx-000087 | 可渲染后调整钢琴声像与宽度，比较单声道求和及低音定位 | Render and adjust piano position and width, checking mono summation and bass location
+  - openscore-000018 | 可尝试人声居中、钢琴不同宽度的布局，按作品意图决定位置 | Try a centred vocal with different piano widths, choosing positions for the piece
 sources:
   - David Gibson, The Art of Mixing, stereo field chapter.
   - Huber and Runstein, Modern Recording Techniques, panning and monitoring.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 问题
 
-声像不是把乐器随便分到左右。宽度来自声部之间的差异，也来自中心是否稳。中心一塌，再宽也像纸片。宽度是结果，不是起点。
+声像主要描述声音在左右的位置，宽度描述它占据的横向范围。单声道乐器可被放在一侧而仍很窄；左右存在不同演奏、音色或反射时，整体可能变宽。先确定主线位置，再安排其他声部与它的关系。
 
 ## 目标与判断
 
-低频与主唱留在中心；中频声部错开；高频装饰可以更靠边。判断时先单声道听，中心不塌再展宽。若一条轨推到极左后，另一边出现空洞，说明编曲缺对位，而不是声像没拉开。
+先确定主线与低频的稳定位置，再安排其他声部。底鼓、贝斯和主唱居中是常见做法，不是所有编制的硬规则。某一侧留白可能是有意设计，也可能需要调整电平或配器，不能仅由“有空洞”断言缺少对位。
 
 ## 做法
 
-先摆骨架，底鼓、贝斯与主唱在中心；军鼓稍偏或居中；和弦与打击乐按两成到六成的幅度错开；立体声采样保持原位。用哈斯延迟或双轨展宽时，先检查单声道折叠是否变薄。声像自动化只在段落变化时用。每推一步都回到中心听一次，避免越拉越远。
+一次移动一条声部，检查与主线的关系并补偿平移律造成的电平差。真实双轨、立体声音源和延迟复制产生的宽度不同；用短延迟展宽时要听单声道求和与定位是否漂移。自动化按段落目标设置，不必限定只在某一位置或固定百分比移动。
 
 ## 听什么
 
 听左右切换时主唱是否移动；听极左极右是否有孤立元素；按单声道，听军鼓与和弦是否互相抵消。
 
 ```audiolab
-{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","G4","E4","G4"],"label":"弦乐铺开","label_en":"String spread","hint":"先听中心，再把声部向两侧展开","hint_en":"Hear the centre first, then spread the parts outward"}
+{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","G4","E4","G4"],"label":"声像练习的弦乐短句","label_en":"A string phrase for panning practice","hint":"先在 DAW 录下短句，再用声像控制比较居中与偏侧；匹配增益，避免把变响误认为变宽。","hint_en":"Record the phrase in a DAW, then compare centre and side positions with pan controls. Match gain so a level change is not mistaken for width."}
 ```
 
 ## 常见误解
@@ -54,22 +54,22 @@ updated: 2026-10-28
 ::: en
 ## The problem
 
-Panning is not distributing instruments left and right at random. Width comes from differences between parts, and from a centre that holds. If the centre collapses, more width only sounds thinner. Width is a result, not a starting point.
+Panning mainly describes left/right position; width describes the horizontal extent occupied. A mono instrument can sit to one side while remaining narrow. Different performances, timbres or reflections on the two sides can create width. Choose the main line’s position, then arrange other parts around that relationship.
 
 ## Goal and judgement
 
-Keep low end and lead vocal centred. Separate midrange parts. Let bright ornaments sit wider. Check in mono before widening. If a hard-left track leaves a hole on the right, the arrangement lacks a counterpart, not panning.
+Establish stable positions for the lead and bass before other parts. Centred kick, bass and vocal are common choices, not universal rules. Space on one side can be intentional or require level or arrangement changes; it does not by itself diagnose missing counterpoint.
 
 ## Method
 
-Place the skeleton first: kick, bass and lead in the centre, snare near centre or slightly off, chords and percussion spread between 20 and 60 percent, stereo samples left where they are. When using Haas delay or doubled takes, check the mono fold-down for thinning. Automate pan only when the section changes. Return to the centre after each move so the image does not drift.
+Move one part at a time and compensate level changes from the pan law while checking the lead. True double-tracking, stereo sources and delayed copies create different width. For short-delay widening, check mono summation and localisation. Automate for sectional goals rather than prescribed positions or percentages.
 
 ## What to listen for
 
 Whether the lead moves when you switch sides; whether hard-panned elements sound isolated; whether snare and chords cancel in mono.
 
 ```audiolab
-{"type": "instrument", "gm": "String Ensemble 1", "synth": "bowed", "phrase": ["C4", "G4", "E4", "G4"], "label": "String spread", "label_en": "String spread", "hint": "先听中心，再把声部向两侧展开", "hint_en": "Hear the centre first, then spread the parts outward"}
+{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","G4","E4","G4"],"label":"A string phrase for panning practice","label_en":"A string phrase for panning practice","hint":"Record the phrase in a DAW, then compare centre and side positions with pan controls. Match gain so a level change is not mistaken for width.","hint_en":"Record the phrase in a DAW, then compare centre and side positions with pan controls. Match gain so a level change is not mistaken for width."}
 ```
 
 ## Common misconceptions

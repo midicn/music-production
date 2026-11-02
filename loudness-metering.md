@@ -4,8 +4,8 @@ site: prod
 cat: B5
 title: 响度表
 title_en: Loudness Metering
-summary: 峰值表防削波，响度表管感受，LUFS 与真峰值各看一头。
-summary_en: Peak meters stop clipping and loudness meters track perception; LUFS and true peak each watch one end.
+summary: 采样峰值、真峰值与 LUFS 分别描述什么，怎样一起检查导出音频。
+summary_en: What sample peak, true peak and LUFS describe, and how to use them together when checking an export.
 level: standard
 tags: [响度, 峰值, LUFS, 真峰值]
 tags_en: [loudness, peak, LUFS, true peak]
@@ -15,55 +15,56 @@ links:
   - "[[glossary:headroom]]"
   - "[[glossary:meter]]"
 instances:
-  - groove-000003 | 80 BPM 灵魂乐鼓循环，底鼓的瞬态看峰值，整体厚度看响度（C1）
-  - atepp-001114 | 肖邦第一叙事曲现场录音，掌声与弱奏并存，响度表比峰值表更贴近听感（C1）
-  - cyberhymnal-000001 | 管风琴赞美诗，长音持续时响度平稳，容易掩盖峰值表看不到的过载风险（C1）
+  - groove-000003 | 鼓循环渲染后可同时观察采样峰值、真峰值与短时响度的变化 | Render the drum loop and observe sample peak, true peak and short-term loudness together
+  - atepp-001114 | 钢琴演奏数据可作动态素材；用固定音色渲染后测量，不含原现场掌声 | Piano performance data supplies dynamic material; measure a fixed-timbre render without claiming original audience applause
+  - cyberhymnal-000001 | 持续管风琴音可用于比较持续响度与峰值，但过载风险需在实际音频链测量 | Sustained organ can compare continuous loudness with peak level; measure overload in the actual audio path
 sources:
+  - "https://support.spotify.com/us/artists/article/loudness-normalization/"
   - ITU-R BS.1770 响度测量方法的用途，参考公开标准说明。
   - 真峰值与采样峰值之差；数字音频惯例是主要依据。
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 容易停住的地方
 
-一首歌响不响，和它的峰值高不高不是一回事。峰值表只告诉你有没有超过满刻度，响度表告诉你人耳觉得多响。母带、播客、流媒体交付都按响度定标准，所以两把尺子都得看。
+峰值表描述幅度上限，响度表按规定的加权、时间窗口和门限计算节目电平。它们是不同的测量工具，不能用一个数完全代表主观音量或制作质量。交付要求可能同时包含响度与真峰值限制。
 
 ## 原因
 
-峰值表读的是单个采样点或相邻样点间的最大幅度，单位 dBFS，超过 0 就削波。响度表先对信号做频率加权，模拟人耳对中频更敏感的特性，再在时间上做门限与积分，得到 LUFS。短期响度看三秒窗口，整体响度看整段，真峰值用插值估算采样点之间的实际峰值，能抓到采样峰值漏掉的过冲。流媒体平台会把过响的曲子往下压，压得越多，动态被削得越狠。
+采样峰值以dBFS记录样点幅度；真峰值以dBTP估算重建后样点之间可能出现的峰值。短时响度常用三秒窗口，整体响度对测量范围积分并应用相应门限。平台降低整曲回放增益通常不会再次压缩其内部动态；某些播放模式可能另加限制，须与单纯增益归一化区分。
 
 ## 怎么绕过去
 
-混音时盯峰值，留 3 到 6 dB 余量。母带时盯整体响度，按交付平台的目标定值，别一味追响。真峰值保持在负一 dBTP 以下，给有损编码留空间。用短期响度看段落之间的平衡，用整体响度看整首。比较两版时先对齐响度，否则更响的那版总显得更好。手机、电视、车载的回放响度差别很大，别只在一个环境里定标准。
+按交付规范设置测量范围，完整播放节目并记录整体响度、峰值和必要的动态指标。比较两版时先匹配响度，再听音色和段落关系；不要为了命中单一LUFS数值自动削平所有瞬态。输出余量按实际平台、格式与编码要求确定。
 
 ## 听这几处
 
-在灵魂乐鼓循环里听底鼓的冲击与整体厚度的关系，在叙事曲现场录音里听弱奏是否被掌声淹没，在管风琴长音里听持续段是否稳定。表上的数字只是参照，最终还是要用耳朵确认段落之间的起伏还在。
+把同一鼓循环或钢琴段落渲染为音频，同时看峰值与响度；再做一版只降低增益、一版改变压缩，比较它们怎样影响段落关系。持续管风琴音可帮助观察长音电平，但不能仅凭持续响度判断是否过载，仍需检查实际峰值与输出链。
 
 ```audiolab
-{"type":"rhythm","sig":"4/4","pattern":"e e e e e e e e","bpm":80,"label":"80 BPM 的稳定律动","label_en":"A steady 80 BPM pulse","hint":"每一拍的重音让响度表跳动，听重音与持续音之间的落差","hint_en":"Each accent makes the meter jump; hear the gap between accents and sustain"}
+{"type":"rhythm","sig":"4/4","pattern":"e e e e e e e e","bpm":80,"label":"响度测量的稳定节奏","label_en":"A steady rhythm for metering","hint":"把节奏录入 DAW，用峰值表与响度表同时观察；改变重音后重测，比较峰值与短时响度的响应。","hint_en":"Record the rhythm in a DAW and watch peak and loudness meters together. Change accents and remeasure their different responses."}
 ```
 :::
 
 ::: en
 ## Where people stall
 
-How loud a track feels is not the same as how high its peaks sit. A peak meter only says whether the signal passed full scale; a loudness meter says how loud the ear judges it. Mastering, podcasting and streaming delivery all set targets in loudness, so both rulers matter.
+Peak meters describe amplitude limits; loudness meters use specified weighting, windows and gating to measure programme level. Neither number completely describes perceived volume or production quality. Delivery requirements may specify both loudness and true-peak limits.
 
 ## The reason
 
-A peak meter reads the largest amplitude of a sample or between neighbouring samples in dBFS, and anything above zero clips. A loudness meter applies frequency weighting that mimics the ear's sensitivity to the midrange, then gates and integrates over time to produce LUFS. Short-term loudness uses a three-second window, integrated loudness covers the whole programme, and true peak interpolates between samples to catch overshoots a sample peak misses. Streaming platforms turn down tracks that are too loud, and the more they turn down, the more dynamics get squeezed.
+Sample peak in dBFS measures sample amplitude; true peak in dBTP estimates reconstructed inter-sample peaks. Short-term loudness commonly uses a three-second window, while integrated loudness measures the selected programme with applicable gating. Turning down playback gain normally does not compress internal dynamics again; any mode that adds limiting is a separate operation.
 
 ## How to get around it
 
-While mixing, watch peaks and leave 3 to 6 dB of headroom. While mastering, watch integrated loudness and set it to the delivery target instead of chasing maximum level. Keep true peak below minus one dBTP to leave room for lossy encoding. Use short-term loudness to judge balance between sections and integrated loudness for the whole track. Align loudness before comparing two versions, otherwise the louder one always seems better. Phones, televisions and cars play back at very different levels, so do not set the standard in one room only.
+Measure the complete programme using the required scope, logging integrated loudness, peaks and any required dynamic metrics. Loudness-match versions before judging timbre and sectional relationships rather than flattening every transient to hit one LUFS number. Choose headroom for the actual platform, format and codec.
 
 ## Listen to these
 
-On the soul loop, hear how kick impact relates to overall weight; on the live ballade, whether quiet passages survive the applause; on the organ hymn, whether sustained passages stay steady. The numbers are a reference, and the ear still has to confirm that the rise and fall between sections is intact.
+Render one drum loop or piano passage and observe peak and loudness together. Compare a gain-only reduction with a compressed version to examine their effects on musical contrasts. Sustained organ audio helps inspect continuous level, but loudness alone cannot diagnose overload; check actual peaks and the output path.
 
 ```audiolab
-{"type":"rhythm","sig":"4/4","pattern":"e e e e e e e e","bpm":80,"label":"A steady 80 BPM pulse","label_en":"A steady 80 BPM pulse","hint":"Each accent makes the meter jump; hear the gap between accents and sustain","hint_en":"Each accent makes the meter jump; hear the gap between accents and sustain"}
+{"type":"rhythm","sig":"4/4","pattern":"e e e e e e e e","bpm":80,"label":"A steady rhythm for metering","label_en":"A steady rhythm for metering","hint":"Record the rhythm in a DAW and watch peak and loudness meters together. Change accents and remeasure their different responses.","hint_en":"Record the rhythm in a DAW and watch peak and loudness meters together. Change accents and remeasure their different responses."}
 ```
 :::

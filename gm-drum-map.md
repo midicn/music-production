@@ -19,9 +19,10 @@ instances:
   - groove-000000 | 除 42、36、38 外还用了 22 键，后者不在 GM 鼓表里
   - oga-000013 | 底鼓 36 有 164 次，踩镲 44 有 83 次，闭镲 42 有 54 次
 sources:
+  - "https://midi.org/general-midi"
   - 通用 MIDI 规范对打击通道与键号的映射（MMA 公开规范）。
   - 本库鼓轨的键号统计，由本地 SMF 解析脚本核对，数值随文件而定
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -37,7 +38,7 @@ GM 把第 10 通道固定为鼓组，键号 35 到 81 各对应一件打击乐�
 
 ## 参数与做法
 
-写鼓固定用第 10 通道。用键号而不是音名。闭镲与开镲不要写在同一时刻。力度分层决定军鼓的手感。底鼓与贝斯留出频段。同一键号在不同鼓音源上的音色可能不同，但语义不变。
+在 GM 模式下用第 10 通道，并按键号核对映射，例如 36 底鼓、38 军鼓、42 闭镲、46 开镲。音名的八度标法因软件而异，所以交换时同时写键号。检查开镲是否被闭镲截断、长音是否响应 Note Off、力度是否切换音色层；这些行为取决于鼓音源实现，不能只凭一张 GM 表推断。
 
 ## 听什么
 
@@ -48,7 +49,7 @@ GM 把第 10 通道固定为鼓组，键号 35 到 81 各对应一件打击乐�
 鼓通道也能写旋律，只是音源会按鼓键解释。第 10 通道不是第十轨。Note Off 对鼓通常没有意义。
 
 ```audiolab
-{"type":"instrument","drum":"36","phrase":["36","38","42","36","38","46"],"label":"底鼓、军鼓、闭镲与开镲","label_en":"Kick, snare, closed and open hat","hint":"听闭镲 42 与开镲 46 的尾音长短","hint_en":"Compare the tail length of closed hat 42 and open hat 46"}
+{"type":"instrument","drum":"36","phrase":["36","38","42","36","38","46"],"label":"GM 鼓键参照","label_en":"GM drum-key reference","hint":"核对 36、38、42、46 的击打顺序；音色和止音行为取决于播放器选用的鼓音源。","hint_en":"Check the attack order of keys 36, 38, 42 and 46. Timbre and choking behaviour depend on the selected drum instrument."}
 ```
 :::
 
@@ -65,7 +66,7 @@ GM fixes channel 10 as drums, with keys 35 to 81 mapped to percussion. 36 is kic
 
 ## Settings and practice
 
-Always write drums on channel 10. Use key numbers rather than note names. Do not place closed and open hats at the same instant. Velocity layers shape the snare. Leave room for kick and bass in the spectrum.
+In GM mode, use channel 10 and verify key numbers such as 36 kick, 38 snare, 42 closed hi-hat and 46 open hi-hat. Octave names differ between applications, so include numeric keys when exchanging files. Check hi-hat choking, response to Note Off and velocity layers on the actual drum instrument rather than inferring all behaviour from a GM map.
 
 ## What to listen for
 
@@ -76,6 +77,6 @@ Closed hat 42 and open hat 46 differ in tail length. Kick 36 and 35 differ in lo
 The drum channel can hold melody, but the instrument reads it as drum keys. Channel 10 is not the tenth track. Note Off rarely matters for drums.
 
 ```audiolab
-{"type": "instrument", "drum": "36", "phrase": ["36", "38", "42", "36", "38", "46"], "label": "Kick, snare, closed and open hat", "label_en": "Kick, snare, closed and open hat", "hint": "听闭镲 42 与开镲 46 的尾音长短", "hint_en": "Compare the tail length of closed hat 42 and open hat 46"}
+{"type":"instrument","drum":"36","phrase":["36","38","42","36","38","46"],"label":"GM drum-key reference","label_en":"GM drum-key reference","hint":"Check the attack order of keys 36, 38, 42 and 46. Timbre and choking behaviour depend on the selected drum instrument.","hint_en":"Check the attack order of keys 36, 38, 42 and 46. Timbre and choking behaviour depend on the selected drum instrument."}
 ```
 :::

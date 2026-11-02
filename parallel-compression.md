@@ -16,34 +16,34 @@ links:
   - "[[instrument:drum-kit]]"
   - "[[period:contemporary]]"
 instances:
-  - groove-000000 | 放克鼓组瞬态清楚，并行压缩的干湿比例容易判断
-  - groove-000011 | 长循环超过三分钟，适合反复对比厚度与瞬态
-  - pdmx-000450 | 大型合唱动态大，并行压缩可抬弱声而不动强声
+  - groove-000000 | 可渲染鼓组，建立干声和压缩返回，匹配输出响度后比较瞬态与持续声 | Render the kit, create dry and compressed returns, then compare attack and sustain at matched loudness
+  - groove-000011 | 循环适合固定小节反复比较并行比例，先检查延迟补偿与等响度 | Loop fixed bars to compare parallel balance after checking latency compensation and loudness
+  - pdmx-000450 | 合唱可作动态练习；并行压缩会改变强弱比例，并非保证强声完全不变 | Choir offers dynamic practice; parallel compression changes relative levels rather than guaranteeing unchanged loud passages
 sources:
   - Bobby Owsinski, The Mixing Engineer's Handbook, parallel compression section.
   - Huber and Runstein, Modern Recording Techniques, dynamics processing.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 问题
 
-直接压缩鼓组会把瞬态压平。想保留冲击力又要厚度，单靠一条压缩链很难两全。两条链各做一件事，反而更容易听清。
+并行压缩将原始路径与压缩路径混合，便于分别控制音头、持续部分与密度。常规串联压缩也能保留所需瞬态；是否使用并行取决于目标，不是两种效果无法兼得时的唯一选择。
 
 ## 目标与判断
 
-并行压缩把干声与重压声并排。判断标准是干声的点击仍在，重压声只补密度。若加入后鼓变慢或变糊，说明重压声的高频与瞬态被削得太多。
+加入并行支路后出现变薄、变糊或鼓点重影，应先检查路径延迟、极性和支路滤波，再判断压缩参数。数字插件的延迟补偿和干湿旋钮实现并不总相同；不要只把问题归因于压掉太多高频。
 
 ## 做法
 
-复制鼓总线，重压到十比一以上，启动一到五毫秒，释放五十到一百毫秒，让增益衰减持续可见；把重压声高通到一百到二百赫兹再混入；干湿比例从一成起，加到能感到厚度为止。也可以只压房间轨，保留主对的清晰。混入时保持总线峰值不变，只比较密度与瞬态。
+先把两路设为无处理并匹配增益，验证相加行为；再只在支路加入压缩，保持原路径不变。从支路静音开始逐渐混入，听持续部分和背景声是否被抬高。比率、时间和支路高通应按素材选择；降低支路低频并不总是必要，也可能改变两路相位关系。
 
 ## 听什么
 
-听军鼓的击打边缘是否还在；听底鼓尾巴是否变长；独奏重压声，听它是否只剩中频；旁通时整体是否只是变薄。
+在完整混音里比较旁通与并行版本，匹配总体响度，检查音头、持续部分与原有背景声。独听压缩支路可以定位抽吸或失真，但是否合用应听回混后的结果；不要把更响或背景更明显直接当作密度改善。
 
 ```audiolab
-{"type":"instrument","gm":"Taiko Drum","synth":"perc","phrase":["C2","C2","G2","C2"],"label":"太鼓四击","label_en":"Four taiko hits","hint":"先听点击，再听并行压缩后的厚度","hint_en":"Hear the click, then the weight after parallel compression"}
+{"type":"instrument","gm":"Taiko Drum","synth":"perc","phrase":["C2","C2","G2","C2"],"label":"并行压缩的鼓声素材","label_en":"Drum material for parallel compression","hint":"在 DAW 复制同一鼓声，一路压缩后混回；核对延迟补偿，等响度比较音头、持续声和尾音。","hint_en":"Duplicate one drum recording in a DAW, compress one path and blend it back. Check latency compensation and compare attack, sustain and decay at matched loudness."}
 ```
 
 ## 常见误解
@@ -54,22 +54,22 @@ updated: 2026-10-28
 ::: en
 ## The problem
 
-Compressing a drum bus directly flattens transients. Keeping impact and adding weight with one chain is hard.
+Parallel compression blends an original and a compressed path to control attacks, sustain and density separately. Serial compression can also preserve wanted attacks; parallel processing is a choice, not the only way to combine impact and body.
 
 ## Goal and judgement
 
-Parallel compression runs a clean signal beside a heavily compressed copy. The dry click must remain; the compressed copy only adds density. If the drums slow down or blur, the copy has lost too much high end and transient.
+If a parallel branch thins, blurs or doubles attacks, check delay, polarity and branch filtering before compression settings. Plug-in delay compensation and mix controls differ. Excessive high-frequency reduction is not the only possible cause.
 
 ## Method
 
-Duplicate the drum bus. Compress the copy above 10 to 1 with 1 to 5 ms attack and 50 to 100 ms release, so gain reduction stays visible. High-pass the copy around 100 to 200 Hz before blending. Start at 10 percent wet and raise until weight is felt. The room mics alone can be compressed instead, leaving the main pair clear. Keep the bus peak matched while blending, so you compare density and transient rather than level.
+First compare the two paths unprocessed at matched gain, then compress the branch with the original unchanged. Bring the branch up from silence and listen for raised sustain and background sound. Choose ratio, timing and any branch high-pass for the source; low-frequency filtering is not always needed and may change phase relationships.
 
 ## What to listen for
 
-Whether the snare edge survives; whether the kick tail grows; whether the compressed copy alone is only midrange; whether bypass makes the whole kit merely thinner.
+Compare bypass and parallel versions in the full mix at matched loudness, checking attack, sustain and existing background sound. Solo the compressed path to locate pumping or distortion, then judge the blend. More level or more audible background is not automatically useful density.
 
 ```audiolab
-{"type": "instrument", "gm": "Taiko Drum", "synth": "perc", "phrase": ["C2", "C2", "G2", "C2"], "label": "Four taiko hits", "label_en": "Four taiko hits", "hint": "先听点击，再听并行压缩后的厚度", "hint_en": "Hear the click, then the weight after parallel compression"}
+{"type":"instrument","gm":"Taiko Drum","synth":"perc","phrase":["C2","C2","G2","C2"],"label":"Drum material for parallel compression","label_en":"Drum material for parallel compression","hint":"Duplicate one drum recording in a DAW, compress one path and blend it back. Check latency compensation and compare attack, sustain and decay at matched loudness.","hint_en":"Duplicate one drum recording in a DAW, compress one path and blend it back. Check latency compensation and compare attack, sustain and decay at matched loudness."}
 ```
 
 ## Common misconceptions

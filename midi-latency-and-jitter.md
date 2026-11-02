@@ -16,13 +16,15 @@ links:
   - "[[glossary:latency-compensation]]"
   - "[[instrument:software-synth]]"
 instances:
-  - musicnet-000315 | 演奏的微时间写成 2647 条速度事件，落点本来就不在网格上
-  - groove-000693 | 100 BPM 的鼓循环只有 5.5% 的音落在十六分网格，律动靠偏移
-  - pdmx-000799 | 21709 个音符里不到一半对齐十六分网格，速度变化有 40 处
+  - musicnet-000315 | 包含演奏速度变化，可区分谱面时间变化与链路延迟 | Tempo-changing performance data for distinguishing scored timing from link latency
+  - groove-000693 | 鼓点偏离网格的律动参照，不是传输抖动测量 | Off-grid drum phrasing, not a transmission-jitter measurement
+  - pdmx-000799 | 含速度变化的音符时序参照，不证明实时设备发生漂移 | Note and tempo timing reference, not evidence of real-time device drift
 sources:
+  - "https://help.ableton.com/hc/en-us/articles/360010545559-How-Latency-Works"
+  - "https://midi.org/summary-of-midi-1-0-messages"
   - MIDI 1.0 串行速率与 USB MIDI 类帧长的公开定义——依据来自规范。
   - 本库文件的音符落点统计，由本地 SMF 解析脚本核对，数值随文件而定
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -34,11 +36,11 @@ updated: 2026-10-28
 
 ## 协议或消息
 
-MIDI 1.0 的串行速率是 31250 比特每秒，一个字节约 320 微秒，一条三字节消息接近 1 毫秒。USB MIDI 1.0 类按 1 毫秒帧打包，驱动再打时间戳。延迟来自缓冲、驱动与音频接口；抖动来自帧对齐与系统调度。时钟抖动会让跟随设备忽快忽慢。
+传统五针 DIN MIDI 1.0 的串行速率为 31,250 bit/s，一个带起止位的字节约 320 μs，三字节消息约 0.96 ms；Running Status 可减少后续重复消息的字节数。USB、蓝牙和网络传输有不同的封包与调度方式，不能一概说成固定 1 ms 延迟。演奏到出声还包括音频缓冲、插件运算和转换器延迟。
 
 ## 参数与做法
 
-先测回环延迟，再调缓冲。录音时用直接监听，或开启延迟补偿。不要把缓冲区压到爆音。多设备级联时把最慢的一台放末端。时钟只留一个主源。
+分别测量 MIDI 事件到达时间与音频输出的往返延迟，重复多次，区分稳定偏移与分散程度。软件音源要降低的是实际监听链路延迟；接口的直接监听通常只绕过外部音频输入的 DAW 路径，不能让尚未渲染的软件乐器提前发声。不要用补偿后的时间线位置代替演奏者实际听到的延迟。
 
 ## 听什么
 
@@ -49,7 +51,7 @@ MIDI 1.0 的串行速率是 31250 比特每秒，一个字节约 320 微秒，�
 延迟不是音源的问题。降低缓冲不总是更好。MIDI 时间戳不等于音频采样位置。
 
 ```audiolab
-{"type":"rhythm","sig":"4/4","bpm":100,"pattern":"q e e q e e","label":"网格之外的那几毫秒","label_en":"The milliseconds off the grid","hint":"跟节拍器数，听落点是否整齐","hint_en":"Count with the click and hear whether the attacks sit evenly"}
+{"type":"rhythm","sig":"4/4","bpm":100,"pattern":"q e e q e e","label":"节奏落点参照","label_en":"Rhythmic placement reference","hint":"预先排好的节奏不是 MIDI 链路延迟测试。测量时要记录发送、接收和音频输出的时间，并重复比较。","hint_en":"A pre-sequenced pattern is not a MIDI-link latency test. Measure send, receive and audio-output times repeatedly."}
 ```
 :::
 
@@ -62,11 +64,11 @@ Latency and jitter are easily confused. The first moves a whole passage late, th
 
 ## Protocol or message
 
-MIDI 1.0 runs at 31,250 bits per second, so one byte takes about 320 microseconds and a three-byte message nearly a millisecond. USB MIDI 1.0 class packets travel in one-millisecond frames, and the driver adds timestamps. Latency comes from buffers, drivers and the audio interface; jitter comes from frame alignment and scheduling. Clock jitter makes a follower drift.
+Traditional five-pin DIN MIDI 1.0 uses 31,250 bit/s: roughly 320 μs per framed byte and 0.96 ms for three bytes. Running Status can shorten subsequent repeated messages. USB, Bluetooth and network MIDI have different packet and scheduling behaviour, so they do not share a fixed one-millisecond delay. Playing-to-sound latency also includes audio buffering, plug-in processing and conversion.
 
 ## Settings and practice
 
-Measure loopback delay before changing the buffer. Use direct monitoring or delay compensation while recording. Do not crush the buffer until it clicks. Put the slowest device last in a chain. Keep one clock master.
+Measure MIDI event arrival and audio round-trip latency separately, repeating the test to distinguish a stable offset from timing spread. For a software instrument, reduce the actual monitoring path. Interface direct monitoring generally bypasses the DAW for incoming external audio; it cannot make an unrendered virtual instrument sound sooner. A compensated timeline position is not the same as the performer's experienced delay.
 
 ## What to listen for
 
@@ -77,6 +79,6 @@ A constant offset sounds like dragging; jitter sounds like an unsteady drummer. 
 Latency is not the sound source's fault. A smaller buffer is not always better. A MIDI timestamp is not an audio sample position.
 
 ```audiolab
-{"type": "rhythm", "sig": "4/4", "bpm": 100, "pattern": "q e e q e e", "label": "The milliseconds off the grid", "label_en": "The milliseconds off the grid", "hint": "跟节拍器数，听落点是否整齐", "hint_en": "Count with the click and hear whether the attacks sit evenly"}
+{"type":"rhythm","sig":"4/4","bpm":100,"pattern":"q e e q e e","label":"Rhythmic placement reference","label_en":"Rhythmic placement reference","hint":"A pre-sequenced pattern is not a MIDI-link latency test. Measure send, receive and audio-output times repeatedly.","hint_en":"A pre-sequenced pattern is not a MIDI-link latency test. Measure send, receive and audio-output times repeatedly."}
 ```
 :::

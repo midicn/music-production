@@ -22,7 +22,7 @@ instances:
 sources:
   - 通行配器教材所述加倍、音区与平衡原则，用于事实核对，未引用原文
   - The New Grove Dictionary of Music and Musicians, 2nd ed., entry "Orchestration".
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -32,7 +32,7 @@ updated: 2026-10-28
 
 ## 乐器组合
 
-同度加倍最厚，八度加倍最稳，不同音色加倍会造出新音色。木管加倍弦乐很常见，铜管加倍旋律则要控制音量。三件以上同度叠置，通常只增加音量，不增加清晰度。
+同度加倍可融合音色，八度加倍可扩展音域，但结果取决于乐器、音区、力度与发音长度。先写清谁是主线：让单簧管与中提琴同奏时，可比较单簧管进入前后的轮廓，再调整它的力度。若只想让某个句尾变亮，可以只加倍句尾；不能只按乐器数量判断清晰度。
 
 ## 音区与掩蔽
 
@@ -43,7 +43,7 @@ updated: 2026-10-28
 《第四十交响曲》里木管与弦乐的同向进行，听旋律怎样变厚；《第一勃兰登堡》里双簧管加入提琴，听音色怎样被重新染色；《第五交响曲》里木管与弦乐的齐奏，听加法何时开始变成模糊。
 
 ```audiolab
-{"type":"instrument","gm":"Clarinet","synth":"reed","phrase":["D4","F4","A4","C5","D5"],"label":"单簧管的中音区","label_en":"The clarinet in its middle register","hint":"这个音色与长笛同度叠置会变厚，与双簧管叠置则会更突出；先听它本身的圆润","hint_en":"Doubled with a flute it thickens; doubled with an oboe it sharpens. Start with its own roundness."}
+{"type":"instrument","gm":"Clarinet","synth":"reed","phrase":["D4","F4","A4","C5","D5"],"label":"单簧管音色","label_en":"Clarinet timbre","hint":"先听单一声部的轮廓。这里只播放一个音色；同度和八度加倍要另外加入第二声部，再匹配响度比较。","hint_en":"Hear the contour of one part. Only one timbre plays here; add a second part separately for matched-level unison and octave comparisons."}
 ```
 
 ## 常见误解
@@ -58,7 +58,7 @@ Doubling makes one line sound on two instruments. It can make a melody more prom
 
 ## Instrument combination
 
-Unison doubling is thickest, octave doubling steadiest, and doubling with a different colour creates a new one. Woodwind doubling strings is common; brass doubling a melody needs careful dynamics. Three or more parts in unison usually add loudness without adding clarity.
+Unison doubling can blend timbres and octave doubling can extend range, but the result depends on instrument, register, dynamic and articulation length. Identify the lead first: when doubling viola with clarinet, compare the contour before and after the clarinet enters, then adjust its dynamic. If only the phrase ending needs brightness, double that ending. Instrument count alone does not determine clarity.
 
 ## Register and masking
 
@@ -69,7 +69,7 @@ Doubling adds energy and masking in equal measure. Low-register doubling turns m
 In the Fortieth Symphony, hear woodwind and strings move in the same direction and thicken the melody. In the First Brandenburg Concerto, hear oboes join the violins and recolour the line. In the Fifth Symphony, hear where doubling stops clarifying and starts blurring.
 
 ```audiolab
-{"type": "instrument", "gm": "Clarinet", "synth": "reed", "phrase": ["D4", "F4", "A4", "C5", "D5"], "label": "The clarinet in its middle register", "label_en": "The clarinet in its middle register", "hint": "这个音色与长笛同度叠置会变厚，与双簧管叠置则会更突出；先听它本身的圆润", "hint_en": "Doubled with a flute it thickens; doubled with an oboe it sharpens. Start with its own roundness."}
+{"type":"instrument","gm":"Clarinet","synth":"reed","phrase":["D4","F4","A4","C5","D5"],"label":"Clarinet timbre","label_en":"Clarinet timbre","hint":"Hear the contour of one part. Only one timbre plays here; add a second part separately for matched-level unison and octave comparisons.","hint_en":"Hear the contour of one part. Only one timbre plays here; add a second part separately for matched-level unison and octave comparisons."}
 ```
 
 ## Common misconceptions

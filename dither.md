@@ -15,12 +15,13 @@ links:
   - "[[glossary:bit-depth]]"
   - "[[glossary:noise-floor]]"
 instances:
-  - giantmidi-009128 | 道兰《鲁特琴教程集》的钢琴改编音量小、织体细，量化台阶在安静处最明显（C1）
-  - openscore-000000 | 艺术歌曲人声与钢琴同时收弱，抖动与否在尾音上分得开（C1）
-  - atepp-000369 | 格里格《夜曲》尾音渐弱，噪声整形把噪声推向高频后更耐听（C1）
+  - giantmidi-009128 | 钢琴改编的音符素材，可另行制作低位深淡出实验（C1） | Notes from a piano arrangement for a separately rendered low-bit-depth fade (C1)
+  - openscore-000000 | 歌声与钢琴的声部参照，不包含加/不加抖动的导出（C1） | Voice-and-piano parts without dithered and undithered exports (C1)
+  - atepp-000369 | 渐弱段落的音乐参照，不是噪声整形效果对照（C1） | A musical reference for a fading passage, not a noise-shaping comparison (C1)
 sources:
+  - "https://downloads.izotope.com/docs/rx6/39-dither/index.html"
   - Lipschitz 与 Vanderkooy 关于抖动的公开论文.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -34,19 +35,19 @@ updated: 2026-10-28
 
 ## 参数与做法
 
-16 位交付用 TPDF 抖动，配适度的噪声整形。只在最后一次降位深时加，加完不要再改增益或做二次编码。24 位通常不必，噪声底已低于录音本底。高频吃重的素材选较轻的整形档。
+若交付要求 16 位定点 PCM，可在最后的限幅和增益处理之后、量化输出时加入合适的抖动。TPDF 是常见选择，是否加噪声整形按软件实现与用途决定。24 位也会重新量化，只是新增噪声常远低于素材本底；不能说加抖动必然没有意义。压缩编码属于另一个环节，保存高质量母版后再生成所需发行文件。
 
 ## 听什么
 
-在鲁特琴曲集的安静段落听量化台阶，在艺术歌曲的收尾听人声与钢琴同时变弱时是否出现沙粒，在《夜曲》的长尾音里听细噪是否均匀。无抖动时尾音一段段发干，有抖动时是连续的细沙。
+用同一条低电平正弦或音频淡出制作加抖动与不加抖动的低位深导出，匹配电平后比较失真成分与噪声。测试应使用真实音频渲染，本站的鲁特琴、人声或钢琴 MIDI 只提供弱奏听感素材，不包含抖动开关，不能听它就判断某种算法好坏。
 
 ```audiolab
-{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C6","G5","E5","C5"],"label":"高音区的弱奏","label_en":"A quiet line in the high register","hint":"把音量调低，听尾音是连续细噪还是一段段发干","hint_en":"Turn it down and hear whether the tail is steady hiss or dry steps"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C6","G5","E5","C5"],"label":"弱音与衰减","label_en":"Soft notes and decay","hint":"听音符何时变弱；此演示没有加/不加抖动两种渲染，不能据此评价抖动算法。","hint_en":"Listen to the decay. There are no dithered and undithered renders here, so this block does not evaluate a dithering algorithm."}
 ```
 
 ## 常见误解
 
-抖动加噪声，所以一定降低音质；它换来的是失真变噪声，通常更耐听。也不必每次导出都加，只有降位深时才需要。24 位加抖动没有意义。它不能修复已经削波的素材。
+抖动把与信号相关的量化失真转为较稳定的噪声，通常用于降低最终定点量化的失真。它不会消除原录音的底噪，也不能修复已经削波的波形。反复加抖动只会累积噪声。
 :::
 
 ::: en
@@ -60,17 +61,17 @@ Quantization rounds values to the nearest step, and on quiet, periodic material 
 
 ## Settings and practice
 
-Use TPDF dither with moderate shaping for 16-bit delivery. Add it once at the final reduction, then change no gain and encode nothing further. At 24 bit it is usually unnecessary, since the floor sits below the recording. Choose lighter shaping for bright material.
+For 16-bit fixed-point PCM delivery, apply suitable dither at output quantisation after final limiting and gain changes. TPDF is a common option; noise shaping depends on implementation and use. Requantisation also occurs at 24 bits, though its added noise often lies far below the recording's existing noise. Preserve a high-quality master before making required lossy distribution files.
 
 ## What to listen for
 
-In quiet lute pieces, listen for the steps. At a song's end, hear whether voice and piano turn sandy as they fade. In a long nocturne tail, check whether the hiss stays even. Without dither the tail dries in patches; with it you hear continuous fine sand.
+Render the same low-level sine or audio fade at reduced depth with and without dither, then compare distortion and noise at matched gain. This needs actual audio renders. The lute, voice and piano MIDI examples only supply quiet passages; they have no dither switch and cannot rank dithering algorithms.
 
 ```audiolab
-{"type": "instrument", "gm": "Acoustic Grand Piano", "synth": "struck", "phrase": ["C6", "G5", "E5", "C5"], "label": "A quiet line in the high register", "label_en": "A quiet line in the high register", "hint": "把音量调低，听尾音是连续细噪还是一段段发干", "hint_en": "Turn it down and hear whether the tail is steady hiss or dry steps"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C6","G5","E5","C5"],"label":"Soft notes and decay","label_en":"Soft notes and decay","hint":"Listen to the decay. There are no dithered and undithered renders here, so this block does not evaluate a dithering algorithm.","hint_en":"Listen to the decay. There are no dithered and undithered renders here, so this block does not evaluate a dithering algorithm."}
 ```
 
 ## Common misconceptions
 
-Dither adds noise, so it must reduce quality; what it trades is distortion for noise, which wears better. It is not needed on every export, only when reducing depth. Adding it at 24 bit achieves nothing. It cannot repair already clipped material.
+Dither trades signal-correlated quantisation distortion for more stable noise at fixed-point quantisation. It does not remove recording noise or repair a clipped waveform. Repeated applications accumulate noise.
 :::

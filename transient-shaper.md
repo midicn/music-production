@@ -15,23 +15,24 @@ links:
   - "[[instrument:drum-kit]]"
   - "[[glossary:bus]]"
 instances:
-  - groove-000006 | 流行鼓循环音头整齐，攻击加减对拍击感的影响最直接
-  - groove-000010 | 放克鼓循环有轻有重，可检验整形器是否随力度改变结果
-  - pdmx-000031 | 拉威尔《波莱罗》钢琴版节奏重复，音头变化不会被人声遮住
+  - groove-000006 | 鼓组起音的素材参照，未执行攻击增减处理 | Drum attacks as source material, without attack boost or cut processing
+  - groove-000010 | 包含不同力度的鼓点，可另渲染后测试实际整形器 | Drum events at different velocities for a separate test with an actual shaper
+  - pdmx-000031 | 重复节奏型的音符素材，不是瞬态整形前后对照 | Repeated rhythmic notes, not before-and-after transient shaping
 sources:
+  - "https://docs.slatedigital.com/VMR/Transient_Shaper.html"
   - Udo Zölzer, DAFX.
   - Sound On Sound, transient shaping explained.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 起点：一个问题
 
-压缩器会连音头与余音一起压。瞬态整形器把两者分开，只动音头或只动余音，所以不需要阈值，也不会随演奏力度改变结果。
+瞬态整形器按声音的起音与后续包络改变增益，常用于调整鼓的敲击感和余响。部分产品采用电平相对检测，不需要用户设置阈值；也有带灵敏度、阈值或多频段检测的设计，不能把一种架构当成所有产品的规则。
 
 ## 工作方式
 
-包络跟随器取出快速与慢速两条包络，二者之差被当作瞬态成分。攻击旋钮改变前几毫秒的增益，延音旋钮改变后段电平。它本质是双包络的增益塑形器，不判断绝对电平，轻奏与重奏会得到同样的比例。
+常见做法是比较不同速度的包络跟随器，从变化较快的部分估计起音，再控制增益。旋钮名称虽相似，检测时间、立体声联动和增益限制可能不同。电平独立只表示整体增益变化不应轻易改变检测，不保证轻奏和重奏的频谱、包络或听感完全一致。
 
 ## 数值怎么变成声音
 
@@ -39,10 +40,10 @@ updated: 2026-10-28
 
 ## 耳朵要抓的点
 
-在鼓组上单独推攻击，先听底鼓的拍击，再听军鼓的响弦。切到钢琴，同样的动作像换了另一种触键。
+在同一条音频上做旁通与处理对照，匹配输出电平，听鼓槌、鼓身与房间余响各发生了什么变化。先只动攻击，再只动延音，观察峰值是否超出余量。本站钢琴与鼓组 MIDI 是可选试听素材，没有实际加载瞬态整形处理，不能把换曲后的差别当作处理效果。
 
 ```audiolab
-{"type":"instrument","gm":"Marimba","synth":"struck","phrase":["C4","E4","G4","C5"],"label":"马林巴音头","label_en":"Marimba attacks","hint":"先听干声，再对比攻击加减的差别","hint_en":"Hear it dry, then compare attack cut and boost"}
+{"type":"instrument","gm":"Marimba","synth":"struck","phrase":["C4","E4","G4","C5"],"label":"马林巴音头","label_en":"Marimba attack","hint":"比较音头与后续衰减。这段没有瞬态整形器，攻击增减的效果须用同一音频的处理与旁通版本比较。","hint_en":"Compare the attack with its decay. There is no transient shaper here; compare processed and bypassed versions of the same audio for attack changes."}
 ```
 
 ## 容易弄错的
@@ -53,11 +54,11 @@ updated: 2026-10-28
 ::: en
 ## Starting point: a problem
 
-A compressor turns down the attack and the body together. A transient shaper separates them, moving only the attack or only the sustain, so it needs no threshold and does not change with playing level.
+A transient shaper changes gain according to attacks and the following envelope, often to adjust a drum's impact and sustain. Some products use level-relative detection with no user threshold; others provide sensitivity, threshold or multiband detection. One architecture does not describe every product.
 
 ## The working principle
 
-An envelope follower derives a fast and a slow envelope, and their difference is treated as the transient. The attack control changes gain over the first few milliseconds; the sustain control changes the later level. It is a dual-envelope gain shaper, not a level detector, so a soft and a hard hit receive the same proportional shape.
+One common approach compares envelope followers with different response speeds to estimate attacks and shape gain. Detection time, stereo linking and gain limits differ between products. Level-independent detection means an overall gain change need not alter detection; it does not make soft and hard performances identical in spectrum, envelope or sound.
 
 ## From numbers to sound
 
@@ -65,10 +66,10 @@ Plus 3 to 6 dB of attack sharpens a beater click; minus 3 dB softens the sound a
 
 ## What the ear should catch
 
-On drums, raise attack alone and listen first to the kick beater, then to the snare wires. Switch to piano and the same move feels like a different touch.
+Compare bypassed and processed versions of the same audio at matched output level, listening separately to beater, drum body and room tail. Change attack and sustain one at a time and watch peak headroom. The piano and drum MIDI examples are source material only; they do not apply transient shaping, and a change of piece is not a processing comparison.
 
 ```audiolab
-{"type": "instrument", "gm": "Marimba", "synth": "struck", "phrase": ["C4", "E4", "G4", "C5"], "label": "Marimba attacks", "label_en": "Marimba attacks", "hint": "先听干声，再对比攻击加减的差别", "hint_en": "Hear it dry, then compare attack cut and boost"}
+{"type":"instrument","gm":"Marimba","synth":"struck","phrase":["C4","E4","G4","C5"],"label":"Marimba attack","label_en":"Marimba attack","hint":"Compare the attack with its decay. There is no transient shaper here; compare processed and bypassed versions of the same audio for attack changes.","hint_en":"Compare the attack with its decay. There is no transient shaper here; compare processed and bypassed versions of the same audio for attack changes."}
 ```
 
 ## Easy to get wrong

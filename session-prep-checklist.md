@@ -15,13 +15,13 @@ links:
   - "[[glossary:tempo]]"
   - "[[instrument:voice]]"
 instances:
-  - openscore-000131 | 人声与钢琴，调性与速度必须在开录前定死
-  - groove-000039 | 打击乐先要速度与节拍，摆位前就得确认
-  - mutopia-001540 | 独奏吉他，定弦与座位在开录前确认
+  - openscore-000131 | 人声与钢琴编制参照，可用于讨论调性、速度和自由段落 | Voice-and-piano instrumentation for discussing key, tempo and free-time sections
+  - groove-000039 | 打击乐节拍参照，可用于讨论引入与返送需求 | Percussion pulse for discussing count-in and monitor requirements
+  - mutopia-001540 | 独奏吉他编制参照，可用于讨论定弦与座位安排 | Solo-guitar instrumentation for discussing tuning and seating
 sources:
   - Huber and Runstein, Modern Recording Techniques, session preparation chapters
   - AES Convention paper on studio documentation and session planning
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -35,10 +35,10 @@ updated: 2026-10-28
 
 ## 摆位与参数
 
-提前发参考轨与节拍标记，确认每个人听到的版本一致。按曲目建好工程与轨名，采样率与位深固定。备足话筒架、线材、备份盘与标签，并留出一小时摆位。
+建立输入表，逐项写清通道号、乐器/人名、话筒、是否需幻象供电、轨名与返送去向。给参考轨标版本和速度变化；需要自由速度的段落，事先约定口令或引入方式。建立工程后做保存、关闭和重新打开测试，并确认所有素材确实写入项目目录。
 
 ```audiolab
-{"type":"rhythm","sig":"4/4","pattern":"q q q q","bpm":92,"label":"开工前先定下的速度","label_en":"The tempo settled before the session","hint":"所有人先跟这条拍子，再开始摆话筒","hint_en":"Everyone follows this pulse first, then the microphones go up"}
+{"type":"rhythm","sig":"4/4","pattern":"q q q q","bpm":92,"label":"节拍参考","label_en":"Count-in reference","hint":"这条节拍可作为讨论速度与引入方式的参照；实际录音前还需与演奏者确认节拍变化、自由速度段和返送。","hint_en":"Use this pulse to discuss tempo and count-in. Confirm tempo changes, free-time passages and monitoring with performers before recording."}
 ```
 
 ## 听什么
@@ -63,10 +63,10 @@ The list starts with the music: key, tempo, instrumentation. Then microphones, c
 
 ## Placement and settings
 
-Send a reference and a tempo map in advance and confirm that everyone hears the same version. Build the project and name the tracks per song, with rate and bit depth fixed. Bring spare stands, cables, backup drives and labels, and allow an hour for setup.
+Create an input sheet with channel, instrument or performer, microphone, phantom-power requirement, track name and monitor destination. Version the reference track and mark tempo changes; agree a count-in or cue for free-time sections. Save, close and reopen the session, confirming that its media are actually inside the project directory.
 
 ```audiolab
-{"type": "rhythm", "sig": "4/4", "pattern": "q q q q", "bpm": 92, "label": "The tempo settled before the session", "label_en": "The tempo settled before the session", "hint": "所有人先跟这条拍子，再开始摆话筒", "hint_en": "Everyone follows this pulse first, then the microphones go up"}
+{"type":"rhythm","sig":"4/4","pattern":"q q q q","bpm":92,"label":"Count-in reference","label_en":"Count-in reference","hint":"Use this pulse to discuss tempo and count-in. Confirm tempo changes, free-time passages and monitoring with performers before recording.","hint_en":"Use this pulse to discuss tempo and count-in. Confirm tempo changes, free-time passages and monitoring with performers before recording."}
 ```
 
 ## What to listen for

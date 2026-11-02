@@ -15,13 +15,14 @@ links:
   - "[[instrument:midi-controller]]"
   - "[[glossary:velocity]]"
 instances:
-  - musicnet-000301 | 19 种 CC，光 CC11 就有 8444 条，另有库选择与 RPN 复位
-  - oga-000003 | 11 种 CC，RPN 的 101、100、6、38 齐全，弯音范围被显式设置
-  - groove-000507 | 鼓轨用 14133 条 CC4 记录踏板连续量，另有 16 到 18 号通用控制器
+  - musicnet-000301 | 含 19 种 CC，其中 CC11 有 8444 条，另有库选择与 CC121 控制器复位 | Contains 19 CC types including 8444 CC11 events, plus bank selection and CC121 controller reset
+  - oga-000003 | 含 11 种 CC，CC101、100、6、38 用于 RPN 参数设置 | Contains 11 CC types; CC101, 100, 6 and 38 provide RPN parameter setting
+  - groove-000507 | 含 14133 条 CC4 踏板事件，以及 CC16、17、18 控制数据；实际映射依音源而定 | Contains 14133 CC4 pedal events plus CC16, 17 and 18 data; their effect depends on the receiver
 sources:
+  - "https://midi.org/midi-1-0-control-change-messages"
   - MIDI 1.0 规范的控制器编号与 RPN、NRPN 机制，参考 MMA 公开规范。
   - 高分辨率控制器的高低字节配对规则；通用 MIDI 规范是主要依据。
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -33,22 +34,22 @@ updated: 2026-10-28
 
 ## 协议或消息
 
-0 到 31 是连续控制器，32 到 63 是它们的高位搭档，合起来成 14 位。7 音量、10 声像、11 表情、1 调制、74 截止、71 共鸣。64 到 69 是开关踏板。0 与 32 选音色库。100 与 101 选 RPN，98 与 99 选 NRPN，6 与 38 写值。120 到 127 是通道模式消息。
+CC0–31 是高 7 位（MSB），CC32–63 是对应的低 7 位（LSB）；接收端支持时，配对值为 MSB × 128 + LSB。常用编号有 CC7 音量、CC10 声像、CC11 表情和 CC1 调制。CC74 的标准名称是亮度，不保证每个音源都把它映射到滤波截止。CC0/32 选择音色库，随后才发 Program Change；RPN/NRPN 先选参数，再由 Data Entry 写入值。
 
 ## 参数与做法
 
-表情与音量分开，表情做乐句，音量做平衡。开关踏板以 64 为界，低于 64 为关，高于 64 为开。RPN 要先选参数再写值，顺序反了不会生效。高分辨率控制器要成对发送，只发一半会被当成粗值。不同音源的映射表要留档。
+延音踏板 CC64 的开关约定是 0–63 关、64–127 开；半踏板需要音源另行支持。把表情用于乐句起伏、通道音量用于平衡，先在目标音源上验证。高分辨率 CC 是否支持、两半消息如何处理，以及 RPN 是否生效，都要查设备的 MIDI 实现表。
 
 ## 听什么
 
-CC11 的起伏像呼吸，CC7 只改响度，CC1 让音高轻微摆动，CC64 把断奏连成一片。
+在同一音源中分别改变 CC7、CC11 和 CC1，记录声音与电平如何变化。若 CC1 改的是滤波或层间渐变，而不是颤音，这是该音源的映射，不是消息发送错误。
 
 ## 常见误解
 
 CC 不是自动化曲线。CC 号不是厂商音色参数。所有 CC 都只到 127，14 位要两条消息拼。
 
 ```audiolab
-{"type":"instrument","gm":"Violin","synth":"bowed","phrase":["G4","A4","B4","D5"],"label":"同一条通道上的手势","label_en":"Gestures on one channel","hint":"听长音的起伏，分辨音量、表情与踏板各管什么","hint_en":"Hear the swell and separate volume, expression and pedal"}
+{"type":"instrument","gm":"Violin","synth":"bowed","phrase":["G4","A4","B4","D5"],"label":"弦乐短句","label_en":"String phrase","hint":"这是固定音符的音色参照，没有独立发送音量、表情或踏板控制器。CC 对照应在支持事件检查的音序器中完成。","hint_en":"This fixed-note phrase is a timbre reference, not separate volume, expression or pedal-controller tests. Compare CC events in a sequencer that exposes them."}
 ```
 :::
 
@@ -61,21 +62,21 @@ Treating CC as a universal knob turns a pedal switch into a continuous value and
 
 ## Protocol or message
 
-0 to 31 are continuous controllers, paired with 32 to 63 for 14-bit values. 7 is volume, 10 pan, 11 expression, 1 modulation, 74 cutoff and 71 resonance. 64 to 69 are switch pedals. 0 and 32 select a bank. 100 and 101 pick an RPN, 98 and 99 an NRPN, and 6 and 38 write the value. 120 to 127 are channel mode messages.
+CC0–31 carry the most significant seven bits; CC32–63 carry the corresponding least significant bits. Where supported, a paired value is MSB × 128 + LSB. Common addresses include CC7 volume, CC10 pan, CC11 expression and CC1 modulation. CC74 is named Brightness; its exact effect depends on the receiver. Bank Select CC0/32 precedes Program Change, while RPN/NRPN selection precedes Data Entry.
 
 ## Settings and practice
 
-Keep expression and volume apart, expression for phrasing and volume for balance. Switch pedals turn at 64. Select an RPN before writing it. Send high-resolution pairs together, since one half alone reads as a coarse value. Archive the mapping of each sound source.
+For sustain CC64, values 0–63 mean off and 64–127 mean on; half-pedalling needs additional receiver support. Use expression for phrasing and channel volume for balance, then test the target instrument. Check its MIDI implementation chart for high-resolution CC and RPN support.
 
 ## What to listen for
 
-CC11 breathes, CC7 only changes level, CC1 wobbles pitch slightly and CC64 joins detached notes into one surface.
+Change CC7, CC11 and CC1 separately on one instrument and note the sound and level. If CC1 changes a filter or crossfades layers rather than adding vibrato, that is the instrument mapping, not necessarily a transmission fault.
 
 ## Common misunderstandings
 
 CC is not an automation curve. A CC number is not a vendor parameter. Every CC stops at 127, so 14 bits need two messages.
 
 ```audiolab
-{"type": "instrument", "gm": "Violin", "synth": "bowed", "phrase": ["G4", "A4", "B4", "D5"], "label": "Gestures on one channel", "label_en": "Gestures on one channel", "hint": "听长音的起伏，分辨音量、表情与踏板各管什么", "hint_en": "Hear the swell and separate volume, expression and pedal"}
+{"type":"instrument","gm":"Violin","synth":"bowed","phrase":["G4","A4","B4","D5"],"label":"String phrase","label_en":"String phrase","hint":"This fixed-note phrase is a timbre reference, not separate volume, expression or pedal-controller tests. Compare CC events in a sequencer that exposes them.","hint_en":"This fixed-note phrase is a timbre reference, not separate volume, expression or pedal-controller tests. Compare CC events in a sequencer that exposes them."}
 ```
 :::

@@ -11,78 +11,43 @@ tags: [本站说明]
 tags_en: [about]
 alias: [关于, 说明, 音频说明, about, audio, production]
 order: 99
-updated: 2026-09-28
+updated: 2026-11-02
 sources:
   - 本站自订说明，据实描述这里的内容范围与编写约定
 ---
 
 ::: zh
-## 这一站是做什么的
+## 内容范围
 
-音频与音乐制作站讲**从声音到成品的那一段**：录音、混音、合成与音色设计、编曲，
-以及音乐怎么进入影像与游戏。
+本站介绍录音、编曲、音频处理、MIDI、配乐与交付。可按具体任务查文章，也可从一个工程的制作流程进入。
 
-## 会讲哪些环节
+## 怎样使用示例
 
-- **录音** —— 话筒怎么摆、房间的影响、远近与拾音方式的取舍。
-- **混音** —— 动态、均衡、空间与层次：几十条音轨怎样排出一张清楚的画面。
-- **合成与音色设计** —— 减法、加法、采样、物理建模，各自的声音特征与典型用法。
-- MIDI 与编曲 —— 用数据描述演奏；力度、时值与「不那么整齐」的处理。
-- 制谱与排版 —— 把演奏变成能给别人读的谱面。
-- 应用配乐 —— 影视与游戏里的音乐怎么工作：主题、动机、循环与段落。
+MIDI 谱例可帮助辨认音符、节奏、声部和控制消息，不能直接证明话筒、房间、位深、压缩器或编码器的处理效果。涉及这些问题时，应按文章给出的条件，在同一音频上做受控比较。
 
-## 每条长什么样
+参数示例用于说明方法，不是所有设备与素材的通用预设。操作时还应查具体软件、硬件的说明文档，并保留工程与导出版本。
 
-- 先讲原理：这一步到底在改变声音的什么属性。
-- 再讲怎么听出来：同一段素材处理前后有什么差别。
-- 能给例子就给对照的例子，而不是只描述参数。
+## 从哪里开始
 
-## 怎么读
+从[做音乐](https://home.midicn.com/make/)按写作、录音、混音或交付目标进入；本站首页也提供分类与主题路径。遇到术语可查[音乐词典](https://gloss.midicn.com/)。
 
-1. 按工作流顺序读 —— 录 → 混 → 编 → 成品的顺序理解最省力。
-2. 带着一首曲子读 —— 拿一首熟悉的曲子对照，效果好得多。
-3. 别把参数当结论 —— 参数是手段，听感才是结果。
-
-## 先从哪一段开始
-
-音频与音乐制作两部分都在陆续上线。会先把录音与混音这条主线立起来 ——
-后面谈合成与编曲时，都要用到这里建立起来的耳朵。
+发现错误，请到[项目反馈页](https://github.com/midicn/home/issues)注明页面、原句、设备或版本以及可核验依据。
 :::
 
 ::: en
-## What this station is for
+## Scope
 
-This station covers **the stretch from sound to finished record**: recording, mixing,
-synthesis and sound design, arranging, and how music works inside film and games.
+This site covers recording, arranging, audio processing, MIDI, scoring and delivery. Browse by a concrete task or follow the stages of a production session.
 
-## Which stages are covered
+## Using examples
 
-- **Recording** — microphone placement, the effect of the room, and the trade-offs between
-  close and distant capture.
-- **Mixing** — dynamics, tone, space and depth: how dozens of tracks become one clear picture.
-- **Synthesis and sound design** — subtractive, additive, sampling and physical modelling,
-  each with its own character and typical use.
-- MIDI and arranging — describing performance as data; velocity, timing and the
-  deliberate imperfection that makes it breathe.
-- Notation and layout — turning a performance into a score someone else can read.
-- Music for media — how music works in film and games: themes, motifs, loops and cues.
+MIDI examples can illustrate notes, rhythm, parts and controller messages. They do not directly establish microphone, room, bit-depth, compressor or codec behaviour. For those questions, use the stated conditions to compare the same audio under controlled settings.
 
-## What each entry looks like
+Settings are examples of a method, not universal presets for every device and source. Consult the relevant software or hardware documentation, and preserve session and export versions.
 
-- It starts with the principle: what property of the sound this step is actually changing.
-- Then how to hear it: what differs before and after on the same piece of material.
-- Where an example is possible, it gives a paired comparison rather than describing
-  settings on their own.
+## Starting points
 
-## How to read it
+Use [Create music](https://home.midicn.com/en/make/) to enter by writing, recording, mixing or delivery, or follow this site's categories and topic paths. Check unfamiliar terms in the [glossary](https://gloss.midicn.com/en/).
 
-1. In workflow order — record, mix, arrange, finish is the easiest path through.
-2. With one piece of music in hand — comparing against something familiar works far better.
-3. Do not mistake settings for conclusions — settings are means; what you hear is the result.
-
-## Where it starts
-
-Both halves — production and digital audio — are being added over time. **Recording and
-mixing** come first, because the ear built here is what the later discussion of synthesis
-and arranging depends on.
+Report a page, disputed wording, device or version and supporting evidence through the [project issue page](https://github.com/midicn/home/issues).
 :::

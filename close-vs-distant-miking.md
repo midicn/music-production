@@ -15,13 +15,13 @@ links:
   - "[[glossary:reverb]]"
   - "[[instrument:classical-guitar]]"
 instances:
-  - atepp-003869 | 钢琴弱奏与踏板细节多，近场与远场差别明显
-  - mutopia-001411 | 稀疏的钢琴织体，房间尾巴容易听出来
-  - m21-000602 | 合唱在远处录时，房间声与整体平衡更明显
+  - atepp-003869 | 钢琴音符与踏板事件参照，不是近、远距离话筒对照 | Piano notes and pedal events, not close and distant microphone recordings
+  - mutopia-001411 | 稀疏钢琴织体参照，音源尾音不等于原房间声 | Sparse piano texture; instrument decay is not the original room sound
+  - m21-000602 | 合唱声部的谱面参照，不包含远距离拾音记录 | Scored choral parts without a distant-microphone recording
 sources:
   - Eargle, The Microphone Book, 3rd ed., close and distant pickup chapters
   - Everest, Master Handbook of Acoustics, direct and reverberant field chapters
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -38,7 +38,7 @@ updated: 2026-10-28
 人声 15 至 25 厘米，木吉他 20 至 30 厘米，鼓皮 2 至 10 厘米。需要空间时退到 1 至 3 米，或把话筒放到房间的有利位置。用距离换混响比，不要用混响器补空间。
 
 ```audiolab
-{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["A3","E4","A4","C5"],"label":"近一点与远一点","label_en":"A little closer, a little farther","hint":"先听合成近似，再听 GM 采样，注意音头与尾音的比例","hint_en":"Compare synth and GM sample for the balance of attack and tail"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["A3","E4","A4","C5"],"label":"音头与尾音","label_en":"Attack and decay","hint":"这里只能比较音色包络，没有同一话筒的近、远距离录音。摆位差异需要实际录制同一乐句并匹配电平。","hint_en":"This compares timbral envelopes, not close and distant recordings with one microphone. Record the same phrase at matched level to evaluate placement."}
 ```
 
 ## 听什么
@@ -47,9 +47,9 @@ updated: 2026-10-28
 
 ## 常见误解
 
-- **近场就没有房间声** → 房间声仍在，只是直达声更强。
-- **远场一定更自然** → 小房间的远场会先收到驻波。
-- **后期混响能替代录音空间** → 混响加不出真实的早期反射。
+- 近拾音仍含房间反射，比例受指向性和环境影响。
+- 远拾音是否合适，取决于房间声是否值得录入。
+- 卷积或算法混响可以合成早期反射，但不能自动修复录音中已经存在的梳状滤波和串音。
 :::
 
 ::: en
@@ -66,7 +66,7 @@ The microphone hears direct sound mixed with room reflections. The closer it is,
 Place a voice 15 to 25 cm away, an acoustic guitar 20 to 30 cm away, and a drum head 2 to 10 cm away. For space, move back to 1 to 3 metres or find a favourable spot in the room. Trade distance for the reverb ratio instead of adding space with a plugin.
 
 ```audiolab
-{"type": "instrument", "gm": "Acoustic Grand Piano", "synth": "struck", "phrase": ["A3", "E4", "A4", "C5"], "label": "A little closer, a little farther", "label_en": "A little closer, a little farther", "hint": "先听合成近似，再听 GM 采样，注意音头与尾音的比例", "hint_en": "Compare synth and GM sample for the balance of attack and tail"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["A3","E4","A4","C5"],"label":"Attack and decay","label_en":"Attack and decay","hint":"This compares timbral envelopes, not close and distant recordings with one microphone. Record the same phrase at matched level to evaluate placement.","hint_en":"This compares timbral envelopes, not close and distant recordings with one microphone. Record the same phrase at matched level to evaluate placement."}
 ```
 
 ## What to listen for
@@ -75,7 +75,7 @@ Close up, listen for breath, fingers and pedals. Farther away, listen to the who
 
 ## Common misconceptions
 
-- **Close miking has no room sound** → the room is still there, just quieter relative to the direct sound.
-- **Distant miking is always more natural** → in a small room it picks up standing waves first.
-- **Reverb can replace recorded space** → it cannot create the real early reflections.
+- Close microphones still capture reflections, depending on pattern and room.
+- Distant placement is useful when the room contribution is useful.
+- Convolution and algorithmic reverbs can create early reflections, but do not automatically repair comb filtering or spill already in the recording.
 :::

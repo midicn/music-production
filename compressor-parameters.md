@@ -16,13 +16,13 @@ links:
   - "[[glossary:bus]]"
   - "[[instrument:drum-kit]]"
 instances:
-  - groove-000000 | 放克鼓循环的军鼓边缘清楚，改启动时间时差别最直接
-  - groove-000011 | 鼓与贝斯交替出现，释放过长时会听到整体随低频抽吸
-  - pdmx-000450 | 勃拉姆斯《德意志安魂曲》动态跨度大，适合观察压缩对强弱层次的保留
+  - groove-000000 | 鼓组音头的源素材；启动时间差别须另做压缩渲染 | Drum attacks as source material; attack-time differences need separately compressed renders
+  - groove-000011 | 节奏与声部交替参照，不包含释放时间的处理对照 | Alternating rhythmic parts, without a release-time processing comparison
+  - pdmx-000450 | 强弱层次的谱面参照，不证明压缩器保留了动态 | A reference for scored dynamics, not evidence of compressor behaviour
 sources:
   - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012.
   - Huber and Runstein, Modern Recording Techniques, dynamics chapter.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -36,14 +36,14 @@ updated: 2026-10-28
 
 ## 旋钮与耳朵
 
-人声常从 −20 dB 阈值、3:1 起手，启动 10–30 ms 放过字头，释放 80–200 ms 跟住句子。启动快于 5 ms 会削掉鼓槌的点击；释放太短会随低音起伏，产生抽吸。软拐点适合总线，硬拐点适合控制单个音头。
+阈值必须跟随输入电平，不能把某个 dB 数字当成人声通用处方。可先用 3:1、较慢启动和中等释放，调阈值让目标强句出现约几 dB 衰减，再听弱句是否仍完整。例如输入高于阈值 9 dB，在硬拐点的静态 3:1 曲线上只超出 3 dB，即衰减约 6 dB；真实启动阶段还受检测与时间常数影响。
 
 ## 耳朵要抓的点
 
 放鼓组循环，先听军鼓的敲击边缘，再把启动从 30 ms 收到 1 ms。然后让贝斯与鼓同时出现，听整体是否随低音一压一放。
 
 ```audiolab
-{"type":"instrument","gm":"Electric Bass (finger)","synth":"plucked","phrase":["E2","E2","G2","A2"],"label":"贝斯短句","label_en":"Bass figure","hint":"先听干声，再对比慢启动与快启动","hint_en":"Hear it dry, then compare slow and fast attack"}
+{"type":"instrument","gm":"Electric Bass (finger)","synth":"plucked","phrase":["E2","E2","G2","A2"],"label":"贝斯短句参照","label_en":"Bass phrase reference","hint":"听每个音的起音与持续部分。此演示不改变压缩器启动时间，快慢启动须在同一音频上做处理对照。","hint_en":"Hear each note’s onset and body. This block does not vary compressor attack; compare attack settings on the same audio."}
 ```
 
 ## 容易弄错的
@@ -62,14 +62,14 @@ A detector reads the input level and, above the threshold, scales gain by the ra
 
 ## Knobs and ears
 
-For a vocal, start near minus 20 dB with 3 to 1, attack 10 to 30 ms to let consonants through, release 80 to 200 ms to follow phrases. Attack faster than 5 ms removes the beater click of a drum; a very short release pumps with the bass. A soft knee suits a bus; a hard knee suits taming a single transient.
+Threshold must follow input level rather than a universal vocal setting. Try 3:1, a slower attack and moderate release, then set threshold for a few dB of reduction on the intended loud phrases. A steady signal 9 dB above a hard-knee threshold emerges 3 dB above it at 3:1, giving about 6 dB reduction. Detection and timing also affect the attack.
 
 ## What the ear should catch
 
 Play a drum loop and listen to the edge of the snare, then pull attack from 30 ms to 1 ms. Next, with bass and drums together, hear whether the whole picture dips and recovers with every bass note.
 
 ```audiolab
-{"type": "instrument", "gm": "Electric Bass (finger)", "synth": "plucked", "phrase": ["E2", "E2", "G2", "A2"], "label": "Bass figure", "label_en": "Bass figure", "hint": "先听干声，再对比慢启动与快启动", "hint_en": "Hear it dry, then compare slow and fast attack"}
+{"type":"instrument","gm":"Electric Bass (finger)","synth":"plucked","phrase":["E2","E2","G2","A2"],"label":"Bass phrase reference","label_en":"Bass phrase reference","hint":"Hear each note’s onset and body. This block does not vary compressor attack; compare attack settings on the same audio.","hint_en":"Hear each note’s onset and body. This block does not vary compressor attack; compare attack settings on the same audio."}
 ```
 
 ## Easy to get wrong

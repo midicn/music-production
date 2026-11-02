@@ -15,13 +15,13 @@ links:
   - "[[glossary:phase-check]]"
   - "[[glossary:headroom]]"
 instances:
-  - pdmx-002592 | 木管与弦乐密集，中低浑浊与掩蔽最容易在这一段暴露
-  - groove-000000 | 鼓循环的瞬态清楚，过度压缩与镲片刺耳可当场辨认
-  - mutopia-000546 | 人声与钢琴同场，齿音与中频掩蔽的典型素材
+  - pdmx-002592 | 密集配器的音符参照，可用于讨论声部让位 | Dense-instrumentation notes for discussing part spacing
+  - groove-000000 | 鼓组节奏参照，不包含过度压缩的音频版本 | Drum-rhythm reference without an overcompressed audio version
+  - mutopia-000546 | 声乐与钢琴的声部参照，不记录真实演唱齿音 | Voice-and-piano parts without recorded vocal sibilance
 sources:
   - Owsinski, Bobby，The Mixing Engineer's Handbook（Cengage）— 混音常见问题章节核对，未引用
   - Katz, Bob，Mastering Audio（Focal Press）— 单声道检查与动态判断章节核对，未引用
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -29,16 +29,16 @@ updated: 2026-10-28
 混音的错误往往不刺耳，只是还行，直到换一套系统才暴露。听辨训练的目标是给每种毛病找到对应的症状与动作。
 
 ## 它怎么工作
-常见问题可以归成四类。中低频堆积让声音浑浊，症状是贝斯与底鼓争同一八度；高频过多让耳朵疲劳，症状是镲片比人声还亮；过度压缩让瞬态消失，症状是鼓没有起音、整体变平；相位问题让单声道塌陷，症状是关掉一只音箱后某些元素消失。混响过多则是另一种远，细节被尾巴盖住。
+把症状当线索而非诊断：浑浊可能来自音区、增益、混响或频谱重叠；刺耳也可能只出现在少数音节；起音变弱可能来自演奏、包络或动态处理。检查单声道时应将左右声道按正确方式求和，关闭一只音箱只会少听一条声道，不能代替单声道折叠。
 
 ## 参数与取舍
-先小音量听平衡，再用单声道检查相位，最后与参考曲对比亮度与低频。独奏每个元素，确认它单独成立，再放回整体。高频刺耳先查二到四千赫兹的堆积，而不是继续加均衡。低频浑浊先切高通，再决定要不要减。
+先用较小监听音量检查平衡，再与匹配响度的参考比较。逐个旁通可疑处理，在上下文中判断原因：若降低一条声部就解决掩蔽，不必先给每轨高通；若只有一个擦音刺耳，可局部处理，不必削暗整首。独奏用于定位，最终判断仍要回到全组。
 
 ## 耳朵要抓的点
 贝斯与底鼓是否在同一条线上，人声是否被埋，镲片是否先于内容吸引注意，关掉混响后细节是否回来。
 
 ```audiolab
-{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C3","D3","E3","G3","B3"],"label":"低音区的密集和弦","label_en":"A dense chord in the low register","hint":"先听这几个低音挤在一起，再想象叠加贝斯后浑浊会加重多少","hint_en":"Hear these low notes crowd together, then imagine how much muddier they become under a bass"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C3","D3","E3","G3","B3"],"label":"低音区密集和弦","label_en":"Dense bass-register chord","hint":"可以观察低音区音符叠置的听感；实际混音问题还需检查音色、增益和效果链，不能只由谱面判断。","hint_en":"Hear notes crowded into the bass register. Actual mix faults also require checking timbre, gain and processing rather than the score alone."}
 ```
 
 ## 容易弄错的
@@ -50,16 +50,16 @@ updated: 2026-10-28
 Mix mistakes rarely shout; they pass as fine until another system exposes them. Critical listening should attach a symptom and an action to each fault.
 
 ## How it works
-Four families cover most of them. Build-up in the low midrange makes mud, and the symptom is bass and kick fighting over one octave. Excess highs tire the ear, and the symptom is cymbals brighter than the voice. Over-compression removes transients, and the symptom is drums with no attack and a flat whole. Phase trouble collapses mono, and the symptom is elements disappearing when one speaker is muted. Too much reverb is a different kind of distance, where the tail covers detail.
+Treat symptoms as clues rather than diagnoses: mud may come from register, gain, reverb or spectral overlap; harshness may affect only a few syllables; weak attacks may reflect performance, envelopes or dynamics. A mono check sums left and right correctly. Muting one speaker removes a channel and is not a substitute.
 
 ## Settings and trade-offs
-Listen quietly for balance first, check phase in mono next, then compare brightness and bass with a reference. Solo each element to confirm it stands alone, then return it to the whole. For harsh highs, look for a pile-up between two and four kilohertz instead of adding more EQ. For low mud, high-pass first and then decide whether to cut.
+Check balance at moderate level, then compare a loudness-matched reference. Bypass suspect processing one element at a time in context. If lowering one part fixes masking, do not automatically high-pass every track; if one sibilant is harsh, treat it locally rather than darkening the whole mix. Soloing locates problems, but final judgement belongs in the mix.
 
 ## What the ear catches
 Whether bass and kick share one line, whether the voice is buried, whether cymbals draw attention before the content, and whether detail returns when the reverb is bypassed.
 
 ```audiolab
-{"type": "instrument", "gm": "Acoustic Grand Piano", "synth": "struck", "phrase": ["C3", "D3", "E3", "G3", "B3"], "label": "A dense chord in the low register", "label_en": "A dense chord in the low register", "hint": "先听这几个低音挤在一起，再想象叠加贝斯后浑浊会加重多少", "hint_en": "Hear these low notes crowd together, then imagine how much muddier they become under a bass"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C3","D3","E3","G3","B3"],"label":"Dense bass-register chord","label_en":"Dense bass-register chord","hint":"Hear notes crowded into the bass register. Actual mix faults also require checking timbre, gain and processing rather than the score alone.","hint_en":"Hear notes crowded into the bass register. Actual mix faults also require checking timbre, gain and processing rather than the score alone."}
 ```
 
 ## Common misconceptions

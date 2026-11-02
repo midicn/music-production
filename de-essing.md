@@ -16,13 +16,14 @@ links:
   - "[[instrument:voice]]"
   - "[[period:romantic]]"
 instances:
-  - openscore-000007 | 法语艺术歌曲字头密集，齿音与气声容易分辨（C1）
-  - openscore-000021 | 西班牙语歌曲辅音清晰，适合检查齿音是否被压过头（C1）
-  - openscore-000024 | 女高音高音多，齿音与高频泛音容易混淆（C1）
+  - openscore-000007 | 法语歌曲的音符参照，不包含字头与气声的录音（C1） | French-song notes without recorded consonant attacks or breath (C1)
+  - openscore-000021 | 歌曲旋律参照，不含压制齿音前后的音频（C1） | Song-melody reference without before-and-after de-essing audio (C1)
+  - openscore-000024 | 高音声部参照，不能把音符泛音当成真实擦音（C1） | High vocal-part notes; their harmonics are not recorded sibilants (C1)
 sources:
+  - "https://www.fabfilter.com/help/pro-ds/using/advancedcontrols"
   - Bobby Owsinski, The Mixing Engineer's Handbook, vocal sibilance and de-essing.
   - David Gibson, The Art of Mixing, vocal consonant preservation.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -36,14 +37,14 @@ updated: 2026-10-28
 
 ## 做法
 
-先用片段增益或音量自动化把最尖的几下压平，再让去齿音器做细活。分频模式只处理五到八千赫兹，衰减二到六 dB，启动要快、释放中等，避免抽气。宽带模式会连元音一起压，只在极端时短用。处理后用耳机与手机各听一遍。
+先用检测监听定位实际擦音，再比较片段增益、宽带或分频模式。选择能让整句发音自然的方式，并限制最大衰减。不要仅凭人声性别预设频率，也不要把宽带模式限定为极端情况；算法和输入差异会改变结果。处理后在匹配电平下听整句，防止为了消除一个s音而损伤相邻元音。
 
 ## 听什么
 
-听 s 与 sh 是否从句子里跳出来，压完后是否变成 lisp，长音是否还在。下面三个高音连续出现，注意高频边缘何时开始刺。
+在同一段实际人声音频中，比较旁通与处理后的s、sh及相邻元音，检查是否含混或过暗。高音音符的频率高，不等于存在语言擦音；判断应针对实际发音而不是音符音区。
 
 ```audiolab
-{"type":"instrument","gm":"Voice Oohs","synth":"vocal","phrase":["A4","E5","A5"],"label":"高音区的边缘","label_en":"The edge of the upper register","hint":"听高音的能量，想象擦音在这一带突然冒出","hint_en":"Hear the energy up high and picture a sibilant jumping out there"}
+{"type":"instrument","gm":"Voice Oohs","synth":"vocal","phrase":["A4","E5","A5"],"label":"高音区旋律参照","label_en":"High-register melody reference","hint":"高音区音符与歌词擦音是不同现象。本段没有歌词发音，也没有去齿音处理。","hint_en":"High notes and sibilant consonants are different phenomena. This block contains neither lyric pronunciation nor de-essing."}
 ```
 
 ## 常见误解
@@ -62,14 +63,14 @@ Suppress only the few excessive hits and leave normal consonants intact. Listen 
 
 ## Method
 
-Flatten the worst peaks first with clip gain or volume automation, then let the de-esser do the fine work. In split-band mode, process only five to eight thousand hertz with two to six dB of reduction, a fast attack and a medium release to avoid pumping. Wideband mode pulls vowels down too, so use it briefly and rarely. Check the result on headphones and on a phone.
+Locate actual sibilance with detector audition, then compare clip gain, wide-band and split-band modes. Choose natural phrase-level pronunciation and limit maximum attenuation. Do not set frequency solely from singer gender or reserve wide-band mode for extreme cases; algorithm and input matter. Loudness-match the full phrase and ensure that treating one s does not damage neighbouring vowels.
 
 ## What to listen for
 
-Hear whether s and sh jump out of the phrase, whether the result turns into a lisp, and whether long notes survive. The three high notes below repeat; notice when the upper edge starts to sting.
+Compare s, sh and neighbouring vowels in bypassed and processed versions of the same vocal audio, checking intelligibility and dulling. A high musical note does not by itself contain a sibilant consonant; judge the pronunciation rather than register.
 
 ```audiolab
-{"type": "instrument", "gm": "Voice Oohs", "synth": "vocal", "phrase": ["A4", "E5", "A5"], "label": "The edge of the upper register", "label_en": "The edge of the upper register", "hint": "听高音的能量，想象擦音在这一带突然冒出", "hint_en": "Hear the energy up high and picture a sibilant jumping out there"}
+{"type":"instrument","gm":"Voice Oohs","synth":"vocal","phrase":["A4","E5","A5"],"label":"High-register melody reference","label_en":"High-register melody reference","hint":"High notes and sibilant consonants are different phenomena. This block contains neither lyric pronunciation nor de-essing.","hint_en":"High notes and sibilant consonants are different phenomena. This block contains neither lyric pronunciation nor de-essing."}
 ```
 
 ## Common misconceptions

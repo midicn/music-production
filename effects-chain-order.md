@@ -16,13 +16,13 @@ links:
   - "[[glossary:compressor]]"
   - "[[instrument:voice]]"
 instances:
-  - groove-000000 | 放克鼓循环的瞬态清楚，压缩与 EQ 的先后差别比想象中明显
-  - mutopia-000546 | 女声与钢琴需要先修齿音再压缩，顺序错了会放大刺耳感
-  - oga-000001 | 管弦铺底层次多，总线上先 EQ 后压缩更容易听出低频触发
+  - groove-000000 | 鼓组源素材，EQ与压缩顺序的差异需另做处理 | Drum-source material; EQ/compressor ordering needs separate processing
+  - mutopia-000546 | 声乐与钢琴音符参照，不包含应当先处理的真实齿音 | Voice-and-piano notes without actual sibilance that dictates processing order
+  - oga-000001 | 管弦声部层次参照，不提供不同总线处理顺序的对照 | Orchestral-layer reference without alternate bus-processing orders
 sources:
   - Pirkle, Designing Audio Effect Plugins in C++.
   - Huber and Runstein, Modern Recording Techniques, effects and signal processing chapter.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -32,18 +32,18 @@ updated: 2026-10-28
 
 ## 背后的机制
 
-线性效果如 EQ 可以交换，非线性和时间效果不行。失真对输入电平敏感，放在 EQ 前，EQ 会改变进入削波器的电平与频谱；放在 EQ 后，削波结果不会被后续滤波改变。压缩器放在混响前，会让混响尾巴保持稳定；放在混响后，尾巴会随干声一起被压。延迟与混响通常放在链尾，避免被失真重复削波。
+在理想线性时不变条件下，两个串联滤波器的顺序可以交换；调制、动态检测、非线性、内部限幅或不同延迟补偿会破坏这个简化条件。EQ放在失真前，会改变送入非线性环节的频谱与电平；EQ放在失真后，则塑造已经产生的谐波。混响前压缩主要改变送入混响的包络，混响后压缩则会一起处理干声与混响，具体也取决于串联还是发送路由。
 
 ## 旋钮与耳朵
 
-人声链常见顺序是高通、去齿音、压缩、EQ、调制、延迟与混响。吉他链常见是滤波、过载、调制、延迟、混响。总线链把 EQ 与压缩放在最后，顺序取决于你想让谁先看到峰值。每加一个效果，都问它应该看见干声还是已经处理过的声音。
+不要从一条固定的人声或吉他链开始照抄。先列出每一步的目的：去低频杂声、控制擦音、稳定动态还是创造空间，再问下一环节应该接收到什么。发送混响、并行压缩和反馈延迟应画出实际路由，插件窗口中的上下排列不一定说明整条信号路径。
 
 ## 耳朵要抓的点
 
-在放克鼓循环上对比「先压缩后 EQ」与「先 EQ 后压缩」，前者更稳，后者更容易让某些击打先触发压缩。在人声上把混响放到压缩前，听尾巴是否被压得忽大忽小。
+复制同一段源音频，两版只交换一对处理器的顺序，其余参数与路由保持一致，再补偿输出响度。观察检测器和频谱变化后回听完整段落；先压缩后EQ并不自动更稳，先EQ后压缩也不自动更容易误触发。
 
 ```audiolab
-{"type":"instrument","gm":"Electric Guitar (clean)","synth":"plucked","phrase":["E3","B3","G3","D4","A3","E4"],"label":"一条可改顺序的吉他句","label_en":"A guitar line whose chain can be reordered","hint":"先听干声，再想滤波与过载谁先看到这一句","hint_en":"Hear it dry, then ask whether filtering or drive should see the line first"}
+{"type":"instrument","gm":"Electric Guitar (clean)","synth":"plucked","phrase":["E3","B3","G3","D4","A3","E4"],"label":"吉他短句参照","label_en":"Guitar-phrase reference","hint":"播放器没有效果链顺序开关。将这类素材渲染为音频后，分别试验EQ→压缩和压缩→EQ并匹配电平。","hint_en":"This player has no effect-order switch. Render suitable material to audio, then compare EQ→compression with compression→EQ at matched level."}
 ```
 
 ## 容易弄错的
@@ -58,18 +58,18 @@ The same effects in a different order become a different tone. Order is not the 
 
 ## The mechanism
 
-Linear effects such as EQ can trade places. Nonlinear and time-based effects cannot. Distortion is sensitive to input level, so an EQ before it changes the level and spectrum entering the clipper; an EQ after it filters an already clipped result. A compressor before reverb steadies the tail, while one after reverb pulls the tail down with the dry. Delay and reverb usually sit at the end so distortion cannot clip their repeats.
+Two cascaded filters commute under ideal linear time-invariant conditions. Modulation, dynamics, nonlinearity, internal clipping or different delay compensation can break that simplification. EQ before distortion changes the spectrum and level entering the nonlinearity; EQ after distortion shapes harmonics already created. Compression before reverb changes its excitation envelope, while compression after reverb processes the resulting combination, also depending on insert or send routing.
 
 ## Knobs and ears
 
-A vocal chain runs high-pass, de-esser, compressor, EQ, modulation, delay and reverb. A guitar chain runs filter, overdrive, modulation, delay and reverb. On a bus, EQ and compression come last, their order depending on which sees peaks first. For each effect, ask whether it should see the dry or processed sound.
+Do not copy one fixed vocal or guitar chain. List each purpose—rumble control, sibilance, dynamics or space—and decide what the next stage should receive. Draw send reverbs, parallel compression and feedback delays explicitly; window order alone may not describe the complete path.
 
 ## What the ear should catch
 
-On a funk drum loop, compare compression before EQ with EQ before compression. The first stays steadier; the second lets some hits trigger the compressor. On a voice, put reverb before compression and hear whether the tail moves with the dry line.
+Duplicate one source passage and swap only one processor pair, keeping other settings and routing fixed, then compensate output loudness. Inspect detection and spectral changes before hearing the full passage. Compression before EQ is not automatically steadier, nor EQ before compression automatically prone to unwanted triggering.
 
 ```audiolab
-{"type": "instrument", "gm": "Electric Guitar (clean)", "synth": "plucked", "phrase": ["E3", "B3", "G3", "D4", "A3", "E4"], "label": "A guitar line whose chain can be reordered", "label_en": "A guitar line whose chain can be reordered", "hint": "先听干声，再想滤波与过载谁先看到这一句", "hint_en": "Hear it dry, then ask whether filtering or drive should see the line first"}
+{"type":"instrument","gm":"Electric Guitar (clean)","synth":"plucked","phrase":["E3","B3","G3","D4","A3","E4"],"label":"Guitar-phrase reference","label_en":"Guitar-phrase reference","hint":"This player has no effect-order switch. Render suitable material to audio, then compare EQ→compression with compression→EQ at matched level.","hint_en":"This player has no effect-order switch. Render suitable material to audio, then compare EQ→compression with compression→EQ at matched level."}
 ```
 
 ## Easy to get wrong

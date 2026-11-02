@@ -2,10 +2,10 @@
 id: volume-balance
 site: prod
 cat: A6
-title: 音量平衡是八成
-title_en: Level Balance Is Most of the Mix
-summary: 推子定下谁在前谁在后，多数音色问题会随平衡一起消失。
-summary_en: Faders decide what sits forward and back, and many tone problems disappear with balance.
+title: 音量平衡
+title_en: Level Balance
+summary: 确定声部前后关系，用可重复的对照调整静态平衡与段落变化
+summary_en: Set the relationship between parts and compare static balance and section changes
 level: standard
 tags: [混音, 音量, 平衡, 推子]
 tags_en: [mixing, level, balance, faders]
@@ -16,63 +16,67 @@ links:
   - "[[instrument:voice]]"
   - "[[instrument:drum-kit]]"
 instances:
-  - openscore-000008 | 艺术歌曲的旋律与钢琴并置，推子一动就知谁在主导
-  - oga-000000 | 三轨小编制，声部少，平衡问题不会被遮住
-  - groove-000002 | 灵魂乐鼓组，各件之间的平衡先于任何处理
+  - openscore-000008 | 舒伯特《魔王》的谱面参照，声部可在工程中另行分配 | Score reference for Schubert’s Erlkönig; parts can be assigned separately in a session
+  - oga-000000 | 游戏音乐素材参照，不预设其轨道数或混音平衡 | Game-music material without an assumed track count or mix balance
+  - groove-000002 | 鼓组 MIDI 参照，可在自己的鼓音源中调整各件关系 | Drum MIDI for testing relative instrument levels in your own drum source
 sources:
   - Bobby Owsinski, The Mixing Engineer's Handbook, fader balance chapter.
   - David Gibson, The Art of Mixing, visual mapping of level and pan.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
-## 问题
+## 先确定谁是前景
 
-推子是最便宜也最有效的工具，但很多人先动均衡。音量关系一变，同一段均衡的听感也会变。
+音量平衡安排各声部在不同段落中的相对位置。没有固定的“占混音八成”比例，也不要求每个声部始终同样清楚。先明确该段落要听见的旋律、节奏与低音，再决定哪些材料需要突出。
 
-## 目标与判断
+## 建立一版静态平衡
 
-目标是让每个声部在需要时出现，不需要时退后。判断标准很简单，合奏里没有哪一轨需要费力去找。平衡不是每轨一样响，而是每轨在该在的位置。若某轨要推高 6 dB 才听得见，问题多半在编曲或频段，不在推子。人声、底鼓与贝斯通常占前景，铺底与装饰让位。
+先关闭会明显改变响度的处理，降低监听音量，并为总线留出余量。选择编制较完整的一段，依次加入声部；每加入一轨，判断它承担的功能，而不是只听单轨是否好听。
 
-## 做法
+随后检查较稀疏的段落和段落转换。副歌合适的平衡未必适合主歌；可以用自动化调整，而不必整首共用一个推子位置。若某个声部被遮住，分别检查音量、音区、时机、声像与音色，不以“需要提高 6 dB”作为某类问题的诊断标准。
 
-从副歌开始，先定人声与鼓的相对位置；再加贝斯，让底鼓与贝斯交替占低频；和弦铺底降到刚好能感到和声；最后加装饰。每次只动一轨，动完回到整体听十秒。把总线衰减 6 dB，检查平衡是否依赖响度。
+## 一个可重复的比较
 
-## 听什么
-
-听主唱换气时伴奏是否忽然变大；听贝斯与底鼓是否互相盖住；把总音量降到很小，听旋律是否还在。
+保留当前平衡作为版本 A，只改变一个关系，例如主旋律相对伴奏提高一点，保存为版本 B。尽量匹配两版的整体响度，交替听相同位置，记录主线是否更清楚，以及其他声部是否被压住。
 
 ```audiolab
-{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C3","E3","G3","C4","G3","E3"],"label":"旋律与伴奏","label_en":"Melody and accompaniment","hint":"先听谁在前，再把伴奏推高 3 dB 对比","hint_en":"Hear what leads, then lift the accompaniment 3 dB and compare"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C3","E3","G3","C4","G3","E3"],"label":"短句参照","label_en":"Short-phrase reference","hint":"听音符的强弱与连接；声部平衡要在可独立调节的工程轨道中比较。","hint_en":"Hear dynamics and connections; compare balance using separately adjustable session parts."}
 ```
 
-## 常见误解
+这个短句只播放一个音色，没有独立的旋律/伴奏推子。要做平衡实验，应在工程里准备可独立调节的声部，再进行上述对照。
 
-把推子当补偿均衡用；以为所有轨都要听得见；以为平衡一次就能定稿。
+## 判断结果
+
+在整段音乐中检查句头、持续音和句尾，注意低音是否掩盖节奏、人声空隙是否让伴奏突然突出。换一档合理的监听音量复核，但不要只把总线衰减某个固定值就认定完成了响度匹配。
+
+音量平衡不能代替编曲、均衡或动态处理；这些手段也不应代替先把声部关系听清楚。
 :::
 
 ::: en
-## The problem
+## Establish the foreground
 
-The fader is the cheapest and strongest tool, yet many reach for EQ first. Change the level relationship and the same EQ is heard differently.
+Level balance sets the relative position of parts across a piece. No fixed percentage of mixing is achieved by faders alone, and every part need not remain equally prominent. Identify the melody, rhythm and bass that matter in the section before deciding what should lead.
 
-## Goal and judgement
+## Building a static balance
 
-Each part should appear when needed and step back when not. The test is simple: nothing is hard to find in the full mix. Balance is not equal loudness; it is each part sitting where it belongs. If a track needs 6 dB more to be audible, the problem is usually arrangement or spectrum, not the fader. Lead vocal, kick and bass normally sit forward; pads and ornaments give way.
+Begin without processing that substantially changes loudness, use a moderate monitoring level and leave bus headroom. Choose a fuller section and add parts in turn, judging each function in the ensemble rather than its solo sound alone.
 
-## Method
+Check sparser sections and transitions afterwards. A chorus balance may not suit a verse; automation can change it instead of retaining one fader setting throughout. For masking, examine level, register, timing, pan and timbre separately. A need for 6 dB more gain is not a universal diagnosis.
 
-Begin at the chorus. Set the vocal against the drums, add bass so kick and bass take turns in the low end, bring chords down until harmony is felt rather than heard, then add ornaments. Move one fader at a time and return to the whole mix for ten seconds. Drop the master by 6 dB to check whether balance depends on loudness.
+## A repeatable comparison
 
-## What to listen for
-
-Whether the backing jumps up between vocal phrases; whether bass and kick cover each other; whether the melody survives at very low volume.
+Save the current balance as A. Change one relationship, such as a small increase of melody relative to accompaniment, and save B. Match overall loudness as closely as practical, alternate the same passage, and note both improved clarity and any newly obscured parts.
 
 ```audiolab
-{"type": "instrument", "gm": "Acoustic Grand Piano", "synth": "struck", "phrase": ["C3", "E3", "G3", "C4", "G3", "E3"], "label": "Melody and accompaniment", "label_en": "Melody and accompaniment", "hint": "先听谁在前，再把伴奏推高 3 dB 对比", "hint_en": "Hear what leads, then lift the accompaniment 3 dB and compare"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["C3","E3","G3","C4","G3","E3"],"label":"短句参照","label_en":"Short-phrase reference","hint":"听音符的强弱与连接；声部平衡要在可独立调节的工程轨道中比较。","hint_en":"Hear dynamics and connections; compare balance using separately adjustable session parts."}
 ```
 
-## Common misconceptions
+This phrase uses one timbre and provides no independent melody and accompaniment faders. A balance experiment requires separately adjustable parts in a production session.
 
-Using faders to fix EQ problems; believing every track must be audible; expecting one balance pass to be final.
+## Judging the result
+
+Check phrase onsets, sustained notes and endings in context. Notice whether bass masks rhythmic detail or accompaniment jumps forward between vocal phrases. Recheck at another reasonable monitoring level; a fixed reduction of the master is not by itself loudness matching.
+
+Balance does not replace arrangement, EQ or dynamics processing. Those tools likewise do not replace listening to the basic relationships between parts.
 :::

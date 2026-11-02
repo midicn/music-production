@@ -15,13 +15,14 @@ links:
   - "[[glossary:harmonics]]"
   - "[[glossary:timbre]]"
 instances:
-  - groove-000000 | 踩镲与军鼓的高频成分多，降采样时最容易折回成沙声
-  - pdmx-000251 | 钢片琴的密集泛音在低采样率下会折叠到中频
-  - atepp-000381 | 高音区钢琴泛音丰富，混叠会让音头多一层金属毛边
+  - groove-000000 | 鼓组音符素材，可另行渲染后做抗混叠实验 | Drum notes for a separately rendered anti-aliasing experiment
+  - pdmx-000251 | 高音打击乐的音符参照，不包含降采样后的音频 | High-percussion notes without downsampled audio
+  - atepp-000381 | 钢琴高音区音符参照，不证明出现了混叠 | High piano notes that do not establish aliasing
 sources:
+  - "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.resample_poly.html"
   - Ken C. Pohlmann, Principles of Digital Audio — 用于核对混叠与过采样的机制。
   - Julius O. Smith III, Digital Audio Resampling — 用于核对重采样滤波与过渡带的说明。
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -31,22 +32,22 @@ updated: 2026-10-28
 
 ## 它怎么工作
 
-采样前如果没有把奈奎斯特频率以上的成分滤掉，它们会折叠到可听频段，这叫混叠。折叠不是衰减，而是频率镜像，假声会出现在与原音无关的位置，像金属摩擦或嘶嘶声。抗混叠滤波器要在采样之前工作，过渡带要窄，否则要么切掉太多高频，要么漏进折叠成分。降采样、变调与波表读取都可能重新引入混叠，所以每一步都要检查带宽。
+采样率为 Fs 时，输入中超出奈奎斯特频率 Fs/2 的成分可能映射到较低频率。例如以 8 kHz 采样未受限的 6 kHz 正弦，会与 2 kHz 分量混淆。抗混叠滤波必须在这一步折返之前限制带宽；折返一旦与有用信号重叠，事后低通不能自动分开。过渡带、衰减与运算成本需要一起设计。
 
 ## 旋钮与做法
 
-录音与导出保持 44.1 或 48 kHz，让转换器负责滤波。做大幅升调时先升采样再变调，或直接用带抗混叠的算法。自己做波表或失真时，在生成阶段就限制谐波，别等播放时再救。检查方法是把升降调前后的频谱对齐，看有没有非谐波成分突然出现。
+降采样应使用带抗混叠滤波的转换器。非线性失真和部分变调算法可能新生成高频成分，可比较其过采样或带限选项；仅把文件采样率调高并不保证算法正确。用扫频或单频测试时，记录输入频率、采样率和处理设置，并在频谱中检查原信号以外的折返分量。
 
 ## 耳朵要抓的点
 
-听踩镲与沙锤的尾音，折叠后会出现一层不随力度变化的沙声。听钢片琴的高音，假声会让音头变脏。听锯齿波主音上滑，若出现反向下行的假音，多半是混叠。听人声齿音，混叠会让齿音变成一片细碎的噪点。
+升高一个测试正弦的频率，若出现向相反方向移动的频谱线，可结合采样率计算它是否是混叠。复杂音乐中的金属声、粗糙感或嘶声也可能来自失真、编码和音色本身，不能只凭这些形容词确诊。
 
 ## 容易弄错的
 
 以为混叠只发生在低端设备；以为加一个低通效果器就能解决；以为提高音量可以掩盖。
 
 ```audiolab
-{"type":"instrument","gm":"Lead 2 (sawtooth)","synth":"bowed","phrase":["A5","C6","E6","A6"],"label":"锯齿波的高音","label_en":"A sawtooth high up","hint":"演示在固定采样率下合成，听高音区锯齿的毛边；真正的折叠要在低采样率导出时对比","hint_en":"The lab synthesises at a fixed rate, so listen for the gritty edge up high; real folding needs a low-rate export to compare"}
+{"type":"instrument","gm":"Lead 2 (sawtooth)","synth":"bowed","phrase":["A5","C6","E6","A6"],"label":"高音区锯齿音色","label_en":"High-register sawtooth timbre","hint":"高音区音色可供参照，但播放器没有切换抗混叠滤波。真正的混叠测试要指定频率、采样率和算法，再检查折返分量。","hint_en":"This high-register timbre is a reference without an anti-alias filter switch. Specify frequency, rate and algorithm before inspecting alias components."}
 ```
 :::
 
@@ -57,21 +58,21 @@ Why does downsampling sometimes add a sandy layer to cymbals that was not in the
 
 ## How it works
 
-If content above Nyquist is not removed before sampling, it folds into the audible band. This is aliasing, and it is a mirror in frequency, not a fade, so the false tones often land far from the original pitch and read as metallic friction or hiss. The anti-aliasing filter must act before conversion, with a narrow transition band; too wide and it cuts useful highs, too gentle and folded content leaks through. Modern converters oversample and filter digitally, easing the analog stage. Downsampling, pitch shifting and wavetable lookup can each reintroduce aliasing, so every stage needs a bandwidth check.
+At sample rate Fs, components above the Nyquist frequency Fs/2 can map to lower frequencies. An unfiltered 6 kHz sine sampled at 8 kHz, for example, aliases to 2 kHz. Bandwidth must be limited before that folding occurs; a later low-pass cannot automatically separate aliases already overlapping wanted signal. Transition width, attenuation and computation cost must be designed together.
 
 ## Knobs and practice
 
-Record and deliver at 44.1 or 48 kHz and let the converter filter. For large upward shifts, upsample before shifting or use an algorithm with built-in anti-aliasing. When generating wavetables or distortion, limit harmonics at the source instead of repairing later. To check, align spectra before and after the shift and look for non-harmonic content that appears from nowhere.
+Use an anti-aliased converter for downsampling. Nonlinear distortion and some pitch algorithms can generate new high frequencies, so compare available oversampling or band-limited modes; raising the file rate alone is not a guarantee. For a sine or sweep test, record frequency, rate and settings and inspect folded components in the spectrum.
 
 ## What the ear catches
 
-Hear hi-hat and shaker tails: aliasing adds a sandy layer that does not follow velocity. Hear celesta high notes, where the attack turns dirty. Slide a sawtooth lead upward and listen for a false tone moving the wrong way. Hear vocal sibilance, which can collapse into fine noise.
+When a test sine rises, an oppositely moving spectral component can be checked against the sample rate as a possible alias. Metallic sound, roughness or hiss in music can also come from distortion, coding or the instrument itself; these descriptions alone do not diagnose aliasing.
 
 ## Easy to get wrong
 
 That aliasing only happens on cheap gear; that a low-pass effect fixes it; that louder playback hides it.
 
 ```audiolab
-{"type": "instrument", "gm": "Lead 2 (sawtooth)", "synth": "bowed", "phrase": ["A5", "C6", "E6", "A6"], "label": "A sawtooth high up", "label_en": "A sawtooth high up", "hint": "The lab synthesises at a fixed rate, so listen for the gritty edge up high; real folding needs a low-rate export to compare", "hint_en": "The lab synthesises at a fixed rate, so listen for the gritty edge up high; real folding needs a low-rate export to compare"}
+{"type":"instrument","gm":"Lead 2 (sawtooth)","synth":"bowed","phrase":["A5","C6","E6","A6"],"label":"High-register sawtooth timbre","label_en":"High-register sawtooth timbre","hint":"This high-register timbre is a reference without an anti-alias filter switch. Specify frequency, rate and algorithm before inspecting alias components.","hint_en":"This high-register timbre is a reference without an anti-alias filter switch. Specify frequency, rate and algorithm before inspecting alias components."}
 ```
 :::

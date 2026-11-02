@@ -14,13 +14,13 @@ links:
   - "[[glossary:sample-rate]]"
   - "[[glossary:monitoring]]"
 instances:
-  - atepp-001868 | 亨德尔《和谐的铁匠》变奏音符密集，低码率下快速音型先糊（C1）
-  - groove-000000 | 踩镲与军鼓的瞬态是编码器的难关，预回声在这里最容易听出（C1）
-  - thesession-000083 | 单声部旋律线干净，编码失真没有伴奏遮掩（C1）
+  - atepp-001868 | 密集变奏的音符素材，可另渲染后制作编码测试（C1） | Dense-variation notes for separate rendering and codec tests (C1)
+  - groove-000000 | 鼓组瞬态的源素材，不包含编码器生成的预回声（C1） | Drum-attack source material without encoder-generated pre-echo (C1)
+  - thesession-000083 | 单声部旋律素材，没有不同码率的编码对照（C1） | Single-line melody without alternate-bitrate codec renders (C1)
 sources:
   - 心理声学模型与掩蔽阈值的通识；音频编码教材是主要依据。
   - Opus 与 AAC 的公开测试资料——依据来自规范与听测报告。
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -30,23 +30,23 @@ updated: 2026-10-28
 
 ## 原理
 
-心理声学模型计算掩蔽阈值，响的成分会盖住邻近的弱成分，被盖住的部分可以粗量化。编码器把信号分帧做频域变换，量化系数再熵编码。码率低时量化噪声上升，瞬态前出现预回声，高频被截掉，声场变窄。联合立体声再利用左右相关压缩声像。
+感知编码器利用听觉掩蔽、变换和量化等方法分配比特，但具体机制依编码器而异。码率受限时，部分素材可能出现预回声、带宽变化或调制伪影。联合立体声利用左右相关性，某些变换本身可以可逆；不能把联合立体声直接等同于声场变窄。
 
 ## 参数与做法
 
-音乐在 256 kbps 以上通常已接近透明，语音用 64 到 96 kbps，低延迟通信用 Opus。母带与归档不要用有损格式。避免多次转码。编码前把峰值留到负 1 dBFS 左右。
+选择编码器、码率和声道数时，先按目标平台与用途要求，再用困难片段试听。语音、立体声音乐和低延迟通信不能共用一个“透明”码率。保存无损母版，只在发行或访问副本上编码，避免从已有有损文件反复转码。峰值余量按编码与交付规范核对，采样峰值不能替代真峰值检查。
 
 ## 听什么
 
-在亨德尔《和谐的铁匠》变奏里听快速音型是否发糊，在放克鼓循环里听踩镲与军鼓的预回声，在单声部旋律里听高频沙感与尾音。编码失真在安静段与瞬态前最明显。
+从同一无损母版生成候选，解码后与原版匹配时间和电平，再检查瞬态前、持续高频、立体声定位和安静尾音。先盲听再看文件名；若无法可靠分辨差异，也应记录，而不是预先断言某个码率必然糊或必然透明。
 
 ```audiolab
-{"type":"instrument","gm":"Harpsichord","synth":"plucked","phrase":["C5","E5","G5","C6","G5","E5","C5"],"label":"密集的快速音型","label_en":"A dense fast figure","hint":"把码率压低再听，注意瞬态前是否多出一层沙","hint_en":"Drop the bitrate and listen for a layer of sand before each attack"}
+{"type":"instrument","gm":"Harpsichord","synth":"plucked","phrase":["C5","E5","G5","C6","G5","E5","C5"],"label":"快速音型参照","label_en":"Fast-figure reference","hint":"这段没有码率开关。把同一无损音频分别编码、解码后匹配电平，才可检查预回声和高频伪影。","hint_en":"There is no bitrate switch. Encode and decode the same lossless audio at different settings, then match level to inspect pre-echo and high-frequency artifacts."}
 ```
 
 ## 常见误解
 
-有损就一定听得出来，高码率下多数人难以分辨。码率高就一定好，编码器与素材同样重要。有损文件可以再压成无损，那只是换了容器。有损压缩不只影响高频，瞬态与声像也会受损。
+有损解码后转存无损格式可以避免下一次再编码，但不会恢复已经丢弃的信息。码率也不是跨编码器统一的质量标尺；应把文件体积、延迟、兼容性与受控听音结果一起考虑。
 :::
 
 ::: en
@@ -56,21 +56,21 @@ Lossy coding skips what the ear will not notice, spending fewer bits there. Size
 
 ## How it works
 
-A psychoacoustic model computes masking thresholds, where loud content hides nearby quiet content, so masked parts can be coarsely quantized. The encoder frames the signal, transforms it to frequency, then quantizes and entropy-codes the coefficients. At low rates quantization noise rises, pre-echo appears before transients, highs are cut and the image narrows. Joint stereo exploits the correlation between channels.
+Perceptual codecs allocate bits using tools such as masking models, transforms and quantisation, with mechanisms varying by codec. Limited bitrate may expose pre-echo, bandwidth changes or modulation artifacts on some material. Joint stereo exploits channel correlation and some transforms are reversible; it is not inherently a narrowed stereo image.
 
 ## Settings and practice
 
-Music is usually near-transparent above 256 kbps; speech uses 64 to 96 kbps, and Opus suits low latency. Do not use lossy formats for masters or archives, and avoid repeated transcoding. Leave peaks near minus 1 dBFS before encoding.
+Choose codec, bitrate and channel count for platform and use, then audition difficult excerpts. Speech, stereo music and low-latency communication do not share one transparent bitrate. Retain a lossless master, encode distribution/access copies and avoid lossy-to-lossy generations. Check peak headroom for the codec and specification; sample peak does not replace true-peak measurement.
 
 ## What to listen for
 
-In Handel's Harmonious Blacksmith variations, hear whether fast figures turn muddy. In a funk loop, hear pre-echo around hi-hat and snare. On a single melodic line, hear high-frequency sand and tails. Codec damage shows most in quiet passages and before attacks.
+Generate candidates from one lossless master, decode and align time and level, then inspect pre-transients, sustained highs, stereo position and quiet tails. Listen blind before filenames; record a failure to distinguish reliably rather than presuming one bitrate must blur or be transparent.
 
 ```audiolab
-{"type": "instrument", "gm": "Harpsichord", "synth": "plucked", "phrase": ["C5", "E5", "G5", "C6", "G5", "E5", "C5"], "label": "A dense fast figure", "label_en": "A dense fast figure", "hint": "把码率压低再听，注意瞬态前是否多出一层沙", "hint_en": "Drop the bitrate and listen for a layer of sand before each attack"}
+{"type":"instrument","gm":"Harpsichord","synth":"plucked","phrase":["C5","E5","G5","C6","G5","E5","C5"],"label":"Fast-figure reference","label_en":"Fast-figure reference","hint":"There is no bitrate switch. Encode and decode the same lossless audio at different settings, then match level to inspect pre-echo and high-frequency artifacts.","hint_en":"There is no bitrate switch. Encode and decode the same lossless audio at different settings, then match level to inspect pre-echo and high-frequency artifacts."}
 ```
 
 ## Common misconceptions
 
-Lossy is not always audible; at high rates most listeners cannot tell. A higher rate is not automatically better, since encoder and material matter too. A lossy file cannot be made lossless by repackaging. Nor is high frequency the only casualty, because transients and image suffer as well.
+Saving decoded lossy audio in a lossless format can avoid another coding generation, but cannot restore discarded information. Bitrate is not a uniform quality scale across codecs; consider size, latency, compatibility and controlled listening together.
 :::

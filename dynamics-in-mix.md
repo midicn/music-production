@@ -16,13 +16,13 @@ links:
   - "[[instrument:drum-kit]]"
   - "[[period:romantic]]"
 instances:
-  - musicnet-000069 | 弦乐四重奏的慢乐章起伏长，适合听压缩前后的呼吸（C1）
-  - oga-000004 | 游戏战斗循环几乎全程满能量，容易听出动态被压平（C1）
-  - atepp-000369 | 格里格《夜曲》钢琴强弱跨度大，适合对照段落对比（C1）
+  - musicnet-000069 | 室内乐乐句起伏的谱面参照，没有压缩前后两份音频（C1） | Scored chamber-music phrasing without two compression renders (C1)
+  - oga-000004 | 高密度战斗曲编排参照，不证明波形动态被压平（C1） | A dense battle-music arrangement that does not establish compressed waveform dynamics (C1)
+  - atepp-000369 | 钢琴强弱层次的音乐参照，可用于讨论段落对比（C1） | Piano dynamic contrasts for discussing sections (C1)
 sources:
   - Bobby Owsinski, The Mixing Engineer's Handbook, dynamic control and bus compression.
   - David Gibson, The Art of Mixing, energy and section contrast.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -32,18 +32,18 @@ updated: 2026-10-28
 
 ## 目标与判断
 
-动态要服务段落。主歌留出让歌词落地的空间，副歌通过演奏力度、编曲密度与少量电平提升推出两到四 dB 的差距。判断时看短时响度差，也看鼓的瞬态是否还在。压缩的任务是粘合与控峰，不是把整首歌压成一个音量。
+先决定段落希望怎样变化：更强的演奏、更多声部、更亮音区和更高电平是不同手段。短时响度可帮助记录差异，但没有所有主副歌都必须相差两到四dB的规定。也可通过收窄伴奏或减少前景声部，让后一个段落显得更展开。
 
 ## 做法
 
-先用推子自动化做出段落的自然起伏，再给单轨二到四 dB 的增益衰减。总线压缩用慢启动、二比一左右，只做一到二 dB，保留鼓的起音。需要密度时用并行压缩，把干净信号留在前面。每加一级都旁通对比，确认没有把弱音也推上来。
+先用编曲和自动化建立段落关系，再只处理需要稳定或塑形的声部。加入压缩前后匹配响度，检查主线、音头和安静细节；不必给每轨规定衰减量。若并行处理增加了不想要的房间声或抽吸，应重新调整路径或不用它。
 
 ## 听什么
 
-听主歌到副歌是变强还是只变响，鼓的起音是否还在，安静段落的指尖声与呼吸是否保留。下面四个音先听起音，再想压缩会削掉哪一部分。
+在同一工程中比较版本，先听主歌到副歌的关系，再把两版匹配整体响度，判断是否只是更响。安静部分的细节变化要用实际音频确认，不能从四个合成音符推断整首歌的压缩效果。
 
 ```audiolab
-{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","E4","G4","C5"],"label":"起音还在不在","label_en":"Is the attack still there","hint":"听每个音的开头，再想象慢启动压缩如何放过它","hint_en":"Hear each onset and picture a slow-attack compressor letting it through"}
+{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","E4","G4","C5"],"label":"音头与持续部分","label_en":"Attacks and sustained sound","hint":"这里呈现固定音符与力度，没有实际压缩。对照动态处理需使用同一音频并匹配响度。","hint_en":"These are fixed notes and velocities without compression. Compare dynamic processing using the same audio at matched loudness."}
 ```
 
 ## 常见误解
@@ -58,18 +58,18 @@ Compress every track, add a limiter on the bus, and the chorus does get louder, 
 
 ## Goal and judgement
 
-Dynamics should serve the sections. The verse leaves room for the lyric to land; the chorus earns a two to four dB lift through performance, arrangement density and a small level rise. Judge the short-term loudness difference and whether drum transients survive. Compression exists to glue and control peaks, not to force the whole song into one level.
+Decide how sections should differ: stronger performance, additional parts, brighter register and higher level are different tools. Short-term loudness can log differences, but no universal verse-to-chorus dB gap applies. Reducing accompaniment or foreground activity earlier can also make a later section feel more open.
 
 ## Method
 
-Ride faders first to create natural section movement, then ask each track for two to four dB of gain reduction. Use bus compression with a slow attack and a ratio near two to one, reducing only one to two dB so drum attacks pass through. When density is needed, use parallel compression and keep the clean signal in front. Bypass at every stage and confirm that quiet notes have not been pushed up.
+Establish sectional relationships with arrangement and automation, then process only parts needing control or shaping. Match loudness around compression and check the lead, attacks and quiet detail rather than assigning reduction to every track. If parallel processing adds unwanted ambience or pumping, adjust the route or omit it.
 
 ## What to listen for
 
-Hear whether the chorus grows stronger or merely louder, whether drum attacks remain, and whether finger noise and breath survive in quiet passages. The four notes below have clear onsets; hear them first, then imagine what compression would remove.
+Compare versions of the same session: hear the sectional relationship, then match overall loudness to distinguish improvement from simple level increase. Verify quiet-detail changes in actual audio rather than inferring a whole mix’s compression from four synthesized notes.
 
 ```audiolab
-{"type": "instrument", "gm": "String Ensemble 1", "synth": "bowed", "phrase": ["C4", "E4", "G4", "C5"], "label": "Is the attack still there", "label_en": "Is the attack still there", "hint": "听每个音的开头，再想象慢启动压缩如何放过它", "hint_en": "Hear each onset and picture a slow-attack compressor letting it through"}
+{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","E4","G4","C5"],"label":"Attacks and sustained sound","label_en":"Attacks and sustained sound","hint":"These are fixed notes and velocities without compression. Compare dynamic processing using the same audio at matched loudness.","hint_en":"These are fixed notes and velocities without compression. Compare dynamic processing using the same audio at matched loudness."}
 ```
 
 ## Common misconceptions

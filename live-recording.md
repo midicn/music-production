@@ -15,13 +15,13 @@ links:
   - "[[glossary:monitoring]]"
   - "[[instrument:voice]]"
 instances:
-  - mutopia-001319 | 长音连绵的合唱，一次成形时空间就是乐器
-  - openscore-000667 | 人声与钢琴同处一室，踏板与演唱互相渗入
-  - m21-000576 | 牧歌多声部，声部间不齐的呼吸正是现场要保留的
+  - mutopia-001319 | 合唱音符与连句的参照，不是现场房间声录音 | Choral notes and connected phrasing, not a recording of live room sound
+  - openscore-000667 | 歌声与钢琴的 MIDI 声部，不记录真实话筒串音 | Voice-and-piano MIDI parts that do not record real microphone spill
+  - m21-000576 | 多声部进入与停顿的参照，不用于证明现场换气 | Multiple entries and rests as reference, not proof of live breathing
 sources:
   - Bartlett and Bartlett, Practical Recording Techniques, remote recording chapters
   - AES Convention paper on live concert recording practice and audience miking
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -35,10 +35,10 @@ updated: 2026-10-28
 
 ## 摆位与参数
 
-主话筒架在观众席后方，高度接近人耳。舞台话筒按乐器分组，用不到的通道先关掉以减少串音。峰值留 10 dB 余量，宁可录低一点；备份机与主机各用独立存储。
+主话筒位置应按视线、安全、直达/混响比例与扩声系统覆盖决定，不必固定在观众席后排或耳高。观众话筒要避开明显的扬声器直射，检查与舞台近讲轨混合时的时间差。用各自独立存储的主、备录音保留足够峰值余量，开演前确认实际写盘而非只有输入电平。
 
 ```audiolab
-{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","E4","G4","C5"],"label":"一次成形的长音","label_en":"Sustained notes formed in one pass","hint":"听四个音怎样连成一句，想象中间没有补录的机会","hint_en":"Hear the four notes become one phrase, with no chance to patch later"}
+{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","E4","G4","C5"],"label":"连贯乐句","label_en":"Connected phrase","hint":"听音符如何组成乐句。这是合成示例，不是现场录音，不能据此判断舞台串音、观众声或话筒距离。","hint_en":"Hear how notes form a phrase. This is synthesis, not a live recording, and cannot establish stage spill, audience sound or microphone distance."}
 ```
 
 ## 听什么
@@ -63,10 +63,10 @@ Stage microphones run through a stage box to the preamps and recorder, while the
 
 ## Placement and settings
 
-Place the main pair behind the audience, at about ear height. Group the stage microphones by instrument and mute unused channels to reduce bleed. Leave 10 dB of headroom at the peaks; lower is safer than clipped, and the backup recorder uses separate storage.
+Place the main array for sight lines, safety, direct/reverberant balance and PA coverage, not automatically at the rear or ear height. Keep audience microphones away from strong direct loudspeaker spill and check their timing against close stage tracks. Main and backup recorders should use independent storage with suitable peak headroom; confirm actual recorded files before the show.
 
 ```audiolab
-{"type": "instrument", "gm": "String Ensemble 1", "synth": "bowed", "phrase": ["C4", "E4", "G4", "C5"], "label": "Sustained notes formed in one pass", "label_en": "Sustained notes formed in one pass", "hint": "听四个音怎样连成一句，想象中间没有补录的机会", "hint_en": "Hear the four notes become one phrase, with no chance to patch later"}
+{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C4","E4","G4","C5"],"label":"Connected phrase","label_en":"Connected phrase","hint":"Hear how notes form a phrase. This is synthesis, not a live recording, and cannot establish stage spill, audience sound or microphone distance.","hint_en":"Hear how notes form a phrase. This is synthesis, not a live recording, and cannot establish stage spill, audience sound or microphone distance."}
 ```
 
 ## What to listen for

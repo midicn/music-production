@@ -15,13 +15,14 @@ links:
   - "[[glossary:bit-depth]]"
   - "[[instrument:cymbals]]"
 instances:
-  - groove-001062 | 拉丁打击乐里镲与沙锤的能量集中在高频，降采样先变钝
-  - mutopia-000981 | 人声独唱，齿音集中在高频，采样率的选择在这里可听
-  - openscore-001257 | 钢琴与人声，高音区泛音密集，速率不足先失去光泽
+  - groove-001062 | 打击乐编制参照，不能由 MIDI 直接听出降采样损失 | Percussion instrumentation reference; MIDI alone does not reveal downsampling loss
+  - mutopia-000981 | 人声旋律的音符参照，不包含真实演唱齿音的录音 | Vocal-melody notes without a recording of real vocal sibilants
+  - openscore-001257 | 钢琴与人声声部的 MIDI 素材，没有不同采样率对照 | Piano-and-voice MIDI material without alternate sample-rate renders
 sources:
+  - "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.resample_poly.html"
   - Pohlmann, Principles of Digital Audio, sampling and conversion chapters
   - AES recommended practice for sampling frequency and studio interchange
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -38,12 +39,12 @@ updated: 2026-10-28
 音乐成品用 44.1 kHz，影视与视频用 48 kHz，需要大量变调或重处理时用 88.2 或 96 kHz。整张工程只用一个速率，避免反复转换。交付前先确认平台要求，不要等到母带阶段才改。
 
 ```audiolab
-{"type":"instrument","drum":"49","synth":"perc","phrase":["49","49"],"label":"镲片的高频先受影响","label_en":"Cymbal top end feels it first","hint":"先听镲的能量，再想采样率把最上面一截切在哪里","hint_en":"Hear the cymbal energy, then picture where the rate cuts the top"}
+{"type":"instrument","drum":"49","synth":"perc","phrase":["49","49"],"label":"镲片音色参照","label_en":"Cymbal timbre reference","hint":"这里只提供镲片音色，不能切换采样率。采样率差异须通过受控音频导出测试，不能用换音色来替代。","hint_en":"This provides a cymbal sound without a sample-rate switch. Compare controlled audio exports rather than substituting a change of timbre."}
 ```
 
 ## 听什么
 
-拿镲片与齿音多的素材对比：低速率下 15 kHz 以上先变钝，高速率经过多次变调仍保留边缘。差别很细，听不出时按交付格式选即可。
+44.1 kHz 的奈奎斯特频率为 22.05 kHz，不能据此推断 15 kHz 以上必然变钝。要比较采样率，使用同一源文件、已知转换设置和匹配电平的音频，不要用不同录音互比。没有听出可靠差别时，按交付与协作要求选择即可；本站 MIDI 试听不是不同采样率录音的盲听测试。
 
 ## 常见误解
 
@@ -66,12 +67,12 @@ The microphone signal passes through the preamp into the converter's anti-aliasi
 Use 44.1 kHz for music releases, 48 kHz for film and video, and 88.2 or 96 kHz for heavy pitch shifting. Keep one rate for the whole project and avoid repeated conversion. Confirm the delivery requirement before mastering.
 
 ```audiolab
-{"type": "instrument", "drum": "49", "synth": "perc", "phrase": ["49", "49"], "label": "Cymbal top end feels it first", "label_en": "Cymbal top end feels it first", "hint": "先听镲的能量，再想采样率把最上面一截切在哪里", "hint_en": "Hear the cymbal energy, then picture where the rate cuts the top"}
+{"type":"instrument","drum":"49","synth":"perc","phrase":["49","49"],"label":"Cymbal timbre reference","label_en":"Cymbal timbre reference","hint":"This provides a cymbal sound without a sample-rate switch. Compare controlled audio exports rather than substituting a change of timbre.","hint_en":"This provides a cymbal sound without a sample-rate switch. Compare controlled audio exports rather than substituting a change of timbre."}
 ```
 
 ## What to listen for
 
-Compare material rich in cymbals and sibilance. At a low rate the top above roughly 15 kHz dulls first; at a high rate the edge survives repeated pitch shifts. The difference is subtle, so when you cannot hear it, choose by delivery format.
+The Nyquist frequency at 44.1 kHz is 22.05 kHz; that does not imply inevitable dulling above 15 kHz. Compare rates using one source, known conversion settings and matched level rather than different recordings. If no reliable audible difference emerges, follow delivery requirements. The MIDI examples are not a blind test of recordings at different sample rates.
 
 ## Common misconceptions
 

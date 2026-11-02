@@ -15,19 +15,20 @@ links:
   - "[[glossary:latency]]"
   - "[[instrument:organ]]"
 instances:
-  - mutopia-000180 | 连续长音里，时钟不稳时高频先发毛
-  - groove-000775 | 鼓组瞬态密集，失锁的咔嗒容易被当成鼓边
-  - m21-000030 | 四声部合唱同时进入，错位会让和声整体发浑
+  - mutopia-000180 | 持续音的音乐参照，不包含设备失锁或时钟抖动记录 | Sustained musical notes without a device lock-loss or clock-jitter recording
+  - groove-000775 | 鼓组节拍参照，不能据此判断数字接口同步 | Drum-beat reference that does not establish digital-interface synchronisation
+  - m21-000030 | 多声部同时进入的谱面参照，不是独立设备时钟的测量 | A scored entry of multiple voices, not a measurement of independent device clocks
 sources:
+  - "https://archiv.rme-audio.de/old/english/download/wcm_e.pdf"
   - Watkinson, The Art of Digital Audio, clocking and interfacing chapters
   - AES Convention paper on word clock distribution and jitter
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 问题
 
-多台数字设备各自计时，采样点就会错位。轻则高频发毛，重则每隔几秒一声咔嗒。规则只有一条：选一个主时钟，其余设备跟随。
+直接交换数字音频的设备需要兼容的采样率和同步关系，否则可能发生样点丢失、重复、爆音或失锁。通常在一个同步域内选一台主时钟，其余设备跟随；带异步采样率转换的接口可以连接不同的时钟域。
 
 ## 信号链
 
@@ -38,24 +39,24 @@ updated: 2026-10-28
 选一台最稳定的设备做主时钟，其余设为外部同步。全场采样率必须一致，48 kHz 工程里不要留 44.1 kHz 设备。时钟线尽量短，避免过长的菊花链；等锁定指示灯稳定再开录。
 
 ```audiolab
-{"type":"rhythm","sig":"4/4","pattern":"q q q q","bpm":120,"label":"全场共用的那一个时钟","label_en":"The one clock everyone shares","hint":"先听它有多稳，再想两台设备各走各的会怎样","hint_en":"Hear its steadiness, then imagine two devices each keeping their own time"}
+{"type":"rhythm","sig":"4/4","pattern":"q q q q","bpm":120,"label":"规则节拍","label_en":"Regular pulse","hint":"这里只演示规则节拍，不改变设备的字时钟或模拟失锁。时钟同步应查看实际设备的锁定状态。","hint_en":"This demonstrates a regular pulse, not Word Clock changes or loss of lock. Check actual device lock status for sample-clock synchronisation."}
 ```
 
 ## 听什么
 
-播放持续和弦或管风琴长音，听高频是否毛糙、有没有周期性的轻响。调换主从再听同一段，锁定不稳时低频也会显得散。
+先看设备的 Sync/Lock 指示、采样率和数字输入错误记录，再沿信号链逐段排查。持续录一段音频，检查是否丢锁、出现不连续样点或爆音；不要只凭“高频发毛”或“低频松散”判断时钟优劣。普通 MIDI 试听不会改变音频接口的物理时钟，也不能模拟这类故障。
 
 ## 常见误解
 
-- **各自用自己的时钟更准** → 各自都准，合起来不准。
-- **时钟只影响数字接口** → 它决定每一次采样的时刻。
-- **听到咔嗒才要查** → 高频发毛已经是早期症状。
+- Word Clock 管采样同步，MIDI Clock 管节拍，MTC 管时间位置，三者不可混称。
+- 外接昂贵时钟不保证改善音质，先保证拓扑、终端和锁定设置正确。
+- 带采样率转换的数字输入应按设备说明设置，不能强套单一主从规则。
 :::
 
 ::: en
 ## The problem
 
-When several digital devices keep their own time, their samples land in different places. The first symptom is a slightly gritty top end; the next is a click every few seconds. One master clock, everything else following.
+Devices exchanging digital audio need compatible sample rates and synchronisation. Otherwise samples may be lost or repeated, causing clicks or loss of lock. A typical synchronisation domain has one master and followers; an asynchronous sample-rate converter can bridge different clock domains.
 
 ## Signal chain
 
@@ -66,16 +67,16 @@ The master can be a converter, an interface or a dedicated clock, distributed ov
 Choose the most stable device as master and set the rest to external sync. Every device must run the same rate; do not leave a 44.1 kHz unit in a 48 kHz session. Keep clock cables short, avoid long daisy chains, and wait for lock before recording.
 
 ```audiolab
-{"type": "rhythm", "sig": "4/4", "pattern": "q q q q", "bpm": 120, "label": "The one clock everyone shares", "label_en": "The one clock everyone shares", "hint": "先听它有多稳，再想两台设备各走各的会怎样", "hint_en": "Hear its steadiness, then imagine two devices each keeping their own time"}
+{"type":"rhythm","sig":"4/4","pattern":"q q q q","bpm":120,"label":"Regular pulse","label_en":"Regular pulse","hint":"This demonstrates a regular pulse, not Word Clock changes or loss of lock. Check actual device lock status for sample-clock synchronisation.","hint_en":"This demonstrates a regular pulse, not Word Clock changes or loss of lock. Check actual device lock status for sample-clock synchronisation."}
 ```
 
 ## What to listen for
 
-Play a sustained chord or an organ note and listen for a rough top end or periodic soft ticks. Swap the master and slave roles and hear it again; when lock is unstable, the low end also sounds loose.
+Check Sync/Lock indicators, sample rate and digital-input error reports before listening impressions. Record a sustained signal and inspect for lock loss, discontinuities or clicks. Descriptions such as gritty highs or loose bass do not identify a clock fault by themselves. Ordinary MIDI playback neither changes an interface's physical clock nor simulates these faults.
 
 ## Common misconceptions
 
-- **Each device is more accurate on its own clock** → each may be accurate, the sum is not.
-- **Clock only affects digital connections** → it sets every sampling instant.
-- **Nothing is wrong until you hear a click** → a gritty top end is already a symptom.
+- Word Clock synchronises samples, MIDI Clock conveys beat timing, and MTC conveys position.
+- An expensive external clock does not guarantee better sound; correct topology, termination and lock settings come first.
+- Follow the manual for inputs with sample-rate conversion rather than forcing one master/follower rule onto every design.
 :::

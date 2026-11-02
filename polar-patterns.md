@@ -15,30 +15,32 @@ links:
   - "[[glossary:microphone]]"
   - "[[instrument:drum-kit]]"
 instances:
-  - m21-000602 | 合唱织体宽，适合用全指向收取房间与整体
-  - openscore-000008 | 单个男声靠近讲话时，心形的低频抬升最容易听出
-  - groove-000003 | 鼓组串音多，适合检查心形后方零点是否安静
+  - m21-000602 | 合唱织体可帮助规划阵列与声部布局，指向性比较需实际话筒录音 | Choral texture can help plan arrays and part layout; polar-pattern comparison needs real mic recordings
+  - openscore-000008 | 声乐素材可作练习曲目，近讲效应需在同一实际话筒改变距离后录制 | Vocal material supplies a practice piece; record one actual mic at different distances to test proximity effect
+  - groove-000003 | 鼓组可作摆位练习的节奏参考，后方抑制需实际话筒及离轴声源验证 | Drums provide a rhythmic reference for placement; verify rear rejection with real microphones and off-axis sources
 sources:
+  - "https://pubs.shure.com/view/guide/KSM313/en-US.pdf"
+  - "https://www.shure.com/en-US/insights/microphone-directionality-polar-pattern-basics"
   - Eargle, The Microphone Book, 3rd ed., directivity and proximity chapters
   - Olson, Acoustical Engineering, pressure-gradient microphone theory
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 问题
 
-话筒对正前方最敏感，对侧面和后方也有不同程度的响应。这个方向图决定了串音、近讲效应与房间声的比例。摆位之前先想清楚要收什么、要躲什么。
+指向性是话筒对入射方向的响应，不等于声像位置。它影响目标声、串音与房间反射的比例，通常还随频率变化。选型和摆位时应查看具体型号的指向图，再验证实际空间中的结果。
 
 ## 信号链
 
-心形指向用单振膜加后方声学延迟，后方形成零点。全指向没有近讲效应，低频更平直。8 字形两侧反相，正后方也是零点，适合两人对唱或侧向隔离。可切换指向的话筒用双振膜，改变两面的极化比例。
+指向图描述不同角度、频率下的灵敏度。理想心形在后方抑制最强，全指向在各方向响应接近；8字形的前后两瓣灵敏，左右侧面接近零点，前后输出极性相反。实际结构和频率响应因型号而异，可切换指向的话筒也不只有一种实现。
 
 ## 摆位与参数
 
-心形主轴对准声源，歌手距离 15 至 25 厘米；太近会因近讲效应让低频膨胀。全指向适合合唱与房间声，放在 1 米外。8 字形让声源落在两瓣之一，把另一瓣对准需要隔离的方向。
+先查目标型号的分频段指向图，把需要的声源对准合适方向，把不想收的声音尽量放在抑制方向。用8字形隔离旁边的声源时应利用侧面零点，不能把其后瓣当作隔离区。近讲效应、声源距离与房间反射要一起检查。
 
 ```audiolab
-{"type":"instrument","drum":"38","synth":"perc","phrase":["38","42","36"],"label":"军鼓与底鼓的方向感","label_en":"Snare and kick, heard off-axis","hint":"先听合成近似，再听 GM 打击采样","hint_en":"Compare the synthetic approximation with the GM drum sample"}
+{"type":"instrument","drum":"38","synth":"perc","phrase":["38","42","36"],"label":"鼓点音色参照","label_en":"A drum-timbre reference","hint":"这里比较合成与采样音色；要测指向性，需用实际话筒固定距离、旋转声源角度并匹配录音增益。","hint_en":"This compares synthetic and sampled timbres. To test directionality, use a real mic at fixed distance, vary source angle and match recording gain."}
 ```
 
 ## 听什么
@@ -47,26 +49,27 @@ updated: 2026-10-28
 
 ## 常见误解
 
-- **心形能完全隔离后方** → 低频会绕射，后方仍有声音。
-- **全指向没有近讲效应** → 确实没有，所以低频更可控。
-- **指向性只影响音量** → 离轴频响也会改变音色。
+- 理想零点不保证实际房间中完全安静，反射与分频段响应仍会影响收音
+- 理想压力式全指向没有梯度式近讲效应，但仍可能受声场和结构影响
+- 改变角度既可能改变电平，也可能改变音色
+- 全指向、心形和8字形都需按具体型号与任务选择
 :::
 
 ::: en
 ## The problem
 
-A microphone is most sensitive in front but still hears the sides and rear. That pattern sets bleed, proximity effect and room in the capture. Before placing it, decide what to pick up and what to avoid.
+Directivity describes response to arrival direction, not stereo position. It affects the balance of wanted sound, bleed and room reflections, and usually varies with frequency. Consult the actual model’s polar plots and verify the result in the room.
 
 ## Signal chain
 
-A cardioid uses one diaphragm and an acoustic delay at the rear, creating a null behind. An omnidirectional capsule has no proximity effect and a flatter low end. A figure-eight is out of phase on the two sides and also null at the rear; it suits two singers facing each other or side isolation. A switchable pattern uses two diaphragms and changes their polarisation.
+Polar patterns describe sensitivity by angle and frequency. An ideal cardioid rejects most strongly behind, while an omni is similar around the capsule. A figure-eight has sensitive front and rear lobes, side nulls and opposite front/rear polarity. Actual structures and responses vary by model; switchable patterns have more than one implementation.
 
 ## Placement and settings
 
-Aim the cardioid axis at the source, with a singer 15 to 25 cm away; closer than that, proximity effect inflates the low end. Use omni for a choir or room sound at one metre. With figure-eight, put the source in one lobe and aim the other at what you want to reject.
+Consult frequency-specific polar plots for the actual model. Aim wanted sources at the appropriate direction and unwanted sound toward rejection. Use a figure-eight’s side nulls for isolation, not its sensitive rear lobe. Check proximity effect, distance and room reflections together.
 
 ```audiolab
-{"type": "instrument", "drum": "38", "synth": "perc", "phrase": ["38", "42", "36"], "label": "Snare and kick, heard off-axis", "label_en": "Snare and kick, heard off-axis", "hint": "先听合成近似，再听 GM 打击采样", "hint_en": "Compare the synthetic approximation with the GM drum sample"}
+{"type":"instrument","drum":"38","synth":"perc","phrase":["38","42","36"],"label":"A drum-timbre reference","label_en":"A drum-timbre reference","hint":"This compares synthetic and sampled timbres. To test directionality, use a real mic at fixed distance, vary source angle and match recording gain.","hint_en":"This compares synthetic and sampled timbres. To test directionality, use a real mic at fixed distance, vary source angle and match recording gain."}
 ```
 
 ## What to listen for
@@ -75,7 +78,8 @@ Walk a full circle around the microphone while clapping, and hear how level and 
 
 ## Common misconceptions
 
-- **Cardioid rejects everything behind it** → low frequencies diffract around the body, so the rear is not silent.
-- **Omni has no proximity effect** → correct, which makes its low end easier to control.
-- **Pattern only changes level** → off-axis response changes tone as well.
+- An ideal null does not guarantee silence in a real room; reflections and frequency-dependent response still matter
+- An ideal pressure omni lacks gradient proximity effect, while field and construction can still affect response
+- Changing angle can alter both level and timbre
+- Choose omni, cardioid or figure-eight for the exact model and task
 :::

@@ -15,34 +15,34 @@ links:
   - "[[glossary:bus]]"
   - "[[instrument:organ]]"
 instances:
-  - cyberhymnal-008348 | 教堂管风琴的和弦尾音长，房间与厅堂的差别一听便知
-  - pdmx-000070 | 巴伯《弦乐慢板》持续音多，板式的密度与厅堂的扩散容易对比
-  - mutopia-001413 | 萨蒂《裸体歌舞》第三首留白多，混响尾巴不再被音符遮住
+  - cyberhymnal-008348 | 持续和弦可渲染成测试素材，再分别送入房间与厅堂混响，匹配湿声电平 | Render sustained chords and send them through room and hall reverbs at matched wet level
+  - pdmx-000070 | 持续弦乐可用于外部混响比较，先匹配衰减与湿声电平，再比较密度 | Use sustained strings for an external reverb comparison, matching decay and wet level before judging density
+  - mutopia-001413 | 钢琴句间空隙可用于听外加混响的尾音，保留同一干声作参照 | Piano gaps can reveal added reverb tails; retain the same dry source as reference
 sources:
   - Välimäki, Parker and Savioja, Fifty Years of Artificial Reverberation, IEEE TASLP 2012.
   - Udo Zölzer, DAFX.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 为什么会用到它
 
-「加一点混响」这句话无法执行。房间、厅堂、板式、弹簧与卷积给出的早期反射和密度完全不同，选错类型，参数再细也救不回来。
+房间、厅堂、板式和弹簧描述空间或装置特性，算法与卷积描述实现方式。两种分类不是互斥的：算法可以模拟板式，卷积也可以使用板式装置的脉冲响应。先确定需要的反射、衰减和音色，再选实现。
 
 ## 背后的机制
 
-算法混响用延迟线与反馈堆出密度，全通滤波器负责扩散。房间的早期反射近而清楚，厅堂的延迟更长、低频拖得更久，板式密度高、高频亮，弹簧带金属色的色散。卷积混响调用真实空间的脉冲响应，空间可信，可调性却小。
+算法混响可用延迟网络、滤波与调制产生反射和衰减；卷积把输入与脉冲响应组合，响应可以来自真实空间、装置或人工设计。固定卷积通常受所录响应限制，但产品可提供编辑和混合方案。某种实现不自动比另一种更真实或更适合所有素材。
 
 ## 数值怎么变成声音
 
-衰减时间决定尾巴长短，尺寸更像空间体积。阻尼让高频先死，混响随之变暗；扩散低时能听出个别反射，像一次拍手。大厅衰减 2–4 秒适合铺底，板式 1–2 秒适合军鼓，弹簧 1 秒左右带明显音高感。
+在同一短句上分别调整预延迟、早期反射、衰减与湿声电平，每次只改一项。目标是让下一句仍清楚、空间与编制相符，而不是给大厅、军鼓或弹簧一律指定秒数。比较时保留干声比例并检查单声道。
 
 ## 耳朵要抓的点
 
 拍一次手，比较房间与厅堂的尾巴。在军鼓上换板式，变化的不只是长度，还有密度。把弹簧放在吉他上，尾音会带出金属味。
 
 ```audiolab
-{"type":"instrument","gm":"Church Organ","synth":"blown","phrase":["C3","G3","C4","E4"],"label":"管风琴和弦","label_en":"Organ chord","hint":"先听干声，再想象厅堂与板式的尾巴","hint_en":"Hear it dry, then imagine hall and plate tails"}
+{"type":"instrument","gm":"Church Organ","synth":"blown","phrase":["C3","G3","C4","E4"],"label":"管风琴混响测试素材","label_en":"Organ material for reverb tests","hint":"在 DAW 中给同一干声分别加厅堂与板式混响，匹配衰减和湿声电平，比较早期反射及尾音密度。","hint_en":"In a DAW, apply hall and plate reverbs to one dry source. Match decay and wet level, then compare early reflections and tail density."}
 ```
 
 ## 容易弄错的
@@ -53,22 +53,22 @@ updated: 2026-10-28
 ::: en
 ## Why reach for it
 
-Add some reverb cannot be executed. Room, hall, plate, spring and convolution differ in early reflections and density, and the wrong type cannot be rescued by fine settings.
+Room, hall, plate and spring describe spaces or devices; algorithmic and convolution describe implementations. The categories overlap: an algorithm can model a plate and convolution can use a plate impulse response. Define reflections, decay and timbre before choosing an implementation.
 
 ## The mechanism
 
-Algorithmic reverbs build density from delay lines and feedback, with all-pass filters spreading the sound. A room has close, clear early reflections; a hall has longer delays and a longer low end; a plate is dense and bright; a spring carries a metallic dispersion. Convolution calls an impulse response of a real space, credible but less adjustable.
+Algorithmic reverbs can use delay networks, filters and modulation; convolution combines input with an impulse response captured from a space or device or designed artificially. Fixed convolution is constrained by its response, though products may offer editing and hybrid methods. Neither implementation is automatically more realistic or suitable for every source.
 
 ## From numbers to sound
 
-Decay sets tail length, while size suggests volume. Damping lets highs die first and darkens the tail; low diffusion exposes individual reflections, like a hand clap. A two to four second hall suits backgrounds, a one to two second plate suits a snare, and a spring around one second adds audible pitch.
+Adjust pre-delay, early reflections, decay and wet level separately on one phrase. Aim for clear following phrases and space appropriate to the arrangement rather than fixed decay seconds for halls, snares or springs. Preserve the dry balance and check mono when comparing.
 
 ## What the ear should catch
 
 Clap once and compare a room with a hall. Swap a plate onto a snare and hear density change, not only length. Put a spring on guitar and the tail turns metallic.
 
 ```audiolab
-{"type": "instrument", "gm": "Church Organ", "synth": "blown", "phrase": ["C3", "G3", "C4", "E4"], "label": "Organ chord", "label_en": "Organ chord", "hint": "先听干声，再想象厅堂与板式的尾巴", "hint_en": "Hear it dry, then imagine hall and plate tails"}
+{"type":"instrument","gm":"Church Organ","synth":"blown","phrase":["C3","G3","C4","E4"],"label":"Organ material for reverb tests","label_en":"Organ material for reverb tests","hint":"In a DAW, apply hall and plate reverbs to one dry source. Match decay and wet level, then compare early reflections and tail density.","hint_en":"In a DAW, apply hall and plate reverbs to one dry source. Match decay and wet level, then compare early reflections and tail density."}
 ```
 
 ## Easy to get wrong

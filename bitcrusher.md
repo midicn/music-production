@@ -15,34 +15,34 @@ links:
   - "[[glossary:harmonics]]"
   - "[[instrument:software-synth]]"
 instances:
-  - oga-000013 | 复古头目战的主旋律是方波，降位深后弱奏会先变成沙粒
-  - oga-000014 | 8-bit 编曲的鼓点短促，降采样率的镜像在高频最明显
-  - oga-000015 | 同类 8-bit 战斗曲的贝斯线低而连续，适合听量化台阶
+  - oga-000013 | 复古游戏旋律的音符参照，未执行降位深处理 | Retro-game melody notes without bit-depth reduction
+  - oga-000014 | 短促鼓点素材，没有降采样处理前后的版本 | Short drum events without before-and-after rate reduction
+  - oga-000015 | 低音音符的素材参照，不包含可切换的量化台阶 | Bass-note material without switchable quantisation steps
 sources:
   - Curtis Roads, The Computer Music Tutorial, quantization sections.
   - Udo Zölzer, DAFX.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 为什么会用到它
 
-比特压碎同时降低位深与采样率，制造粗颗粒和镜像频率。它听起来像旧游戏机，但两件事的作用并不相同。
+Bitcrusher 常提供降低幅度精度、降低更新速率或采样保持等处理；不同插件可能只包含其中一部分。位深和速率改变的机制不同，应分开试听。
 
 ## 它怎么工作
 
-位深决定量化台阶，8 bit 的理论信噪比约 48 dB，低电平细节会落进台阶里。降低采样率让高于新奈奎斯特频率的成分折返，形成镜像；采样保持还让波形变成阶梯。位深降低带来的是颗粒噪声，采样率降低带来的是金属味和混叠。先抗混叠再降采样，声音会干净一些；直接降采样，镜像会留在高频。
+降低位深会增大量化误差，低电平信号可能出现与信号相关的失真。降低有效更新率而不做足够带限，会让高频成分折返到较低频率，形成混叠；采样保持也会改变频谱。产生的假频率不只留在高频，具体位置由源频率和有效采样率决定。
 
 ## 旋钮与耳朵
 
-bits 从 16 降到 8 已经很明显，4 bit 以下适合特殊音效；sample rate 从 44.1 kHz 降到 8 kHz 会切掉空气感并带回镜像。mix 控制并行量，放在鼓组上 20–30% 就能听出颗粒。
+先把混合量设为全处理，只降低位深，记下电平较小时的变化；恢复位深后再降低更新速率，区分两种效果。随后按需要混入干声并补偿输出电平。鼓、贝斯和长音的反应不同，参数值应跟素材走，不能把某个比特数或百分比当通用效果。
 
 ## 耳朵要抓的点
 
-在 8-bit 风格的战斗曲上听主旋律的方波边缘，降低 bits 后注意弱奏是否变成沙粒。再把采样率降到 8 kHz，听高频镜像如何让镲片变成金属屑。换到干净钢琴，同样的设置会暴露尾音被量化台阶切碎。
+使用同一段已渲染音频逐项比较，保持其他处理不变。查看频谱能帮助区分原有谐波、新增失真与折返分量；“复古”属于审美选择，不由低位深或低采样率自动保证。
 
 ```audiolab
-{"type":"instrument","gm":"Lead 1 (square)","synth":"reed","phrase":["C4","E4","G4","C5","G4","E4"],"label":"方波主旋律","label_en":"A square-wave lead","hint":"先听干净的方波，再想象 8 bit 与 8 kHz 各自留下的痕迹","hint_en":"Hear the clean square, then what 8 bit and 8 kHz each leave behind"}
+{"type":"instrument","gm":"Lead 1 (square)","synth":"reed","phrase":["C4","E4","G4","C5","G4","E4"],"label":"方波乐句参照","label_en":"Square-wave phrase reference","hint":"这里播放预设音色，没有位深或采样保持参数。需将同一音频送入 bitcrusher，分别改变位深和降采样设置。","hint_en":"This plays a preset without bit-depth or sample-hold controls. Send the same audio through a bitcrusher and change depth and rate reduction separately."}
 ```
 
 ## 容易弄错的
@@ -53,22 +53,22 @@ bits 从 16 降到 8 已经很明显，4 bit 以下适合特殊音效；sample r
 ::: en
 ## Why reach for it
 
-A bitcrusher lowers both bit depth and sample rate, producing coarse grain and mirror frequencies. It sounds like an old game console, but the two moves do different things.
+A bitcrusher may reduce amplitude precision, reduce update rate or use sample-and-hold; plug-ins need not include every operation. Depth and rate changes have different mechanisms and should be auditioned separately.
 
 ## How it works
 
-Bit depth sets the quantization step size. At 8 bit the theoretical signal-to-noise ratio is about 48 dB, so quiet detail falls between steps. Lowering the sample rate folds content above Nyquist back as images, and sample-and-hold turns the waveform into stairs. Fewer bits give granular noise; a lower rate gives a metallic edge and aliasing. Anti-alias before decimating for a cleaner result; direct decimation leaves images in the high end.
+Reduced depth increases quantisation error and may create signal-correlated distortion at low levels. Reducing effective update rate without adequate band limiting folds higher components into lower frequencies, producing aliases; sample-and-hold also changes the spectrum. These components are not confined to high frequencies: their positions depend on source frequency and effective sample rate.
 
 ## Knobs and ears
 
-Dropping bits from 16 to 8 is obvious, and below 4 bit suits effects. Dropping the rate from 44.1 kHz to 8 kHz removes air and brings images back. Mix sets the parallel amount; on drums, 20 to 30 percent reveals the grain.
+Set the mix fully wet and reduce depth alone, noting low-level changes. Restore depth before reducing update rate to separate the effects. Then blend dry signal as needed and compensate output level. Drums, bass and sustained sounds respond differently, so no bit count or mix percentage is a universal setting.
 
 ## What the ear should catch
 
-On an 8-bit battle cue, listen to the square lead, lower the bits and hear quiet notes turn sandy. At 8 kHz, hear cymbals turn into metal filings. On a clean piano, the same setting chops the decay into steps.
+Compare one rendered audio passage one control at a time, keeping other processing fixed. A spectrum helps distinguish original harmonics, added distortion and aliases. A retro character is an aesthetic choice, not an automatic consequence of low depth or rate.
 
 ```audiolab
-{"type": "instrument", "gm": "Lead 1 (square)", "synth": "reed", "phrase": ["C4", "E4", "G4", "C5", "G4", "E4"], "label": "A square-wave lead", "label_en": "A square-wave lead", "hint": "先听干净的方波，再想象 8 bit 与 8 kHz 各自留下的痕迹", "hint_en": "Hear the clean square, then what 8 bit and 8 kHz each leave behind"}
+{"type":"instrument","gm":"Lead 1 (square)","synth":"reed","phrase":["C4","E4","G4","C5","G4","E4"],"label":"Square-wave phrase reference","label_en":"Square-wave phrase reference","hint":"This plays a preset without bit-depth or sample-hold controls. Send the same audio through a bitcrusher and change depth and rate reduction separately.","hint_en":"This plays a preset without bit-depth or sample-hold controls. Send the same audio through a bitcrusher and change depth and rate reduction separately."}
 ```
 
 ## Easy to get wrong

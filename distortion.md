@@ -15,34 +15,34 @@ links:
   - "[[glossary:clipping]]"
   - "[[instrument:electric-guitar]]"
 instances:
-  - cyberhymnal-000000 | 风琴持续和弦的泛音密，削波后新增的谐波最容易分辨
-  - oga-000004 | 战斗音乐的铜管齐奏厚，过载会让齐奏边缘先变硬
-  - mutopia-000005 | 古典吉他的拨弦颗粒细，少量失真会把指尖噪声一起放大
+  - cyberhymnal-000000 | 持续和弦的音符素材，可另渲染后施加削波 | Sustained-chord notes for separate rendering and clipping
+  - oga-000004 | 铜管齐奏声部参照，未提供过载前后的版本 | Brass-unison parts without before-and-after overload
+  - mutopia-000005 | 吉他音符素材，不包含真实拨弦录音中的指尖噪声 | Guitar-note material without recorded finger noise
 sources:
   - Udo Zölzer, DAFX.
   - Julius O. Smith, Physical Audio Signal Processing, nonlinear distortion sections.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 为什么会用到它
 
-失真、过载、模糊是同一类非线性的三种程度。它们改变的不只是「脏」，还有谐波结构、动态和频响。
+Distortion、overdrive与fuzz通常指不同设计和风格的非线性效果，不能排成同一算法由轻到重的三个档位。它们可能同时改变谐波、动态和频响，实际行为要看电路或算法。
 
 ## 背后的机制
 
-信号超过器件的线性范围后被削平，削波产生新的谐波。对称削波以奇次谐波为主，听感硬；不对称削波加入偶次谐波，听感暖。过载的拐点较软，失真更硬，模糊把增益推到几乎方波。输入电平决定削波量，所以前级增益比 drive 旋钮更能改变结果。削波也会压缩动态，低频互调会让和弦变糊。
+非线性会产生输入中原本没有的频率分量。对称或不对称的传递曲线会影响谐波组成，但“奇次硬、偶次暖”不是可靠的通用听感定律。复杂和弦还会产生互调；输入电平、前后滤波和处理器内部设计共同决定结果。
 
 ## 旋钮与耳朵
 
-drive 从 3 dB 开始试，tone 控制削波后的高频；mix 保持 30–50% 可以保留原始瞬态。给贝斯加失真时先高通到 100 Hz 以下，避免低频互调。人声少量失真会增加存在感，过量会咬住齿音。
+一次改变输入或drive，匹配输出后听新增谐波与音头变化。处理贝斯时可把低频保留在干声支路，只对中高频支路失真，再检查分频与延迟对齐；若直接高通整条贝斯，会连基音一起削弱。并行量和tone按目标调整，不必固定为某个百分比。
 
 ## 耳朵要抓的点
 
-在持续的风琴和弦上听削波如何把音头压平；换到失真吉他，注意五度和弦的低频是否出现新的嗡声。把 mix 从 100% 降到 40%，原始拨弦的颗粒会回来。
+从单音开始区分原有谐波与新增分量，再试双音和和弦，观察互调。用同一段干声比较旁通、全处理和并行混合，并检查峰值；预设失真音色不能代替一条可控的处理链。
 
 ```audiolab
-{"type":"instrument","gm":"Distortion Guitar","synth":"plucked","phrase":["E2","E2","B2","B2","G3","G3","D3"],"label":"失真吉他的五度和弦","label_en":"Power chords on a distorted guitar","hint":"先听干声的拨弦，再想象削波后多出来的谐波与压平的音头","hint_en":"Hear the dry pick, then picture added harmonics and a flattened attack"}
+{"type":"instrument","gm":"Distortion Guitar","synth":"plucked","phrase":["E2","E2","B2","B2","G3","G3","D3"],"label":"吉他和弦音色","label_en":"Guitar-chord timbre","hint":"预设失真吉他音色并非可切换的削波处理。要比较新增谐波，应把同一干声送入实际失真器再做旁通。","hint_en":"A distorted-guitar preset is not switchable clipping. Compare added harmonics by routing the same dry audio through an actual distortion processor."}
 ```
 
 ## 容易弄错的
@@ -53,22 +53,22 @@ drive 从 3 dB 开始试，tone 控制削波后的高频；mix 保持 30–50% �
 ::: en
 ## Why reach for it
 
-Distortion, overdrive and fuzz are three degrees of the same nonlinear family. They change harmonic structure, dynamics and frequency response, not just how dirty the sound seems.
+Distortion, overdrive and fuzz name nonlinear effects with different designs and styles, not three strengths of one algorithm. They may change harmonics, dynamics and frequency response together; behaviour depends on the circuit or algorithm.
 
 ## The mechanism
 
-Once a signal exceeds the linear range, it is clipped, and clipping creates new harmonics. Symmetrical clipping favours odd harmonics and sounds hard; asymmetrical clipping adds even harmonics and sounds warmer. Overdrive has a softer knee, distortion is harder, and fuzz pushes gain toward a square wave. Input level sets the amount of clipping, so pre-gain matters more than the drive control alone. Clipping also compresses dynamics, and low-frequency intermodulation turns chords muddy.
+Nonlinearity creates frequency components absent from the input. Symmetric and asymmetric transfer curves affect harmonic content, but odd means hard and even means warm is not a universal listening rule. Complex chords also produce intermodulation. Input level, pre/post filtering and internal design all affect the result.
 
 ## Knobs and ears
 
-Start with about 3 dB of drive, use tone to shape the clipped high end, and keep mix at 30 to 50 percent to retain the original transient. Before distorting a bass, high-pass it below 100 Hz to avoid low intermodulation. A little distortion on a voice adds presence; too much grabs the sibilants.
+Change input or drive one at a time and match output to judge harmonics and attacks. For bass, retain lows in a dry branch and distort a higher band if useful, checking crossover and delay alignment. High-passing the whole bass also removes fundamental energy. Set blend and tone for the goal rather than a fixed percentage.
 
 ## What the ear should catch
 
-On a sustained organ chord, hear how clipping flattens the attack. On a distorted guitar, listen for a new hum under fifth chords. Pull mix from 100 to 40 percent and the grain of the original pick returns.
+Start with one note to distinguish original and added components, then test two notes and chords for intermodulation. Compare bypass, wet and parallel versions of the same dry audio and check peaks. A distorted instrument preset is not a substitute for a controlled processing chain.
 
 ```audiolab
-{"type": "instrument", "gm": "Distortion Guitar", "synth": "plucked", "phrase": ["E2", "E2", "B2", "B2", "G3", "G3", "D3"], "label": "Power chords on a distorted guitar", "label_en": "Power chords on a distorted guitar", "hint": "先听干声的拨弦，再想象削波后多出来的谐波与压平的音头", "hint_en": "Hear the dry pick, then picture added harmonics and a flattened attack"}
+{"type":"instrument","gm":"Distortion Guitar","synth":"plucked","phrase":["E2","E2","B2","B2","G3","G3","D3"],"label":"Guitar-chord timbre","label_en":"Guitar-chord timbre","hint":"A distorted-guitar preset is not switchable clipping. Compare added harmonics by routing the same dry audio through an actual distortion processor.","hint_en":"A distorted-guitar preset is not switchable clipping. Compare added harmonics by routing the same dry audio through an actual distortion processor."}
 ```
 
 ## Easy to get wrong

@@ -15,63 +15,64 @@ links:
   - "[[glossary:dither]]"
   - "[[glossary:noise-floor]]"
 instances:
-  - atepp-000195 | 德彪西《月光》的弱奏与长衰减把噪声底推到能听见的位置
-  - giantmidi-003263 | 萨蒂《玄秘曲》里极弱的和弦余韵最考验低位深的尾巴
-  - atepp-003869 | 贝多芬《月光》低音区的持续音让量化噪声更像一层薄雾
+  - atepp-000195 | 钢琴音符和力度素材，可另行制作低位深淡出实验 | Piano notes and velocities for a separate reduced-depth fade experiment
+  - giantmidi-003263 | 和弦衰减的音乐参照，不包含低位深渲染 | A musical reference for chord decay without reduced-depth renders
+  - atepp-003869 | 低音区持续音符，不记录量化噪声的实际频谱 | Sustained bass-register notes without a measured quantisation-noise spectrum
 sources:
+  - "https://downloads.izotope.com/docs/rx6/39-dither/index.html"
   - Ken C. Pohlmann, Principles of Digital Audio — 用于核对量化噪声与位深的换算。
   - Stanley Lipshitz, John Vanderkooy, Quantization and Dither — 用于核对抖动与噪声整形的结论。
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 起点：一个问题
 
-同样是 44.1 kHz，为什么 8 位录音的底噪像一层沙，而 24 位几乎听不见？
+位深改变幅度量化的精度，实际听到的底噪还包含录音设备和环境。比较两个文件前，应先确认它们来自同一源音频、处理链一致，而不是把不同录音的噪声差异归给位深。
 
 ## 它怎么工作
 
-每个采样点要存成一个整数，位数决定可用的台阶数。16 位有 65536 级，24 位约有一千六百多万级。台阶越粗，最轻的声音越容易被抹平，差距变成量化噪声。量化噪声大致均匀分布在频带里，位深每增加一位，噪声底约下降 6 dB。16 位在正常监听音量下已经够用，24 位留出的余量主要用于录音时避免削波，以及多次处理后的累积误差。浮点格式把台阶换成指数，处理过程中几乎不再增加噪声。
+16 位定点 PCM 有 65536 个编码级，24 位有 16777216 个。理想量化器在一定信号与误差模型下，每增加一位，信噪比约改善 6 dB；未加抖动的误差不一定是均匀噪声，也可能与信号相关。浮点使用有效数字和指数表示幅度，可提供很大的数值余量，但精度仍有限，也不能消除原录音噪声。
 
 ## 旋钮与做法
 
-录音用 24 位，留 12 到 18 dB 余量。混音内部用 32 位浮点。交付用 24 位，需要 16 位版本时最后再加抖动。判断位深够不够，看最安静的段落有没有被噪声盖住，而不是看文件大小。衰减很大的轨道，例如长混响尾巴，最容易暴露噪声。多次增益变化之后，检查一次噪声底。
+录制与交付位深先按设备能力和接收方要求确定。录音时为突发峰值留余量，混音时了解 DAW 的内部运算格式，最终转为定点输出时配置抖动。把原有16位文件放进浮点工程有助于后续计算，却不会恢复已经损失的录音信息。
 
 ## 耳朵要抓的点
 
-听钢琴弱奏后的余韵，低位深会让尾巴提前断掉，或者带上颗粒。听人声句尾的气息，噪声底高时气息会变成一层薄纱。听淡出结尾，量化噪声常在最后几秒变得明显。听极安静的室内乐，注意力放在两件乐器之间，而不是音符本身。
+取同一低电平音频淡出，分别导出低位深的加抖动与不加抖动版本，再在安全监听电平下比较尾音和频谱。文件不同不代表必定可闻；底噪、播放设备和音量都会影响判断。
 
 ## 容易弄错的
 
 以为位深决定频率上限；以为 24 位一定比 16 位好听；以为抖动可以补救削波。
 
 ```audiolab
-{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["E4","G4","B4","E5"],"label":"弱奏后的余韵","label_en":"The tail after a soft chord","hint":"先听真实钢琴的余韵，再听合成近似的尾巴；低位深的粗糙感要在导出成 8 位时对比","hint_en":"Hear the real piano tail, then the synth approximation; the roughness of low bit depth needs an 8-bit export to compare"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["E4","G4","B4","E5"],"label":"钢琴衰减参照","label_en":"Piano-decay reference","hint":"合成与 GM 钢琴都由 MIDI 触发，不能称为原演奏录音。量化对照需另制同一源音频的不同位深版本。","hint_en":"Both synthesized and GM piano are triggered from MIDI, not original performance recordings. Compare quantisation using alternate bit-depth renders of one source."}
 ```
 :::
 
 ::: en
 ## Starting point: a problem
 
-At the same 44.1 kHz, why does an 8-bit recording hiss like sand while a 24-bit one is nearly silent?
+Bit depth changes amplitude-quantisation precision; audible noise also includes recording equipment and environment. Before comparing files, confirm one source and matching processing rather than attributing differences between recordings to bit depth.
 
 ## How it works
 
-Every sample is an integer, and bit depth sets how many steps are available. Sixteen bits give 65,536 steps; 24 bits give about 16.7 million. Coarser steps flatten the quietest detail, and the error becomes quantization noise. That noise is spread fairly evenly across the band, and each extra bit lowers the floor by roughly 6 dB. Sixteen bits are enough at normal listening levels; the extra room mainly prevents clipping and absorbs accumulated error across processing. Floating point replaces steps with an exponent, so processing adds almost no noise.
+16-bit fixed-point PCM has 65536 code levels and 24-bit PCM has 16777216. Under suitable ideal signal and error assumptions, each added bit improves signal-to-noise ratio by about 6 dB. Undithered error need not be uniform noise and may be signal-correlated. Floating point uses a significand and exponent for large numerical headroom, but precision remains finite and existing recording noise remains.
 
 ## Knobs and practice
 
-Record at 24 bits with 12 to 18 dB of headroom. Mix internally at 32-bit float. Deliver 24-bit files, and add dither only when making the 16-bit version. Judge depth by whether the quietest passage is buried, not by file size. Tracks with heavy attenuation, such as long reverb tails, expose the floor first.
+Choose recording and delivery depth for equipment and recipient requirements. Leave room for unexpected peaks, know the DAW’s internal format, and configure dither at final fixed-point quantisation. Loading an existing 16-bit file into a floating-point session supports later computation but does not restore lost recording information.
 
 ## What the ear catches
 
-Hear a soft piano note's tail: low depth cuts it short or adds grain. Hear the breath at the end of a vocal phrase, which turns into a thin veil when the floor is high. Hear a fade-out, where quantization noise often becomes obvious in the last seconds. In quiet chamber music, listen between the instruments, not the notes.
+Render one low-level fade at reduced depth with and without dither, then compare decay and spectrum at a safe monitor level. Different files need not sound detectably different; source noise, playback equipment and level affect the judgement.
 
 ## Easy to get wrong
 
 That bit depth sets the frequency limit; that 24 bits always sounds better; that dither can rescue clipping.
 
 ```audiolab
-{"type": "instrument", "gm": "Acoustic Grand Piano", "synth": "struck", "phrase": ["E4", "G4", "B4", "E5"], "label": "The tail after a soft chord", "label_en": "The tail after a soft chord", "hint": "Hear the real piano tail, then the synth approximation; the roughness of low bit depth needs an 8-bit export to compare", "hint_en": "Hear the real piano tail, then the synth approximation; the roughness of low bit depth needs an 8-bit export to compare"}
+{"type":"instrument","gm":"Acoustic Grand Piano","synth":"struck","phrase":["E4","G4","B4","E5"],"label":"Piano-decay reference","label_en":"Piano-decay reference","hint":"Both synthesized and GM piano are triggered from MIDI, not original performance recordings. Compare quantisation using alternate bit-depth renders of one source.","hint_en":"Both synthesized and GM piano are triggered from MIDI, not original performance recordings. Compare quantisation using alternate bit-depth renders of one source."}
 ```
 :::

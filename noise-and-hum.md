@@ -4,8 +4,8 @@ site: prod
 cat: A4
 title: 噪声与哼声
 title_en: Noise and Hum
-summary: 嘶声来自电路，哼声来自接地，两者要先分清再处理
-summary_en: Hiss comes from the circuit, hum from the grounding. Separate them before you treat either.
+summary: 先区分宽带嘶声、工频及谐波，再逐段排查环境、电路与连接。
+summary_en: Distinguish broadband hiss from mains-frequency components, then isolate environmental, circuit and connection causes.
 level: standard
 tags: [录音, 噪声, 接地]
 tags_en: [recording, noise, grounding]
@@ -15,67 +15,69 @@ links:
   - "[[glossary:signal-to-noise]]"
   - "[[instrument:organ]]"
 instances:
-  - cyberhymnal-001740 | 管风琴持续音不衰减，哼声会一直贴在和声里
-  - mutopia-000848 | 独奏吉他动态小，弱奏时底噪的占比最高
-  - openscore-000667 | 艺术歌曲的弱唱段，房间声与电流声一起进来
+  - cyberhymnal-001740 | 管风琴持续和弦可作背景素材；排查哼声需另录实际设备的静音与有声片段 | Sustained organ chords offer background material; diagnose hum with separate recordings of actual silent and active equipment
+  - mutopia-000848 | 弱奏吉他可用于设计信号与底噪的混合练习，噪声需另行加入并记录电平 | Soft guitar can support signal/noise mixing practice; add noise separately and log its level
+  - openscore-000667 | 声乐与伴奏可作降噪练习的音乐底稿，不能据 MIDI 判断房间噪声或电流声 | Voice and accompaniment provide a musical base for denoising practice, not evidence of room or electrical noise in the MIDI
 sources:
   - Ballou, Handbook for Sound Engineers, grounding and shielding chapters
   - AES Convention paper on hum, ground loops and balanced interconnection
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 问题
 
-安静段落里，嘶声与低频嗡声会先于音乐被听见。嘶声来自电路与增益，哼声来自供电与接地，两者的成因不同，处理手段也不能互换。
+嘶声、窄带嗡声、无线干扰和房间杂声可有不同来源。先看它是否随输入增益、线缆或设备连接变化，再判断应处理环境、布线、供电还是音频文件，不能只凭音色确定原因。
 
 ## 信号链
 
-噪声沿着整条链累积。话筒拾取房间与电磁场，话放把自身底噪和信号一起放大，转换器再加一点。哼声多由地环路引起，基频落在 50 Hz，并带整数倍谐波，随线缆与电源变化。
+模拟电子噪声、话筒自噪声与环境声会随增益链一起进入录音。50或60 Hz及其谐波可能与供电或地环路有关，也可能来自电磁感应和机械振动。用频谱确认频率，逐段改变连接定位来源，不要把所有嗡声都诊断为地环路。
 
 ## 摆位与参数
 
-增益按最强段设定，让峰值落在 -12 dBFS 附近，弱奏段不要再补。话筒线远离电源线与显示器，所有设备插同一路电源。查出哼声先拔输入判断来源，再用平衡线与正确接地解决，不要用 EQ 硬削。
+先降低监听音量，再按设备手册依次检查信号线、输入模式与增益。用已知良好的平衡线或隔离器验证音频路径，线缆布局远离强干扰源。不得通过断开电源保护地线来消嗡；涉及供电故障时应由合适人员处理。需要后期去嗡时先测频率，并保存未处理录音。
 
 ```audiolab
-{"type":"instrument","gm":"Contrabass","synth":"bowed","phrase":["G1","G1"],"label":"哼声所在的低频带","label_en":"The band where hum sits","hint":"先听 G1 的厚度，市电哼声就在它上方一点","hint_en":"Hear the weight of G1; mains hum sits just above it"}
+{"type":"instrument","gm":"Contrabass","synth":"bowed","phrase":["G1","G1"],"label":"G1 音高参照","label_en":"A G1 pitch reference","hint":"G1约49 Hz，可帮助定位50 Hz附近；这段是低音乐器音，不是实际市电哼声，60 Hz及谐波需另测。","hint_en":"G1 is about 49 Hz, near 50 Hz. This is a bass-instrument tone, not recorded mains hum; measure 60 Hz and harmonics separately."}
 ```
 
 ## 听什么
 
-在无声段落把监听推高，听嘶声是否随增益一起变大；换一个电源插座，再听低频嗡声是否改变。哼声的谐波常落在人声低频区，容易被误认为低频太厚。
+记录安静输入与实际演奏两种状态，保持监听在安全范围，比较噪声是否随输入增益或某个连接改变。切换设备或插拔时先静音，避免瞬时冲击。最后检查修复是否损伤了有用低频，而非只看嗡声是否变小。
 
 ## 常见误解
 
-- **噪声大就换话筒** → 增益分配与接地更常见。
-- **降噪插件能救一切** → 它会连弱奏的尾音一起吃掉。
-- **哼声是设备坏了** → 多数来自地环路。
+- 噪声大不一定需要更换话筒
+- 降噪和去嗡不能修复所有供电或布线故障
+- 频谱峰值只是定位线索，不是单一成因的证明
+- 保留测试条件和原始文件，便于重复排查
 :::
 
 ::: en
 ## The problem
 
-In quiet passages, hiss and hum arrive before the music. Hiss comes from circuits and gain; hum from power and grounding. Their causes differ, and so do the cures.
+Hiss, narrow-band hum, radio interference and room noise have different possible sources. Check changes with gain, cables and connections before choosing environmental, wiring, power or file processing; sound alone does not identify the cause.
 
 ## Signal chain
 
-Noise accumulates along the chain. The microphone picks up the room and electromagnetic fields, the preamp amplifies its own noise floor with the signal, and the converter adds more. Hum usually comes from a ground loop at 50 Hz with harmonics that shift with cables and outlets.
+Electronic noise, microphone self-noise and environment enter through the gain chain. Mains-frequency hum and harmonics may involve power or ground loops, but also magnetic induction or mechanical vibration. Identify frequencies and change connections stage by stage rather than diagnosing every hum as a ground loop.
 
 ## Placement and settings
 
-Set gain from the loudest passage so peaks land near -12 dBFS, and do not make up level later. Keep microphone cables away from mains cables and displays, and plug every device into the same outlet strip. When hum appears, unplug inputs to find the source, then fix it with balanced wiring and correct grounding instead of EQ.
+Lower monitoring before checking cables, input mode and gain according to manuals. Test the audio path with known-good balanced connections or suitable isolation, away from strong interference. Do not defeat protective mains earth to remove hum; power faults need qualified attention. Measure frequencies before later de-hum and preserve the original.
 
 ```audiolab
-{"type": "instrument", "gm": "Contrabass", "synth": "bowed", "phrase": ["G1", "G1"], "label": "The band where hum sits", "label_en": "The band where hum sits", "hint": "先听 G1 的厚度，市电哼声就在它上方一点", "hint_en": "Hear the weight of G1; mains hum sits just above it"}
+{"type":"instrument","gm":"Contrabass","synth":"bowed","phrase":["G1","G1"],"label":"A G1 pitch reference","label_en":"A G1 pitch reference","hint":"G1 is about 49 Hz, near 50 Hz. This is a bass-instrument tone, not recorded mains hum; measure 60 Hz and harmonics separately.","hint_en":"G1 is about 49 Hz, near 50 Hz. This is a bass-instrument tone, not recorded mains hum; measure 60 Hz and harmonics separately."}
 ```
 
 ## What to listen for
 
-In a silent passage, raise the monitor and hear whether hiss grows with gain. Change the power outlet and hear whether the hum moves. Its harmonics often land in the low voice range, where they can be mistaken for too much body.
+Record quiet input and performance at safe monitoring levels, noting noise changes with gain or a connection. Mute before switching or connecting equipment to avoid transients. Finally check whether a repair removed wanted bass rather than judging only hum reduction.
 
 ## Common misconceptions
 
-- **Noise means a bad microphone** → gain staging and grounding are more common.
-- **A denoiser fixes everything** → it also eats the tails of soft notes.
-- **Hum means broken gear** → most hum is a ground loop.
+- Noise does not automatically call for a new microphone
+- Denoising/de-hum cannot repair every wiring or power fault
+- Spectral peaks are clues, not proof of one cause
+- Preserve test conditions and originals for repeatable diagnosis
 :::

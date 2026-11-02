@@ -16,13 +16,13 @@ links:
   - "[[glossary:reverb]]"
   - "[[instrument:organ]]"
 instances:
-  - mutopia-001411 | 稀疏织体加踏板，房间的尾巴与驻波最容易暴露
-  - cyberhymnal-000828 | 管风琴在教堂空间里，混响时间直接写在声音上
-  - m21-000602 | 合唱与房间声比例清楚，适合比较不同摆位
+  - mutopia-001411 | 钢琴织体的谱面参照，不是某间房间的拾音 | Piano texture as a scored reference, not a microphone recording of a room
+  - cyberhymnal-000828 | 管风琴编制参照；MIDI 音源混响不是原教堂的测量 | Organ instrumentation; MIDI-instrument reverb does not measure the original church
+  - m21-000602 | 合唱声部参照，不包含不同话筒摆位的录音 | Choral parts without recordings from different microphone positions
 sources:
   - Everest, Master Handbook of Acoustics, room modes and reverberation chapters
   - Ballou, Handbook for Sound Engineers, 5th ed., studio acoustics chapters
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -36,10 +36,10 @@ updated: 2026-10-28
 
 ## 摆位与参数
 
-话筒离墙至少 1 米，避开房间中线与角落。第一反射点做吸音，角落放低频陷阱。小房间用近场拾音加短混响，大房间可以把话筒退远，利用自然空间。
+先在房间里移动声源和话筒，录制同一短句，再比较直达声、梳状染色和低频突出的位置。离墙一米不是通用安全线，距离要与房间尺寸、乐器和话筒指向性一起考虑。薄吸音材料主要影响较高频率，低频处理通常需要更厚的结构、足够空气层或专门设计。
 
 ```audiolab
-{"type":"instrument","gm":"Church Organ","synth":"blown","phrase":["C3","G3","C4","G4"],"label":"房间也是乐器的一部分","label_en":"The room is part of the instrument","hint":"先听合成近似，再听 GM 采样，注意尾音的长度","hint_en":"Compare synth and GM sample, listening to the length of the tail"}
+{"type":"instrument","gm":"Church Organ","synth":"blown","phrase":["C3","G3","C4","G4"],"label":"音色尾音参照","label_en":"Instrument decay reference","hint":"比较音色的衰减即可。合成音与 GM 音色的差别不是同一房间的声学对照，也不能测出 RT60。","hint_en":"Compare instrument decay only. Synth and GM timbres are not controlled recordings of one room and cannot measure RT60."}
 ```
 
 ## 听什么
@@ -64,10 +64,10 @@ The microphone hears direct sound first, then early reflections from walls, floo
 
 ## Placement and settings
 
-Keep the microphone at least 1 metre from a wall and away from the room centre line and corners. Treat the first reflection points and put bass traps in the corners. In a small room, work close with a short reverb; in a large room, move the microphone back and use the natural space.
+Move the source and microphone and record the same short phrase at each position, comparing direct sound, comb filtering and prominent bass notes. One metre from a wall is not a universal safe boundary: room size, instrument and microphone pattern matter. Thin absorbers mainly affect higher frequencies; bass treatment generally requires greater depth, an air gap or a dedicated design.
 
 ```audiolab
-{"type": "instrument", "gm": "Church Organ", "synth": "blown", "phrase": ["C3", "G3", "C4", "G4"], "label": "The room is part of the instrument", "label_en": "The room is part of the instrument", "hint": "先听合成近似，再听 GM 采样，注意尾音的长度", "hint_en": "Compare synth and GM sample, listening to the length of the tail"}
+{"type":"instrument","gm":"Church Organ","synth":"blown","phrase":["C3","G3","C4","G4"],"label":"Instrument decay reference","label_en":"Instrument decay reference","hint":"Compare instrument decay only. Synth and GM timbres are not controlled recordings of one room and cannot measure RT60.","hint_en":"Compare instrument decay only. Synth and GM timbres are not controlled recordings of one room and cannot measure RT60."}
 ```
 
 ## What to listen for

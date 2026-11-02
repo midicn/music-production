@@ -4,8 +4,8 @@ site: prod
 cat: B5
 title: 定点与浮点
 title_en: Fixed Point and Floating Point
-summary: 定点有硬顶，浮点有余量，混音决策由此而来。
-summary_en: Fixed point has a hard ceiling, floating point has room to spare, and that shapes every mixing decision.
+summary: 区分整数文件、浮点运算和硬件边界，判断超出满刻度后能否恢复。
+summary_en: Distinguish integer files, float processing and hardware boundaries when judging recovery above full scale.
 level: standard
 tags: [浮点, 定点, 余量, 削波]
 tags_en: [floating point, fixed point, headroom, clipping]
@@ -15,62 +15,62 @@ links:
   - "[[glossary:clipping]]"
   - "[[glossary:bit-depth]]"
 instances:
-  - pdmx-000435 | 贝多芬第九的乐谱声部极多，叠加后的峰值最能说明定点与浮点的余量差（C1）
-  - oga-000001 | 游戏管弦编曲轨数多、音色杂，总线求和的余量不足就会削波（C1）
-  - musicnet-000067 | 四重奏四个声部同时强奏，密集和声处的峰值为浮点留出余量（C1）
+  - pdmx-000435 | 多声部可作求和素材；同一渲染在浮点处理中升降增益，再比较定点导出的削波 | Use multiple parts for summing; boost and attenuate one float render before comparing an overloaded integer export
+  - oga-000001 | 可渲染编曲检查总线峰值，内部能否恢复过载取决于实际处理链 | Render the arrangement to inspect bus peaks; overload recovery depends on the actual processing chain
+  - musicnet-000067 | 四声部可作等增益叠加练习，峰值与可恢复性需测量实际渲染 | Four parts support equal-gain summing practice; measure peaks and recovery on the actual render
 sources:
   - 浮点与定点音频通路的差异.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 问题
 
-同一段声音可以用整数或浮点表示。前者在满刻度处硬性截断，后者把小数点挪来挪去，混音留多少余量由此决定。
+定点PCM与浮点是数值表示方式。源文件格式、DAW内部运算和最终输出可采用不同表示，不能只从文件扩展名推断整条混音链的余量。
 
 ## 原理
 
-定点数的小数点位置固定，24 位整数超出满刻度就再无处可去，多轨相加越过 0 dBFS 便被削平。浮点用指数记录数量级，32 位浮点的动态范围远超听觉上限，通路内部可以暂时超过 0 dBFS 而不失真，只在送到定点设备时才需回到范围内。浮点并非无限，极大增益与反复处理仍会累积误差。
+定点文件有有限的编码范围；写入超出范围的结果需要处理，否则会削波。浮点使用有效数字与指数，通常可以在内部表示超过0 dBFS的幅度，但插件可能主动限幅、饱和或采用不同内部精度。浮点数仍有有限精度，不能逆转前面已产生的失真。
 
 ## 参数与做法
 
-混音总线保持 32 位浮点，进 DAC 或导出整数文件前留 3 到 6 dB 余量并限幅。不要因为浮点有余量就纵容每轨过响，插件之间仍按增益结构安排。导出后回放确认峰值。
+了解DAW与插件的运算路径，保持合理增益，输出到转换器或定点文件前回到要求的范围。无需为了定点交付自动加上限制器：若只需降低整体电平，可先降低增益。保存高精度中间文件便于继续处理，最终导出后重新检查峰值和文件属性。
 
 ## 听什么
 
-在贝多芬第九的乐谱上听多声部齐奏，在游戏管弦编曲里听密集配器，在四重奏的强奏和弦里听四个声部叠加。把总线推过 0 dBFS 再拉回，浮点下听不出异样，导出 16 位后削波就会现形。
+可在不含非线性插件的浮点测试链中先升高增益，再用等量衰减恢复，比较恢复前后的文件。另做一版在超量时先导出定点再拉低，检查削波残留。两种路径的差别在何时量化或限幅，不是16位文件在任何情况下都会削波。
 
 ```audiolab
-{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C3","G3","C4","E4","G4"],"label":"多声部叠加","label_en":"Voices stacked together","hint":"想象十条这样的声部同时进来，总线还剩下多少余量","hint_en":"Imagine ten such parts at once, then ask how much headroom the bus has left"}
+{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C3","G3","C4","E4","G4"],"label":"定点与浮点测试素材","label_en":"Material for fixed/float tests","hint":"渲染后在浮点通路先加增益再等量减回；另导出过载的整数文件再减，比较波形与误差。","hint_en":"Render, boost and equally attenuate within a float path. Separately export an overloaded integer file before attenuating; compare waveforms and error."}
 ```
 
 ## 常见误解
 
-浮点可以随便超 0 dBFS，最终仍要落到有上限的设备。浮点也不是没有噪声，只是噪声底极低。定点不等于低音质，24 位足够完成大部分录音。32 位浮点文件不会让原始录音多出信息。
+浮点运算的可表示范围不等于每个插件、模拟输入和输出设备都有同样余量。32位浮点中间文件可保存后续处理产生的高精度结果，却不能修复之前已经削波或噪声掩盖的素材。原始录音、内部运算和交付格式要分别判断。
 :::
 
 ::: en
 ## The question
 
-A sample can be an integer or a float. The first clips at full scale, the second shifts the decimal point, and the difference sets the headroom a mix needs.
+Fixed-point PCM and floating point are numerical representations. Source files, DAW arithmetic and final output can differ, so a file extension does not establish the headroom of the entire chain.
 
 ## How it works
 
-Fixed point holds the decimal point in place, so a 24-bit integer has no room past full scale and summed tracks that cross 0 dBFS flatten. Float stores an exponent, so 32-bit float spans far beyond the ear and a path can pass 0 dBFS undistorted. Only the trip to a fixed-point device needs a return to range. Huge gains still accumulate error.
+A fixed-point file has a finite coding range; writing values beyond it requires handling or they clip. Floating point uses a significand and exponent and commonly represents internal levels above 0 dBFS. Plug-ins may nevertheless limit, saturate or use different internal precision. Floating point remains finite and cannot undo distortion already created.
 
 ## Settings and practice
 
-Keep the mix bus at 32-bit float, leave 3 to 6 dB before the DAC or an integer export, and limit there. Do not let float headroom excuse hot tracks.
+Know the DAW and plug-in path, maintain suitable gain and bring output within requirements before a converter or fixed-point file. A limiter is not automatically required: simple gain reduction may suffice. Keep high-precision intermediates for later work and check peaks and file properties after final export.
 
 ## What to listen for
 
-On the Beethoven Ninth score, hear many parts at once. In a quartet's loud chord, hear four voices stack. Push the bus past 0 dBFS and pull back: float hides it, a 16-bit export does not.
+In a floating-point test chain without nonlinear plug-ins, add gain then apply equal attenuation and compare. Separately export fixed point while over range, then lower that file and inspect residual clipping. The distinction is where quantisation or limiting occurs, not that every 16-bit export must clip.
 
 ```audiolab
-{"type": "instrument", "gm": "String Ensemble 1", "synth": "bowed", "phrase": ["C3", "G3", "C4", "E4", "G4"], "label": "Voices stacked together", "label_en": "Voices stacked together", "hint": "想象十条这样的声部同时进来，总线还剩下多少余量", "hint_en": "Imagine ten such parts at once, then ask how much headroom the bus has left"}
+{"type":"instrument","gm":"String Ensemble 1","synth":"bowed","phrase":["C3","G3","C4","E4","G4"],"label":"Material for fixed/float tests","label_en":"Material for fixed/float tests","hint":"Render, boost and equally attenuate within a float path. Separately export an overloaded integer file before attenuating; compare waveforms and error.","hint_en":"Render, boost and equally attenuate within a float path. Separately export an overloaded integer file before attenuating; compare waveforms and error."}
 ```
 
 ## Common misconceptions
 
-Float does not allow endless overs, because playback ends at a ceiling. It is not noise-free, only very quiet. Fixed point is not low fidelity, since 24 bit covers most recording. A 32-bit float file adds no detail the source lacked.
+The representable float range is not shared by every plug-in, analogue input and output device. A 32-bit float intermediate file can preserve high-precision processing results but cannot repair earlier clipping or information buried in source noise. Evaluate recording, internal processing and delivery formats separately.
 :::

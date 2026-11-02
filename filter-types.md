@@ -15,13 +15,14 @@ links:
   - "[[instrument:organ]]"
   - "[[glossary:automation]]"
 instances:
-  - oga-000009 | 游戏场景音乐以持续铺底为主，扫低通时共振峰最容易辨认
-  - mutopia-001412 | 钢琴与弦乐的混合织体，高通逐级上移时能听出哪一层先退
-  - groove-000010 | 鼓组循环含明显低频与镲片，适合比较高通与带通对两端的取舍
+  - oga-000009 | 持续铺底的音符素材，可另渲染后施加实际滤波 | Sustained-note material for separate rendering and actual filtering
+  - mutopia-001412 | 钢琴与弦乐的声部参照，没有扫动高通的对照版本 | Piano-and-string parts without a high-pass sweep comparison
+  - groove-000010 | 鼓组编制参照，不能用原始 MIDI 代替滤波频响测量 | Drum instrumentation reference, not a substitute for filter-response measurement
 sources:
+  - "https://docs.scipy.org/doc/scipy/reference/signal.html"
   - Udo Zölzer, DAFX.
   - Sound On Sound, synthesizer filter primer.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
@@ -31,7 +32,7 @@ updated: 2026-10-28
 
 ## 工作方式
 
-低通保留截止频率以下，高通保留以上；带通只留中间一段，陷波只挖掉一条窄缝。每增加一阶，斜率约增加 6 dB/倍频程，常见的是 12 与 24 dB。截止点定在 −3 dB 处，Q 抬高会在那里形成共振峰，Q 很高时甚至自激。
+低通、高通、带通和陷波分别保留低频、高频、中间频带或削弱一段频带。常见滤波器每增加一阶，远离过渡带的渐近斜率约增加 6 dB/倍频程；具体截止点定义和响应依类型而定，不能一律当作 −3 dB。Q 可表示共振或带宽的关系，但高 Q 是否自激取决于滤波器的电路或算法设计。
 
 ## 旋钮与耳朵
 
@@ -39,10 +40,10 @@ updated: 2026-10-28
 
 ## 耳朵要抓的点
 
-用持续和弦扫截止频率，注意共振峰先出现再消失。换一段噪声音色切高通，嘶声会一层层退掉。
+用含宽频能量的声音扫动截止频率：提高高通截止会先削掉低频，降低低通截止会先削掉高频。想处理高频嘶声，应试低通或有针对性的高频衰减，而不是把高通截止不断抬高。原有音符演示可听滤波音色变化，但不能代替显示频响曲线的测量。
 
 ```audiolab
-{"type":"instrument","gm":"Synth Strings 1","synth":"bowed","phrase":["A3","C4","E4","A4"],"label":"持续和弦","label_en":"Sustained chord","hint":"先听干声，再用低通从 8 kHz 往下扫","hint_en":"Hear it dry, then sweep a low-pass down from 8 kHz"}
+{"type":"instrument","gm":"Synth Strings 1","synth":"bowed","phrase":["A3","C4","E4","A4"],"label":"持续音色参照","label_en":"Sustained timbre reference","hint":"先熟悉这段持续音的频谱感受；此播放器没有低通扫频控件，滤波对照应在实际滤波器上完成。","hint_en":"Become familiar with this sustained sound. This player has no low-pass sweep control; perform filtering comparisons with an actual filter."}
 ```
 
 ## 容易弄错的
@@ -57,7 +58,7 @@ Low-pass, high-pass, band-pass and notch are often treated as four EQ curves. Th
 
 ## The working principle
 
-A low-pass keeps content below the cutoff and a high-pass keeps content above. A band-pass leaves a middle slice; a notch removes a narrow strip. Each additional order adds about 6 dB per octave of slope, with 12 and 24 dB the common choices. The cutoff sits at the minus 3 dB point, and raising Q builds a resonant peak there, high enough at extreme settings to self-oscillate.
+Low-pass, high-pass, band-pass and notch filters retain lows, highs, a middle band, or attenuate a band respectively. For common designs, each order adds roughly 6 dB per octave of asymptotic slope away from the transition band. Cutoff definition and response depend on design and are not universally −3 dB. Q relates to resonance or bandwidth; high Q causes self-oscillation only in designs that support it.
 
 ## Knobs and ears
 
@@ -65,10 +66,10 @@ Sweep a 24 dB low-pass below 200 Hz and a drum loses its body; 12 dB sounds more
 
 ## What the ear should catch
 
-Sweep the cutoff on a sustained chord and notice the resonant peak arrive before it disappears. On a noisy timbre, raise the high-pass and hear the hiss retreat layer by layer.
+Sweep a broadband sound: raising a high-pass cutoff removes low frequencies first, while lowering a low-pass cutoff removes highs first. To address high-frequency hiss, try a low-pass or targeted high-frequency attenuation rather than continually raising a high-pass cutoff. Note-based examples can illustrate a tonal change but do not replace a measured response curve.
 
 ```audiolab
-{"type": "instrument", "gm": "Synth Strings 1", "synth": "bowed", "phrase": ["A3", "C4", "E4", "A4"], "label": "Sustained chord", "label_en": "Sustained chord", "hint": "先听干声，再用低通从 8 kHz 往下扫", "hint_en": "Hear it dry, then sweep a low-pass down from 8 kHz"}
+{"type":"instrument","gm":"Synth Strings 1","synth":"bowed","phrase":["A3","C4","E4","A4"],"label":"Sustained timbre reference","label_en":"Sustained timbre reference","hint":"Become familiar with this sustained sound. This player has no low-pass sweep control; perform filtering comparisons with an actual filter.","hint_en":"Become familiar with this sustained sound. This player has no low-pass sweep control; perform filtering comparisons with an actual filter."}
 ```
 
 ## Easy to get wrong

@@ -16,71 +16,71 @@ links:
   - "[[glossary:clipping]]"
   - "[[glossary:lufs]]"
 instances:
-  - groove-000004 | 八十四拍的放克鼓组，瞬态被限制器压平后律动会变呆
-  - mutopia-000497 | 贝多芬第五第一乐章动态跨度大，能听出限制类型对起伏的影响
-  - oga-000011 | 首领段落地鼓密集，削波与限制的差别在低频上最先暴露
+  - groove-000004 | 可渲染鼓组，再等响度比较限制与削波对音头、尾音的影响 | Render drums and compare limiting and clipping on attack and decay at matched loudness
+  - mutopia-000497 | 可渲染动态起伏段，对比不同峰值处理，固定输入与输出响度 | Render dynamic sections and compare peak processing with fixed input and matched output loudness
+  - oga-000011 | 密集底鼓可作失真测试素材，限制与削波差异需实际处理后判断 | Dense kicks offer distortion-test material; judge limiting/clipping differences only after processing
 sources:
   - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012.
   - ITU-R BS.1770-4, Algorithms to Measure Audio Programme Loudness and True-peak Level.
   - FabFilter, Pro-L 2 user manual, limiting styles and oversampling.
-updated: 2026-10-31
+updated: 2026-11-02
 order: 460
 ---
 
 ::: zh
-把削波器当限制器用，鼓会先失去起音；把限制器当削波器用，响度总差一截。名字都叫限制，做的事并不相同。
+峰值限制与削波都可控制上限，但改写波形和增益包络的方式不同。相同输出峰值并不保证相同响度、音头或失真。用同一输入制作对照，再按目标动态与可接受失真选择，不只看处理器名称。
 
 ## 四种常见类型
 
-| 类型 | 工作方式 | 听感 | 常见用途 | 风险 |
-|---|---|---|---|---|
-| 砖墙限制 | 前视加平滑增益 | 干净，可能抽吸 | 交付末端 | 释放过短 |
-| 削波器 | 直接削掉尖峰 | 密度高，边缘硬 | 鼓与电子 | 高频混叠 |
-| 多段限制 | 分频段各自限峰 | 低频稳，高频少动 | 低频多的素材 | 分频处相位 |
-| 真峰值限制 | 过采样检测峰值 | 编码后不削波 | 有损交付 | 延迟与过采样 |
+| 方法 | 主要动作 | 检查重点 |
+|---|---|---|
+| 峰值限制 | 按检测峰值控制增益 | 起音、恢复、输出峰值 |
+| 削波 | 由非线性幅度曲线改写峰值 | 新谐波、互调、混叠 |
+| 多段限制 | 分频后分别控峰 | 跨频带平衡、求和与相位 |
+| 真峰值限制 | 估算样点间峰值并据此控增益 | 检测精度、输出余量、后续编码结果 |
 
 ## 选择看交付
 
-响度目标高、素材以合成器为主，削波加限制的组合更有效。原声乐器多、动态本身就是内容，砖墙限制更稳。低频重而中频薄，多段限制能只收低频。要交给流媒体，真峰值检测必须开，ceiling 留在 −1 dBTP 附近。
+先按交付规范确定峰值上限，再根据素材选择限制、削波或其他处理。真峰值限制并不保证所有后续编码器都绝不产生过冲，仍应检查最终编码解码结果。目标响度、保留动态和可接受失真需要共同取舍，不由“原声用某类、电子用另一类”单独决定。
 
 ## 参数与听感
 
-前视越长，瞬态越平；释放越短，低频抽吸越明显。增益推进一次 1–3 dB，超过就换一种类型，而不是继续加。换类型时先把增益归零，再按同一响度对齐，否则比较的只是响度。削波器的过采样打开后，混叠减少，延迟增加。真峰值表读数高于采样峰值，两者不要混用。
+每次只改一项设置，并在相同响度下比较。前瞻和释放怎样改变瞬态取决于算法，不是越长或越短就必然有某种音色。过采样可能减少部分非线性混叠，但检测精度、处理延迟和资源成本应分别查看说明与输出测量。
 
 ```audiolab
-{"type":"instrument","drum":"38","synth":"perc","phrase":["36","38","42","38","36","38","49","46"],"label":"底鼓与军鼓的连续击打","label_en":"A run of kick and snare hits","hint":"先听干声，再想峰值被限制或被削掉后，哪一下先失去边缘","hint_en":"Hear it dry, then ask which hit loses its edge first under limiting or clipping"}
+{"type":"instrument","drum":"38","synth":"perc","phrase":["36","38","42","38","36","38","49","46"],"label":"限制与削波测试的鼓点","label_en":"Drum hits for limiting/clipping tests","hint":"在 DAW 给同一录音分别加限制器与削波器，匹配输出响度，比较音头、低频失真及增益衰减。","hint_en":"Apply a limiter and clipper separately to one recording in a DAW. Match output loudness and compare attack, bass distortion and gain reduction."}
 ```
 
 ## 边界与失败模式
 
-限制器不能修复混音的动态失衡。削波器放在限制器之后，会把限制器的平滑增益重新切硬。两级限制串联，第二级通常只在替第一级收拾释放。ceiling 设在 0 dBFS，转成有损格式仍可能削波。过度限制先吃掉的是最静处的细节，不是最响处。
+限制器不能自动修复编曲或混音失衡。多级处理是否有用，要比较每一级的目标和残留失真；不要因为第二级动作就断定它只在替第一级补错。保存未限制的高精度版本，最终检查峰值、响度和头尾。
 :::
 
 ::: en
-Use a clipper as a limiter and the drums lose their attack first. Use a limiter as a clipper and loudness always falls short. Both carry the same name and do different jobs.
+Peak limiting and clipping can both control a ceiling but alter waveforms and gain envelopes differently. Equal output peak does not guarantee equal loudness, attack or distortion. Compare the same input and choose for intended dynamics and acceptable artifacts rather than the processor name alone.
 
 ## Four common types
 
-| Type | How it works | Sound | Typical use | Risk |
-|---|---|---|---|---|
-| Brickwall limiter | Lookahead plus smoothed gain | Clean, may pump | End of delivery chain | Release too short |
-| Clipper | Shaves the spikes directly | Dense, hard edges | Drums and electronic | High-frequency aliasing |
-| Multiband limiter | Limits each band separately | Steady lows, less high-end work | Bass-heavy material | Phase at crossovers |
-| True-peak limiter | Oversampled peak detection | No clipping after encoding | Lossy delivery | Latency and oversampling |
+| Method | Main action | Check |
+|---|---|---|
+| Peak limiting | Gain control from detected peaks | Attacks, recovery and output peak |
+| Clipping | Nonlinear amplitude mapping | Added harmonics, intermodulation and aliases |
+| Multiband limiting | Peak control after splitting bands | Balance, summation and phase |
+| True-peak limiting | Gain control using estimated inter-sample peaks | Estimation, headroom and later encoded output |
 
 ## The choice follows delivery
 
-With a high loudness target and synth-led material, clipping plus limiting is more efficient. With acoustic instruments and dynamics that carry the music, a brickwall limiter is steadier. When the low end is heavy and the mids are thin, multiband limiting can work only on the bass. For streaming delivery, true-peak detection must be on, with the ceiling near −1 dBTP.
+Choose the peak limit from the delivery specification, then select limiting, clipping or another process for the source. True-peak limiting does not guarantee zero overshoot from every later codec; inspect the final encoded/decoded result. Loudness, retained dynamics and acceptable distortion must be considered together rather than by an acoustic/electronic genre rule.
 
 ## Reading the controls by ear
 
-Longer lookahead flattens transients more; shorter release makes low-end pumping clearer. Add 1–3 dB of drive at a time, then switch type rather than push further. When switching type, reset gain and match loudness again, otherwise the comparison is only about level. Oversampling in a clipper reduces aliasing and adds latency. A true-peak meter reads above the sample peak, so do not treat the two as the same number.
+Change one setting at a time and compare at equal loudness. Look-ahead and release behaviour depend on the algorithm rather than one inevitable long/short result. Oversampling may reduce some nonlinear aliases, but inspect detection precision, latency and resource cost separately.
 
 ```audiolab
-{"type": "instrument", "drum": "38", "synth": "perc", "phrase": ["36", "38", "42", "38", "36", "38", "49", "46"], "label": "A run of kick and snare hits", "label_en": "A run of kick and snare hits", "hint": "先听干声，再想峰值被限制或被削掉后，哪一下先失去边缘", "hint_en": "Hear it dry, then ask which hit loses its edge first under limiting or clipping"}
+{"type":"instrument","drum":"38","synth":"perc","phrase":["36","38","42","38","36","38","49","46"],"label":"Drum hits for limiting/clipping tests","label_en":"Drum hits for limiting/clipping tests","hint":"Apply a limiter and clipper separately to one recording in a DAW. Match output loudness and compare attack, bass distortion and gain reduction.","hint_en":"Apply a limiter and clipper separately to one recording in a DAW. Match output loudness and compare attack, bass distortion and gain reduction."}
 ```
 
 ## Limits and failure modes
 
-A limiter cannot repair dynamic imbalance in the mix. A clipper placed after the limiter cuts the smoothed gain hard again. With two limiters in series, the second usually cleans up the release of the first. A ceiling at 0 dBFS can still clip after lossy encoding. Over-limiting removes detail in the quietest passage before it touches the loudest one.
+A limiter does not automatically repair arrangement or mix imbalance. Judge multistage processing by each stage’s purpose and residual distortion, not by assuming the second only fixes the first. Preserve an unlimited high-precision version and check final peaks, loudness and boundaries.
 :::

@@ -16,34 +16,34 @@ links:
   - "[[glossary:bus]]"
   - "[[instrument:drum-kit]]"
 instances:
-  - groove-001103 | 四拍底鼓间隔均匀，侧链泵感最容易听
-  - oga-000002 | 鼓与合成贝斯并置，侧链让位是否自然一听便知
-  - groove-000006 | 流行鼓组密集，检查侧链释放是否拖慢律动
+  - groove-001103 | 规律底鼓可用作外部触发；需另设被压轨道并接好侧链路由 | Regular kicks can trigger a sidechain; supply a separate processed track and verify routing
+  - oga-000002 | 可将鼓与贝斯分轨渲染，在 DAW 中接外部侧链，比较有无让位 | Render drums and bass separately, route an external sidechain in a DAW and compare ducking on and off
+  - groove-000006 | 密集鼓点可测试侧链释放是否及时恢复，需查看增益衰减并听合奏 | Dense hits test recovery between triggers; watch gain reduction and listen in the mix
 sources:
   - Giannoulis, Massberg and Reiss, Digital Dynamic Range Compressor Design, JAES 2012.
   - Bobby Owsinski, The Mixing Engineer's Handbook, sidechain section.
-updated: 2026-10-28
+updated: 2026-11-02
 ---
 
 ::: zh
 ## 问题
 
-侧链常被当成舞曲的泵感开关。它真正的作用，是让一条声部在另一条出现时自动让位。
+侧链是处理器用来判断何时动作的检测路径。检测信号可来自被处理声音本身，也可来自另一条轨道；它不一定直接混入可听输出。外部底鼓触发贝斯衰减，是其中一种用途。
 
 ## 目标与判断
 
-先确定谁触发、谁让位、让多少。底鼓触发贝斯是最常见的组合，人声触发铺底也有效。判断标准是让位发生在需要的那几毫秒，而不是整段都在抖。释放太长会拖慢律动，太短会产生点击。
+先确定谁触发、谁让位及让位的时间段。底鼓可触发贝斯衰减，人声也可触发伴奏让位。所需持续时间依音符长度与编曲而变；观察增益衰减曲线，听释放是否衔接下一音。过快动作可能引入调制失真，长释放也可能是有意的包络设计。
 
 ## 做法
 
-把底鼓送进侧链输入，阈值设到只有底鼓能触发；比率二比一到四比一；启动一到十毫秒；释放跟随速度，约八十到二百毫秒。用增益衰减表确认每次只减三到六分贝。需要更自然的让位时，改用动态均衡或音量自动化。旁通时对比整段，而不是只看表。
+先把贝斯送入压缩器的音频输入，把底鼓送入其侧链输入，并确认路由和检测监听。调阈值让目标击打触发，再设置最大需要的让位量。听贝斯是否在下一音前恢复，按节奏调整释放；如果只有某一频带冲突，可比较动态EQ或自动化，不必让整条贝斯都下降。
 
 ## 听什么
 
-听贝斯在底鼓之后是否迅速回来；听泵感是否与拍点一致；把侧链旁通，听低频是否立刻变浑；在副歌最密处检查是否过度抽吸。
+保持同一段鼓与贝斯，比较侧链关闭与开启，记录触发位置和恢复时间，再匹配总体响度判断让位是否有效。若没有实际外部触发路由，单独播放一个音色并不能展示侧链动作。
 
 ```audiolab
-{"type":"instrument","gm":"Synth Bass 1","synth":"plucked","phrase":["E1","E1","G1","E1"],"label":"合成贝斯","label_en":"Synth bass","hint":"先听贝斯，再让底鼓触发侧链","hint_en":"Hear the bass, then let the kick trigger the sidechain"}
+{"type":"instrument","gm":"Synth Bass 1","synth":"plucked","phrase":["E1","E1","G1","E1"],"label":"侧链练习的贝斯短句","label_en":"Bass material for sidechain practice","hint":"在 DAW 录下贝斯，另用底鼓送入压缩器外部侧链；观察每次触发的衰减与两次触发间的恢复。","hint_en":"Record the bass in a DAW and feed a separate kick into the compressor’s external sidechain. Observe reduction per trigger and recovery between triggers."}
 ```
 
 ## 常见误解
@@ -54,22 +54,22 @@ updated: 2026-10-28
 ::: en
 ## The problem
 
-Sidechain is often treated as a pump switch for dance music. Its real job is to make one part step back when another appears.
+A sidechain is the detector path that decides when a processor acts. It can use the processed signal or another track and need not be audible in the output. Ducking bass from an external kick is one application.
 
 ## Goal and judgement
 
-Decide who triggers, who moves, and by how much. Kick triggering bass is the common pair; vocal triggering a pad also works. The move should happen for the few milliseconds needed, not for the whole bar. Too long a release drags the groove; too short a release clicks.
+Choose the trigger, the reduced part and the intended ducking interval. A kick may duck bass, or a vocal may duck accompaniment. Duration depends on notes and arrangement; observe gain reduction and listen through recovery into the next note. Very fast action can introduce modulation distortion, while long release can be an intentional envelope choice.
 
 ## Method
 
-Send the kick to the sidechain input and set the threshold so only the kick triggers. Try 2 to 1 up to 4 to 1, attack 1 to 10 ms, release around 80 to 200 ms following the tempo. Check the gain-reduction meter for 3 to 6 dB per hit. For a more natural result, use dynamic EQ or volume automation instead. Compare the full section when bypassing, not just the meter.
+Feed bass to the audio input and kick to the sidechain, verifying routing and detector audition. Set threshold for intended hits, then choose the required ducking. Adjust release so bass recovers at the needed point. If only one band conflicts, compare dynamic EQ or automation rather than ducking the whole bass.
 
 ## What to listen for
 
-Whether the bass returns quickly after each kick; whether the pump lands on the beat; whether bypassing the sidechain makes the low end muddy; whether the chorus is over-pumped.
+Keep the same kick-and-bass passage, compare sidechain off and on, and note triggering and recovery before matching overall loudness. A single preset sound without the external-trigger route does not demonstrate sidechain behaviour.
 
 ```audiolab
-{"type": "instrument", "gm": "Synth Bass 1", "synth": "plucked", "phrase": ["E1", "E1", "G1", "E1"], "label": "Synth bass", "label_en": "Synth bass", "hint": "先听贝斯，再让底鼓触发侧链", "hint_en": "Hear the bass, then let the kick trigger the sidechain"}
+{"type":"instrument","gm":"Synth Bass 1","synth":"plucked","phrase":["E1","E1","G1","E1"],"label":"Bass material for sidechain practice","label_en":"Bass material for sidechain practice","hint":"Record the bass in a DAW and feed a separate kick into the compressor’s external sidechain. Observe reduction per trigger and recovery between triggers.","hint_en":"Record the bass in a DAW and feed a separate kick into the compressor’s external sidechain. Observe reduction per trigger and recovery between triggers."}
 ```
 
 ## Common misconceptions

@@ -20,10 +20,11 @@ instances:
   - atepp-000005 | 同一首的阿什肯纳齐版本，可与前一版对照句尾收束的时间 | The same etude by Ashkenazy, useful for comparing where phrases end
   - atepp-000006 | 同一首的索科洛夫版本，同一和弦在不同演奏者手里落点不同 | A third reading by Sokolov, where the same chords land in different places
 sources:
+  - https://www.ableton.com/en/live-manual/11/editing-midi-notes-and-velocities/
   - Ableton Live Reference Manual, 量化 MIDI 音符与 groove
   - Apple Logic Pro User Guide, 量化与时间校正
   - Steinberg Cubase Operation Manual, 量化面板与迭代量化
-updated: 2026-10-31
+updated: 2026-11-04
 ---
 
 ::: zh
@@ -35,7 +36,7 @@ updated: 2026-10-31
 
 ## 网格与强度
 
-网格决定最小单位，强度决定往格子上靠多少。八分网格适合铺底与长音，十六分适合快速音型，三连音段落要用三连音网格。强度不必百分之百：六十到八十之间，听感还在演奏者手里。量化起点之后，音符长度与控制器不会跟着走，踏板的落点要单独检查。
+网格决定最小单位，强度决定往格子上靠多少。八分网格适合铺底与长音，十六分适合快速音型，三连音段落要用三连音网格。强度不必百分之百：六十到八十之间，听感还在演奏者手里。先确认量化作用于起点、终点还是两者；终点量化会改变音符长度。踏板等控制器是否随动取决于软件与编辑设置，应在处理后逐项检查。
 
 | 素材 | 网格 | 强度 | 备注 |
 |---|---|---|---|
@@ -71,7 +72,7 @@ Timing can be off for three reasons: the performance itself, latency in the reco
 
 ## Grid and strength
 
-The grid sets the smallest unit, strength sets how far notes move toward it. Eighths suit pads and sustains, sixteenths suit fast figures, and triplet passages need a triplet grid. Strength does not have to be 100 percent; between sixty and eighty the performance still feels played. Quantizing note starts does not move note lengths or controller data, so pedal points need a separate check.
+The grid sets the smallest unit, strength sets how far notes move toward it. Eighths suit pads and sustains, sixteenths suit fast figures, and triplet passages need a triplet grid. Strength does not have to be 100 percent; between sixty and eighty the performance still feels played. Check whether the command targets starts, ends or both: end quantization changes note lengths. Whether controllers follow depends on the software and editing settings, so inspect pedal timing after the operation.
 
 | Material | Grid | Strength | Note |
 |---|---|---|---|
